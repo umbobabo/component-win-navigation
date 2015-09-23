@@ -6,13 +6,21 @@ import ArticleItem from './article';
 
 export default class Subcategory extends React.Component {
 
+  static get propTypes() {
+    return {
+      title: React.PropTypes.string,
+      href: React.PropTypes.string,
+      children: React.PropTypes.arrayOf(React.PropTypes.object),
+    };
+  }
+
   constructor() {
     super();
 
-    this._renderArticleItem = this._renderArticleItem.bind(this);
+    this.renderArticleItem = this.renderArticleItem.bind(this);
   }
 
-  _renderArticleItem(article, key) {
+  renderArticleItem(article, key) {
     const { title, text } = article;
     return (
       <ArticleItem key={key} title={title} text={text} />
@@ -24,7 +32,7 @@ export default class Subcategory extends React.Component {
     return (
       <div>
         <a href={href}>{title}</a>
-        {children ? <List>{children.map(this._renderArticleItem)}</List> : '' }
+        {children ? <List>{children.map(this.renderArticleItem)}</List> : ''}
       </div>
     );
   }

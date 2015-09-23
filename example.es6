@@ -5,7 +5,7 @@ import CategoryList from '.';
 const data = [
   {
     title: 'Leaders',
-    href: ''
+    href: '',
   },
   {
     title: 'World',
@@ -17,87 +17,87 @@ const data = [
           {
             title: 'Coalition, the Sequel',
             text: 'Hung Parliament',
-            href: ''
+            href: '',
           },
           {
             title: 'After the referendum',
             text: 'What happens next for Scotland',
-            href: ''
+            href: '',
           },
           {
             title: 'Italian lessons',
             text: 'Friendly advice for 2015',
-            href: ''
+            href: '',
           },
           {
             title: 'Land Rover Defender, RIP',
             text: 'The end of the line for the boneshaker',
-            href: ''
+            href: '',
           },
           {
             title: 'Plane thinking',
             text: 'Where to fit London\'s new airport',
-            href: ''
+            href: '',
           },
           {
             title: 'Keeping the light on',
             text: 'Britain will avoid a blackout-Just',
-            href: ''
+            href: '',
           },
           {
             title: 'Estente frugale',
             text: 'Francois Heisbourg on Britain\'s relations with France',
-            href: ''
-          }
-        ]
+            href: '',
+          },
+        ],
       },
       {
-        title: 'Europe'
+        title: 'Europe',
       },
       {
-        title: 'United States'
+        title: 'United States',
       },
       {
-        title: 'The Americas'
+        title: 'The Americas',
       },
       {
-        title: 'Asia'
+        title: 'Asia',
       },
       {
-        title: 'China'
+        title: 'China',
       },
       {
-        title: 'Middle East & Africa'
+        title: 'Middle East & Africa',
       },
       {
-        title: 'International'
-      }
-    ]
+        title: 'International',
+      },
+    ],
   },
   {
     title: 'Business & Finance',
-    href: ''
+    href: '',
   },
   {
     title: 'Science & Tech',
-    href: ''
+    href: '',
   },
   {
     title: 'Culture',
-    href: ''
+    href: '',
   },
   {
     title: 'Specials',
-    href: ''
-  }
+    href: '',
+  },
 ];
 
 const activeCategory = 'World';
 const activeSubcategory = 'Britain';
-
 export default (
   <CategoryList
     data={data}
     activeCategory={activeCategory}
-    activeSubcategory={activeSubcategory} />
+    activeSubcategory={activeSubcategory}
+  />
 );
