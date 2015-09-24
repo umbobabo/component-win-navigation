@@ -12,7 +12,7 @@ export default class ArticleItem extends React.Component {
   render() {
     const { title, text } = this.props;
     return (
-      <div>
+      <div className="navigation__articles__article">
         <h2>{title}</h2>
         <span>{text}</span>
       </div>
