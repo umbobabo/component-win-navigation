@@ -5,7 +5,7 @@ import List from '@economist/component-list';
 function isComponentType(props, propName, componentName) {
   if (typeof props[propName] === 'function' &&
       props[propName].prototype.render &&
-      typeof props[propName].prototype === 'function'
+      typeof props[propName].prototype.render === 'function'
   ) {
     return true;
   }
