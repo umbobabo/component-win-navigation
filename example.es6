@@ -10,10 +10,10 @@ const data = [
   {
     title: 'World',
     href: '',
-    children: [
+    childs: [
       {
         title: 'Britain',
-        children: [
+        childs: [
           {
             title: 'Coalition, the Sequel',
             text: 'Hung Parliament',

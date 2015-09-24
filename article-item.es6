@@ -13,7 +13,7 @@ export default class ArticleItem extends React.Component {
     const { title, text } = this.props;
     return (
       <div>
-        <strong>{title}</strong>
+        <h2>{title}</h2>
         <span>{text}</span>
       </div>
     );
