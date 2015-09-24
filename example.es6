@@ -56,8 +56,8 @@ const data = [
             href: '',
           },
         ],
-      }
-    ]
+      },
+    ],
   },
   {
     title: 'World',
@@ -681,7 +681,7 @@ const data = [
       {
         title: 'Cartoon',
         childs: [],
-      }
+      },
     ],
   },
 ];
