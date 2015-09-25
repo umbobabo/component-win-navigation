@@ -13,9 +13,10 @@ export default class CategoryCard extends React.Component {
 
   render() {
     const children = this.props.childs;
+    const childProps = this.props.childProps;
     return (
       <div className="navigation__category-card">
-        <ListOfComponent className="navigation__subcategories" component={Subcategory} data={children} />
+        <ListOfComponent className="navigation__subcategories" component={Subcategory} data={children} childProps={childProps} />
       </div>
     );
   }

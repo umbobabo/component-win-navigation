@@ -12,11 +12,16 @@ export default class Category extends React.Component {
   }
 
   render() {
-    const { title, slug } = this.props;
+    const { title, slug, focusCategorySlug } = this.props;
+    const isFocused = slug === focusCategorySlug;
+    const childProps = {
+      focusCategorySlug: this.props.focusCategorySlug,
+      focusSubcategorySlug: this.props.focusSubcategorySlug,
+    };
     return (
       <div className="navigation__category">
         <h2 className="navigation__category-title"><a href={slug}>{title}</a></h2>
-        <CategoryCard {...this.props} />
+        {isFocused ? <CategoryCard {...this.props} childProps={childProps} /> : ''}
       </div>
     );
   }

@@ -33,8 +33,9 @@ export default class ListOfComponent extends React.Component {
 
   renderChildComponent(object, key) {
     const ChildComponent = this.props.component;
+    const childProps = this.props.childProps || {};
     return (
-      <ChildComponent key={key} {...object} />
+      <ChildComponent key={key} {...object} {...childProps} />
     );
   }
 

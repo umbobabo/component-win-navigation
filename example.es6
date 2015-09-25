@@ -102,7 +102,7 @@ import json from './test/data/large';
 // ]
 const data = json;
 const focusCategorySlug = 'world';
-const focusSubcategorySlug = 'britain';
+const focusSubcategorySlug = 'africa';
 export default (
   <Navigation
     data={data}

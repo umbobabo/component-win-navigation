@@ -13,11 +13,12 @@ export default class Subcategory extends React.Component {
   }
 
   render() {
-    const { title, slug } = this.props;
+    const { title, slug, focusSubcategorySlug } = this.props;
+    const isFocused = slug === focusSubcategorySlug;
     return (
       <div className="navigation__subcategory">
         <h2 className="navigation__subcategory-title"><a href={slug}>{title}</a></h2>
-        <SubcategoryCard {...this.props} />
+        {isFocused ? <SubcategoryCard {...this.props} /> : ''}
       </div>
     );
   }
