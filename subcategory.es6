@@ -1,7 +1,6 @@
 import React from 'react';
 
-import ListOfComponent from './list-of-component';
-import ArticleItem from './article-item';
+import SubcategoryCard from './subcategory-card';
 
 export default class Subcategory extends React.Component {
 
@@ -15,11 +14,10 @@ export default class Subcategory extends React.Component {
 
   render() {
     const { title } = this.props;
-    const children = this.props.childs;
     return (
       <div className="navigation__subcategory">
         <h2 className="navigation__subcategory-title">{title}</h2>
-        <ListOfComponent className="navigation__articles" component={ArticleItem} data={children} />
+        <SubcategoryCard {...this.props} />
       </div>
     );
   }
