@@ -6,18 +6,19 @@ export default class ArticleItem extends React.Component {
 
   static get propTypes() {
     return {
-      id: React.PropTypes.number,
-      title: React.PropTypes.string,
+      title: React.PropTypes.string.isRequired,
       text: React.PropTypes.string,
+      id: React.PropTypes.number,
       slug: React.PropTypes.string,
+      publishedOn: React.PropTypes.string,
     };
   }
 
   render() {
     const { title, text } = this.props;
     return (
-      <div className="navigation__articles__article">
-        <h2>{title}</h2>
+      <div className="navigation__article">
+        <h2 className="navigation__article-title">{title}</h2>
         <span>{text}</span>
       </div>
     );
