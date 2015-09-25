@@ -6,8 +6,8 @@ export default class Category extends React.Component {
 
   static get propTypes() {
     return {
-      title: React.PropTypes.string,
-      slug: React.PropTypes.string,
+      title: React.PropTypes.string.isRequired,
+      slug: React.PropTypes.string.isRequired,
     };
   }
 

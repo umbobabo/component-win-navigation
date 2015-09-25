@@ -13,10 +13,10 @@ export default class Subcategory extends React.Component {
   }
 
   render() {
-    const { title } = this.props;
+    const { title, slug } = this.props;
     return (
       <div className="navigation__subcategory">
-        <h2 className="navigation__subcategory-title">{title}</h2>
+        <h2 className="navigation__subcategory-title"><a href={slug}>{title}</a></h2>
         <SubcategoryCard {...this.props} />
       </div>
     );

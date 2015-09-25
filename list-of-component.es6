@@ -3,7 +3,9 @@ import React from 'react';
 import List from '@economist/component-list';
 
 function isComponentType(props, propName, componentName) {
-  if (typeof props[propName] === 'function' &&
+  if (props[propName] &&
+      typeof props[propName] === 'function' &&
+      props[propName].prototype &&
       props[propName].prototype.render &&
       typeof props[propName].prototype.render === 'function'
   ) {

@@ -25,7 +25,8 @@ describe('ArticleItem', () => {
     // We must check console.warn to test validation: http://stackoverflow.com/a/31835256/130566
     const oldConsoleWarn = console.warn;
     beforeEach(() => {
-      console.warn = chai.spy(console.warn);
+      const spy = chai.spy(() => {});
+      console.warn = spy;
     });
     afterEach(() => {
       console.warn = oldConsoleWarn;
