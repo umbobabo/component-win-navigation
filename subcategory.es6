@@ -17,8 +17,8 @@ export default class Subcategory extends React.Component {
     const { title } = this.props;
     const children = this.props.childs;
     return (
-      <div className="navigation__subcategories__subcategory">
-        <h2 className="navigation__subcategories__subcategory__title">{title}</h2>
+      <div className="navigation__subcategory">
+        <h2 className="navigation__subcategory-title">{title}</h2>
         <ListOfComponent className="navigation__articles" component={ArticleItem} data={children} />
       </div>
     );

@@ -14,7 +14,7 @@ export default class Category extends React.Component {
   render() {
     const { title, slug } = this.props;
     return (
-      <div className="navigation__head__category">
+      <div className="navigation__category">
         <a href={slug}>{title}</a>
         <CategoryCard {...this.props} />
       </div>
