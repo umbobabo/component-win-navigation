@@ -1,11 +1,15 @@
-import React from 'react/addons';
+/* eslint id-length: 0 */
+
+import React from 'react';
 
 export default class ArticleItem extends React.Component {
 
   static get propTypes() {
     return {
+      id: React.PropTypes.number,
       title: React.PropTypes.string,
       text: React.PropTypes.string,
+      slug: React.PropTypes.string,
     };
   }
 

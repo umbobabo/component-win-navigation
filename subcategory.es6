@@ -8,6 +8,7 @@ export default class Subcategory extends React.Component {
   static get propTypes() {
     return {
       title: React.PropTypes.string,
+      slug: React.PropTypes.string,
       childs: React.PropTypes.arrayOf(React.PropTypes.object),
     };
   }

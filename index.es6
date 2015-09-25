@@ -1,4 +1,4 @@
-import React from 'react/addons';
+import React from 'react';
 
 import ListOfComponent from './list-of-component';
 import Category from './category';
