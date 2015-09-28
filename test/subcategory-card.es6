@@ -5,7 +5,7 @@ import SubcategoryCard from '../subcategory-card';
 import ListOfComponent from '../list-of-component';
 import ArticleItem from '../article-item';
 
-const TestUtils = React.addons.TestUtils;
+const { createRenderer } = React.addons.TestUtils;
 describe('SubcategoryCard', () => {
 
   it('is compatible with React.Component', () => {
@@ -17,8 +17,13 @@ describe('SubcategoryCard', () => {
   });
 
   describe('rendering', () => {
+    /* eslint init-declarations: 0 */
 
-    const renderer = TestUtils.createRenderer();
+    let renderer;
+    beforeEach(() => {
+      renderer = createRenderer();
+    });
+
     it('renders a basic subcategory card', () => {
       renderer.render(<SubcategoryCard childs={[]} />);
       renderer.getRenderOutput().should.deep.equal(

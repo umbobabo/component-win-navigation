@@ -12,7 +12,7 @@ export default class Subcategory extends React.Component {
       childs: PropTypes.arrayOf(PropTypes.object),
       focusSubcategorySlug: PropTypes.string,
       activeSubcategorySlug: PropTypes.string,
-      handleFocusChange: PropTypes.instanceOf(Function),
+      handleFocusChange: PropTypes.func,
     };
   }
 

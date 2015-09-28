@@ -7,7 +7,7 @@ import React from 'react/addons';
 
 import ArticleItem from '../article-item';
 
-const TestUtils = React.addons.TestUtils;
+const { createRenderer } = React.addons.TestUtils;
 describe('ArticleItem', () => {
 
   it('is compatible with React.Component', () => {
@@ -19,12 +19,14 @@ describe('ArticleItem', () => {
   });
 
   describe('validates propTypes', () => {
+    /* eslint init-declarations: 0 */
 
-    const renderer = TestUtils.createRenderer();
-
+    let renderer;
     // We must check console.warn to test validation: http://stackoverflow.com/a/31835256/130566
     const oldConsoleWarn = console.warn;
     beforeEach(() => {
+      renderer = createRenderer();
+
       const spy = chai.spy(() => {});
       console.warn = spy;
     });
@@ -42,8 +44,13 @@ describe('ArticleItem', () => {
   });
 
   describe('rendering', () => {
+    /* eslint init-declarations: 0 */
 
-    const renderer = TestUtils.createRenderer();
+    let renderer;
+    beforeEach(() => {
+      renderer = createRenderer();
+    });
+
     it('renders a basic article item', () => {
       renderer.render(<ArticleItem title={'Here is my title'} text={'Here is my text'} />);
       renderer.getRenderOutput().should.deep.equal(

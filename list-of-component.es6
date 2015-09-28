@@ -20,7 +20,7 @@ export default class ListOfComponent extends React.Component {
       data: PropTypes.arrayOf(PropTypes.object),
       component: isComponentType,
       childMetadata: PropTypes.object,
-      handleFocusChange: PropTypes.instanceOf(Function),
+      handleFocusChange: PropTypes.func,
     };
   }
 

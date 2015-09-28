@@ -12,8 +12,8 @@ export default class CategoryCard extends React.Component {
       focusSubcategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,
       activeSubcategorySlug: PropTypes.string,
-      activeArticleId: PropTypes.string,
-      handleFocusChange: PropTypes.instanceOf(Function),
+      activeArticleId: PropTypes.number,
+      handleFocusChange: PropTypes.func,
     };
   }
 

@@ -8,22 +8,14 @@ export default class CategoryCard extends React.Component {
   static get propTypes() {
     return {
       childs: PropTypes.arrayOf(PropTypes.object),
-      focusCategorySlug: PropTypes.string,
-      focusSubcategorySlug: PropTypes.string,
-      activeCategorySlug: PropTypes.string,
-      activeSubcategorySlug: PropTypes.string,
       activeArticleId: PropTypes.number,
-      handleFocusChange: PropTypes.instanceOf(Function),
+      handleFocusChange: PropTypes.func,
     };
   }
 
   render() {
     const children = this.props.childs;
     const childMetadata = {
-      focusCategorySlug: this.props.focusCategorySlug,
-      focusSubcategorySlug: this.props.focusSubcategorySlug,
-      activeCategorySlug: this.props.activeCategorySlug,
-      activeSubcategorySlug: this.props.activeSubcategorySlug,
       activeArticleId: this.props.activeArticleId,
     };
     return (

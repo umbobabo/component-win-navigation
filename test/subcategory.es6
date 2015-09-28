@@ -3,7 +3,7 @@ import React from 'react/addons';
 import Subcategory from '../subcategory';
 import SubcategoryCard from '../subcategory-card';
 
-const TestUtils = React.addons.TestUtils;
+const { createRenderer } = React.addons.TestUtils;
 describe('Subcategory', () => {
 
   it('is compatible with React.Component', () => {
@@ -15,8 +15,13 @@ describe('Subcategory', () => {
   });
 
   describe('rendering', () => {
+    /* eslint init-declarations: 0 */
 
-    const renderer = TestUtils.createRenderer();
+    let renderer;
+    beforeEach(() => {
+      renderer = createRenderer();
+    });
+
     it('renders a basic subcategory', () => {
       renderer.render(<Subcategory title={'Here is my title'} slug={'here-is-my-title'} childs={[]} />);
       renderer.getRenderOutput().should.deep.equal(

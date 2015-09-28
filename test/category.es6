@@ -3,7 +3,7 @@ import React from 'react/addons';
 import Category from '../category';
 import CategoryCard from '../category-card';
 
-const TestUtils = React.addons.TestUtils;
+const { createRenderer } = React.addons.TestUtils;
 describe('Category', () => {
 
   it('is compatible with React.Component', () => {
@@ -15,8 +15,13 @@ describe('Category', () => {
   });
 
   describe('rendering', () => {
+    /* eslint init-declarations: 0 */
 
-    const renderer = TestUtils.createRenderer();
+    let renderer;
+    beforeEach(() => {
+      renderer = createRenderer();
+    });
+
     it('renders a basic category', () => {
       renderer.render(<Category title={'Here is my title'} slug={'here-is-my-title'} childs={[]} />);
       renderer.getRenderOutput().should.deep.equal(

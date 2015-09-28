@@ -11,7 +11,7 @@ export default class Category extends React.Component {
       slug: PropTypes.string.isRequired,
       focusCategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,
-      handleFocusChange: PropTypes.instanceOf(Function),
+      handleFocusChange: PropTypes.func,
     };
   }
 
