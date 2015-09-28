@@ -23,7 +23,7 @@ export default class CategoryCard extends React.Component {
     const children = this.props.childs;
 
     // By default the first subcategory of a category should have focus.
-    const defaultSubcategorySlug = children[0] ? children[0].slug : '';
+    const defaultSubcategorySlug = children[0] ? children[0].slug : null;
 
     const childMetadata = {
       focusCategorySlug: this.props.focusCategorySlug,

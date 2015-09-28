@@ -46,7 +46,9 @@ export default class Subcategory extends React.Component {
     });
     return (
       <div className="navigation__subcategory">
-        <h2 className={titleClasses}><a href={slug} onClick={this.focus(slug)}>{title}</a></h2>
+        <h2 className={titleClasses}>
+          <a href={slug} onClick={this.focus(slug)}>{title}</a>
+        </h2>
         {isFocused ? <SubcategoryCard {...this.props} /> : ''}
       </div>
     );

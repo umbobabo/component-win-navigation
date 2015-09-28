@@ -23,22 +23,22 @@ describe('ArticleItem', () => {
 
     let renderer;
     // We must check console.warn to test validation: http://stackoverflow.com/a/31835256/130566
-    const oldConsoleWarn = console.warn;
+    const oldConsoleError = console.error;
     beforeEach(() => {
       renderer = createRenderer();
 
       const spy = chai.spy(() => {});
-      console.warn = spy;
+      console.error = spy;
     });
     afterEach(() => {
-      console.warn = oldConsoleWarn;
+      console.error = oldConsoleError;
     });
 
     it('requires a title', () => {
-      renderer.render(<ArticleItem />);
+      renderer.render(<ArticleItem />, {});
 
       const message = 'Warning: Failed propType: Required prop `title` was not specified in `ArticleItem`.';
-      console.warn.should.have.been.called.with(message);
+      console.error.should.have.been.called.with(message);
     });
 
   });
@@ -52,13 +52,11 @@ describe('ArticleItem', () => {
     });
 
     it('renders a basic article item', () => {
-      renderer.render(<ArticleItem title={'Here is my title'} text={'Here is my text'} />);
-      renderer.getRenderOutput().should.deep.equal(
-        <div className="navigation__article">
-          <h2 className="navigation__article-title">Here is my title</h2>
-          <span>Here is my text</span>
-        </div>
-      );
+      renderer.render(<ArticleItem title={'Here is my title'} text={'Here is my text'} />, {});
+      renderer.getRenderOutput().should.deep.equal(<div className="navigation__article">
+        <h2 className="navigation__article-title">Here is my title</h2>
+        <span>Here is my text</span>
+      </div>);
     });
 
   });

@@ -36,11 +36,16 @@ describe('ListOfComponent', () => {
         {},
         {},
       ];
-      renderer.render(<ListOfComponent className="stub-class" component={StubComponent} data={data} />);
+      renderer.render(
+        <ListOfComponent
+          className="stub-class"
+          component={StubComponent}
+          data={data}
+        />, {});
       renderer.getRenderOutput().should.deep.equal(
         <List className="stub-class">
-          <StubComponent key={0} />
-          <StubComponent key={1} />
+          <StubComponent key={0} handleFocusChange={null} />
+          <StubComponent key={1} handleFocusChange={null} />
         </List>
       );
     });

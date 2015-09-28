@@ -25,11 +25,19 @@ describe('SubcategoryCard', () => {
     });
 
     it('renders a basic subcategory card', () => {
-      renderer.render(<SubcategoryCard childs={[]} />);
+      renderer.render(<SubcategoryCard childs={[]} />, {});
+      const childMetadata = {
+        activeArticleId: null,
+      };
       renderer.getRenderOutput().should.deep.equal(
-        <div className="navigation__subcategory-card">
-          <ListOfComponent className="navigation__articles" component={ArticleItem} data={[]} />
-        </div>
+        <nav className="navigation__subcategory-card">
+          <ListOfComponent
+            className="navigation__articles"
+            component={ArticleItem}
+            data={[]}
+            childMetadata={childMetadata}
+          />
+        </nav>
       );
     });
 

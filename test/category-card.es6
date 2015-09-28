@@ -25,11 +25,33 @@ describe('CategoryCard', () => {
     });
 
     it('renders a basic category card', () => {
-      renderer.render(<CategoryCard childs={[]} />);
+      renderer.render(
+        <CategoryCard
+          childs={[]}
+          focusCategorySlug={null}
+          focusSubcategorySlug={null}
+          activeCategorySlug={null}
+          activeSubcategorySlug={null}
+          activeArticleId={null}
+          handleFocusChange={null}
+        />, {});
+      const childMetadata = {
+        focusCategorySlug: null,
+        focusSubcategorySlug: null,
+        activeCategorySlug: null,
+        activeSubcategorySlug: null,
+        activeArticleId: null,
+      };
       renderer.getRenderOutput().should.deep.equal(
-        <div className="navigation__category-card">
-          <ListOfComponent className="navigation__subcategories" component={Subcategory} data={[]} />
-        </div>
+        <nav className="navigation__category-card">
+          <ListOfComponent
+            className="navigation__subcategories"
+            component={Subcategory}
+            data={[]}
+            childMetadata={childMetadata}
+            handleFocusChange={null}
+          />
+        </nav>
       );
     });
 

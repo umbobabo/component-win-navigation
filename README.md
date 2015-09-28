@@ -4,10 +4,10 @@
 
 - [ ] Reclicking a category should not re-open it.
 - [ ] Move isComponentType into its own file.
-- [ ] Fix warnings of React-v0.14.0-rc.
+- [x] Fix warnings of React-v0.14.0-rc.
 - [ ] Fix unit tests. Use of some kind of match on everything deep equal helper.
 - [ ] Refactor so that delegating elements are pass-through as opposed to knowing their arguments.
-- [ ] Clicking outside of navigation component should reset its focus.
+- [ ] Clicking outside of navigation component should reset its focus. See: https://github.com/Pomax/react-onclickoutside
 - [ ] Context-related hrefs generated from slugs.
       Article href will be like: `/article/${articleId}/${articleSlug}`
       Category urls ignored in case of client-side JavaScript, but if running without JavaScript then hitting the server with the URL postfixed with: `?category=${categorySlug}&subcategory=${subcategorySlug}`

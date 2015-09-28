@@ -46,7 +46,9 @@ export default class Category extends React.Component {
     });
     return (
       <div className="navigation__category">
-        <h2 className={titleClasses}><a href={slug} onClick={this.focus(slug)}>{title}</a></h2>
+        <h2 className={titleClasses}>
+          <a href={slug} onClick={this.focus(slug)}>{title}</a>
+        </h2>
         {isFocused ? <CategoryCard {...this.props} /> : ''}
       </div>
     );

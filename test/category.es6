@@ -1,7 +1,7 @@
 import React from 'react/addons';
 
 import Category from '../category';
-import CategoryCard from '../category-card';
+// import CategoryCard from '../category-card';
 
 const { createRenderer } = React.addons.TestUtils;
 describe('Category', () => {
@@ -23,11 +23,15 @@ describe('Category', () => {
     });
 
     it('renders a basic category', () => {
-      renderer.render(<Category title={'Here is my title'} slug={'here-is-my-title'} childs={[]} />);
-      renderer.getRenderOutput().should.deep.equal(
+      renderer.render(<Category title={'Here is my title'} slug={'here-is-my-title'} childs={[]} />, {});
+      const renderOutput = renderer.getRenderOutput();
+      const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
+      renderOutput.should.deep.equal(
         <div className="navigation__category">
-          <h2 className="navigation__category-title"><a href="here-is-my-title">Here is my title</a></h2>
-          <CategoryCard title={'Here is my title'} slug={'here-is-my-title'} childs={[]} />
+          <h2 className="navigation__category-title">
+            <a href="here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+          </h2>
+          {''}
         </div>
       );
     });
