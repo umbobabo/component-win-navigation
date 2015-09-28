@@ -102,14 +102,17 @@ import json from './test/data/large';
 // ]
 const data = json;
 const focusCategorySlug = 'world';
-const focusSubcategorySlug = 'britain';
+const focusSubcategorySlug = 'africa';
+const activeCategorySlug = 'world';
+const activeSubcategorySlug = 'africa';
+const activeArticleId = 55;
 export default (
   <Navigation
     data={data}
     focusCategorySlug={focusCategorySlug}
     focusSubcategorySlug={focusSubcategorySlug}
-    activeCategorySlug={null}
-    activeSubcategorySlug={null}
-    activeArticleId={null}
+    activeCategorySlug={activeCategorySlug}
+    activeSubcategorySlug={activeSubcategorySlug}
+    activeArticleId={activeArticleId}
   />
 );

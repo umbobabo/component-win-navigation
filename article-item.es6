@@ -1,23 +1,29 @@
 /* eslint id-length: 0 */
-
-import React from 'react';
+import React, { PropTypes } from 'react';
+import classes from 'classnames';
 
 export default class ArticleItem extends React.Component {
 
   static get propTypes() {
     return {
-      title: React.PropTypes.string.isRequired,
-      text: React.PropTypes.string,
-      id: React.PropTypes.number,
-      slug: React.PropTypes.string,
-      publishedOn: React.PropTypes.string,
+      title: PropTypes.string.isRequired,
+      text: PropTypes.string,
+      id: PropTypes.number,
+      slug: PropTypes.string,
+      publishedOn: PropTypes.string,
+      activeArticleId: PropTypes.number,
     };
   }
 
   render() {
-    const { title, text } = this.props;
+    const { title, text, id, activeArticleId } = this.props;
+    const isActive = id === activeArticleId;
+    const containerClasses = classes({
+      'navigation__article': true,
+      'navigation__article--active': isActive,
+    });
     return (
-      <div className="navigation__article">
+      <div className={containerClasses}>
         <h2 className="navigation__article-title">{title}</h2>
         <span>{text}</span>
       </div>
