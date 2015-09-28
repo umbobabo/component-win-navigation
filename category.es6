@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import classes from 'classnames';
 
 import CategoryCard from './category-card';
 
@@ -6,22 +7,47 @@ export default class Category extends React.Component {
 
   static get propTypes() {
     return {
-      title: React.PropTypes.string.isRequired,
-      slug: React.PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+      focusCategorySlug: PropTypes.string,
+      activeCategorySlug: PropTypes.string,
+      handleFocusChange: PropTypes.instanceOf(Function),
+    };
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.focus = this.focus.bind(this);
+  }
+
+  focus(slug) {
+    const handleFocusChange = this.props.handleFocusChange;
+    const newFocus = {
+      focusCategorySlug: slug,
+      focusSubcategorySlug: null,
+    };
+    return (event) => {
+      event.preventDefault();
+      if (handleFocusChange) {
+        handleFocusChange(newFocus);
+      }
     };
   }
 
   render() {
-    const { title, slug, focusCategorySlug } = this.props;
+    const { title, slug, focusCategorySlug, activeCategorySlug } = this.props;
     const isFocused = slug === focusCategorySlug;
-    const childProps = {
-      focusCategorySlug: this.props.focusCategorySlug,
-      focusSubcategorySlug: this.props.focusSubcategorySlug,
-    };
+    const isActive = slug === activeCategorySlug;
+    const titleClasses = classes({
+      'navigation__category-title': true,
+      'navigation__category-title--focus': isFocused,
+      'navigation__category-title--active': isActive,
+    });
     return (
       <div className="navigation__category">
-        <h2 className="navigation__category-title"><a href={slug}>{title}</a></h2>
-        {isFocused ? <CategoryCard {...this.props} childProps={childProps} /> : ''}
+        <h2 className={titleClasses}><a href={slug} onClick={this.focus(slug)}>{title}</a></h2>
+        {isFocused ? <CategoryCard {...this.props} /> : ''}
       </div>
     );
   }
