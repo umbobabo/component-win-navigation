@@ -7,3 +7,4 @@ import SubcategoryTest from './subcategory';
 import CategoryCardTest from './category-card';
 import SubcategoryCardTest from './subcategory-card';
 import ListOfComponentTest from './list-of-component';
+import IsPropTypeComponentTest from './is-proptype-component';

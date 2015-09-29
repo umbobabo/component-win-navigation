@@ -12,7 +12,7 @@ class StubComponent extends React.Component {
 
 }
 
-const TestUtils = React.addons.TestUtils;
+const { createRenderer } = React.addons.TestUtils;
 describe('ListOfComponent', () => {
 
   it('is compatible with React.Component', () => {
@@ -24,18 +24,29 @@ describe('ListOfComponent', () => {
   });
 
   describe('rendering', () => {
+    /* eslint init-declarations: 0 */
 
-    const renderer = TestUtils.createRenderer();
+    let renderer;
+    beforeEach(() => {
+      renderer = createRenderer();
+    });
+
     it('renders a basic list of a particular component', () => {
       const data = [
         {},
         {},
       ];
-      renderer.render(<ListOfComponent className="stub-class" component={StubComponent} data={data} />);
+      renderer.render(
+        <ListOfComponent
+          className="stub-class"
+          component={StubComponent}
+          data={data}
+          handleFocusChange={null}
+        />, {});
       renderer.getRenderOutput().should.deep.equal(
         <List className="stub-class">
-          <StubComponent key={0} />
-          <StubComponent key={1} />
+          <StubComponent key={0} handleFocusChange={null} />
+          <StubComponent key={1} handleFocusChange={null} />
         </List>
       );
     });

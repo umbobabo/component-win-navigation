@@ -12,7 +12,7 @@ export default class Subcategory extends React.Component {
       childs: PropTypes.arrayOf(PropTypes.object),
       focusSubcategorySlug: PropTypes.string,
       activeSubcategorySlug: PropTypes.string,
-      handleFocusChange: PropTypes.instanceOf(Function),
+      handleFocusChange: PropTypes.func,
     };
   }
 
@@ -46,7 +46,9 @@ export default class Subcategory extends React.Component {
     });
     return (
       <div className="navigation__subcategory">
-        <h2 className={titleClasses}><a href={slug} onClick={this.focus(slug)}>{title}</a></h2>
+        <h2 className={titleClasses}>
+          <a href={slug} onClick={this.focus(slug)}>{title}</a>
+        </h2>
         {isFocused ? <SubcategoryCard {...this.props} /> : ''}
       </div>
     );

@@ -5,7 +5,7 @@ import CategoryCard from '../category-card';
 import ListOfComponent from '../list-of-component';
 import Subcategory from '../subcategory';
 
-const TestUtils = React.addons.TestUtils;
+const { createRenderer } = React.addons.TestUtils;
 describe('CategoryCard', () => {
 
   it('is compatible with React.Component', () => {
@@ -17,14 +17,41 @@ describe('CategoryCard', () => {
   });
 
   describe('rendering', () => {
+    /* eslint init-declarations: 0 */
 
-    const renderer = TestUtils.createRenderer();
+    let renderer;
+    beforeEach(() => {
+      renderer = createRenderer();
+    });
+
     it('renders a basic category card', () => {
-      renderer.render(<CategoryCard childs={[]} />);
+      renderer.render(
+        <CategoryCard
+          childs={[]}
+          focusCategorySlug={null}
+          focusSubcategorySlug={null}
+          activeCategorySlug={null}
+          activeSubcategorySlug={null}
+          activeArticleId={null}
+          handleFocusChange={null}
+        />, {});
+      const childMetadata = {
+        focusCategorySlug: null,
+        focusSubcategorySlug: null,
+        activeCategorySlug: null,
+        activeSubcategorySlug: null,
+        activeArticleId: null,
+      };
       renderer.getRenderOutput().should.deep.equal(
-        <div className="navigation__category-card">
-          <ListOfComponent className="navigation__subcategories" component={Subcategory} data={[]} />
-        </div>
+        <nav className="navigation__category-card">
+          <ListOfComponent
+            className="navigation__subcategories"
+            component={Subcategory}
+            data={[]}
+            childMetadata={childMetadata}
+            handleFocusChange={null}
+          />
+        </nav>
       );
     });
 

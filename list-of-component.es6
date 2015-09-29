@@ -2,15 +2,7 @@ import React, { PropTypes } from 'react';
 
 import List from '@economist/component-list';
 
-function isComponentType(props, propName, componentName) {
-  const isRenderable =
-      props[propName] && typeof props[propName] === 'function' &&
-      props[propName].prototype &&
-      props[propName].prototype.render && typeof props[propName].prototype.render === 'function';
-  if (!isRenderable) {
-    return new Error(`${componentName} was not passed a valid renderable class inside its '${propName}' prop.`);
-  }
-}
+import isPropTypeComponent from './is-proptype-component';
 
 export default class ListOfComponent extends React.Component {
 
@@ -18,9 +10,9 @@ export default class ListOfComponent extends React.Component {
     return {
       className: PropTypes.string,
       data: PropTypes.arrayOf(PropTypes.object),
-      component: isComponentType,
+      component: isPropTypeComponent,
       childMetadata: PropTypes.object,
-      handleFocusChange: PropTypes.instanceOf(Function),
+      handleFocusChange: PropTypes.func,
     };
   }
 

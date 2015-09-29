@@ -17,7 +17,7 @@ export default class ArticleItem extends React.Component {
 
   render() {
     const { title, text, id, activeArticleId } = this.props;
-    const isActive = id === activeArticleId;
+    const isActive = id && id === activeArticleId;
     const containerClasses = classes({
       'navigation__article': true,
       'navigation__article--active': isActive,

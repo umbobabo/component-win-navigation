@@ -7,7 +7,7 @@ import React from 'react/addons';
 
 import ArticleItem from '../article-item';
 
-const TestUtils = React.addons.TestUtils;
+const { createRenderer } = React.addons.TestUtils;
 describe('ArticleItem', () => {
 
   it('is compatible with React.Component', () => {
@@ -19,39 +19,62 @@ describe('ArticleItem', () => {
   });
 
   describe('validates propTypes', () => {
+    /* eslint init-declarations: 0 */
 
-    const renderer = TestUtils.createRenderer();
-
+    let renderer;
     // We must check console.warn to test validation: http://stackoverflow.com/a/31835256/130566
-    const oldConsoleWarn = console.warn;
+    const oldConsoleError = console.error;
     beforeEach(() => {
+      renderer = createRenderer();
+
       const spy = chai.spy(() => {});
-      console.warn = spy;
+      console.error = spy;
     });
     afterEach(() => {
-      console.warn = oldConsoleWarn;
+      console.error = oldConsoleError;
     });
 
     it('requires a title', () => {
-      renderer.render(<ArticleItem />);
+      renderer.render(<ArticleItem />, {});
 
       const message = 'Warning: Failed propType: Required prop `title` was not specified in `ArticleItem`.';
-      console.warn.should.have.been.called.with(message);
+      console.error.should.have.been.called.with(message);
     });
 
   });
 
   describe('rendering', () => {
+    /* eslint init-declarations: 0 */
 
-    const renderer = TestUtils.createRenderer();
-    it('renders a basic article item', () => {
-      renderer.render(<ArticleItem title={'Here is my title'} text={'Here is my text'} />);
-      renderer.getRenderOutput().should.deep.equal(
-        <div className="navigation__article">
-          <h2 className="navigation__article-title">Here is my title</h2>
-          <span>Here is my text</span>
-        </div>
-      );
+    let renderer;
+    beforeEach(() => {
+      renderer = createRenderer();
+    });
+
+    it('renders inactive', () => {
+      renderer.render(
+        <ArticleItem
+          title={'Here is my title'}
+          text={'Here is my text'}
+        />, {});
+      renderer.getRenderOutput().should.deep.equal(<div className="navigation__article">
+        <h2 className="navigation__article-title">Here is my title</h2>
+        <span>Here is my text</span>
+      </div>);
+    });
+
+    it('renders active', () => {
+      renderer.render(
+        <ArticleItem
+          id={25}
+          title={'Here is my title'}
+          text={'Here is my text'}
+          activeArticleId={25}
+        />, {});
+      renderer.getRenderOutput().should.deep.equal(<div className="navigation__article navigation__article--active">
+        <h2 className="navigation__article-title">Here is my title</h2>
+        <span>Here is my text</span>
+      </div>);
     });
 
   });
