@@ -2,7 +2,6 @@
 
 ## TODO
 
-- [ ] Dates can cause article items to be greyed out later and not contain links.
 - [ ] Refactor so that delegating elements are pass-through as opposed to knowing their arguments.
 - [ ] Clicking outside of navigation component should reset its focus. See: https://github.com/Pomax/react-onclickoutside
 - [ ] `:hover` state should be pure CSS.
