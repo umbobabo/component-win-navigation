@@ -3,6 +3,14 @@ import classes from 'classnames';
 
 import SubcategoryCard from './subcategory-card';
 
+function identity(v) {
+  return v;
+}
+
+function subcategoryUrl(category, subcategory) {
+  return '?category=' + category + '&subcategory=' + subcategory;
+}
+
 export default class Subcategory extends React.Component {
 
   static get propTypes() {
@@ -36,7 +44,7 @@ export default class Subcategory extends React.Component {
   }
 
   render() {
-    const { title, slug, focusSubcategorySlug, activeSubcategorySlug } = this.props;
+    const { title, slug, focusCategorySlug, focusSubcategorySlug, activeSubcategorySlug } = this.props;
     const isFocused = slug === focusSubcategorySlug;
     const isActive = slug === activeSubcategorySlug;
     const titleClasses = classes({
@@ -47,7 +55,7 @@ export default class Subcategory extends React.Component {
     return (
       <div className="navigation__subcategory">
         <h2 className={titleClasses}>
-          <a href={slug} onClick={this.focus(slug)}>{title}</a>
+          <a href={subcategoryUrl(focusCategorySlug, slug)} onClick={this.focus(slug)}>{title}</a>
         </h2>
         {isFocused ? <SubcategoryCard {...this.props} /> : ''}
       </div>

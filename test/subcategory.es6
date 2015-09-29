@@ -27,6 +27,7 @@ describe('Subcategory', () => {
         <Subcategory
           title={'Here is my title'}
           slug={'here-is-my-title'}
+          focusCategorySlug={'previously-selected-category'}
           childs={[]}
         />, {});
       const renderOutput = renderer.getRenderOutput();
@@ -34,7 +35,7 @@ describe('Subcategory', () => {
       renderOutput.should.deep.equal(
         <div className="navigation__subcategory">
           <h2 className="navigation__subcategory-title">
-            <a href="here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+            <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
           {''}
         </div>
@@ -46,6 +47,7 @@ describe('Subcategory', () => {
         <Subcategory
           title={'Here is my title'}
           slug={'here-is-my-title'}
+          focusCategorySlug={'previously-selected-category'}
           focusSubcategorySlug={'here-is-my-title'}
           childs={[]}
         />, {});
@@ -54,11 +56,12 @@ describe('Subcategory', () => {
       renderOutput.should.deep.equal(
         <div className="navigation__subcategory">
           <h2 className="navigation__subcategory-title navigation__subcategory-title--focus">
-            <a href="here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+            <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
           <SubcategoryCard
             title={'Here is my title'}
             slug={'here-is-my-title'}
+            focusCategorySlug={'previously-selected-category'}
             focusSubcategorySlug={'here-is-my-title'}
             childs={[]}
           />
@@ -71,6 +74,7 @@ describe('Subcategory', () => {
         <Subcategory
           title={'Here is my title'}
           slug={'here-is-my-title'}
+          focusCategorySlug={'previously-selected-category'}
           activeSubcategorySlug={'here-is-my-title'}
           childs={[]}
         />, {});
@@ -79,7 +83,7 @@ describe('Subcategory', () => {
       renderOutput.should.deep.equal(
         <div className="navigation__subcategory">
           <h2 className="navigation__subcategory-title navigation__subcategory-title--active">
-            <a href="here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+            <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
           {''}
         </div>

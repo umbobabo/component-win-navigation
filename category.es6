@@ -3,6 +3,14 @@ import classes from 'classnames';
 
 import CategoryCard from './category-card';
 
+function identity(v) {
+  return v;
+}
+
+function categoryUrl(category) {
+  return '?category=' + category;
+}
+
 export default class Category extends React.Component {
 
   static get propTypes() {
@@ -47,7 +55,7 @@ export default class Category extends React.Component {
     return (
       <div className="navigation__category">
         <h2 className={titleClasses}>
-          <a href={slug} onClick={this.focus(slug)}>{title}</a>
+          <a href={categoryUrl(slug)} onClick={this.focus(slug)}>{title}</a>
         </h2>
         {isFocused ? <CategoryCard {...this.props} /> : ''}
       </div>

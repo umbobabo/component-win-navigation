@@ -56,11 +56,17 @@ describe('ArticleItem', () => {
         <ArticleItem
           title={'Here is my title'}
           text={'Here is my text'}
+          slug={'here-is-my-text'}
+          id={10}
         />, {});
-      renderer.getRenderOutput().should.deep.equal(<div className="navigation__article">
-        <h2 className="navigation__article-title">Here is my title</h2>
-        <span>Here is my text</span>
-      </div>);
+      renderer.getRenderOutput().should.deep.equal(
+        <a href="/article/10/here-is-my-text">
+          <div className="navigation__article">
+            <h2 className="navigation__article-title">Here is my title</h2>
+            <span>Here is my text</span>
+          </div>
+        </a>
+      );
     });
 
     it('renders active', () => {
@@ -69,12 +75,15 @@ describe('ArticleItem', () => {
           id={25}
           title={'Here is my title'}
           text={'Here is my text'}
+          slug={'here-is-my-text'}
           activeArticleId={25}
         />, {});
-      renderer.getRenderOutput().should.deep.equal(<div className="navigation__article navigation__article--active">
-        <h2 className="navigation__article-title">Here is my title</h2>
-        <span>Here is my text</span>
-      </div>);
+      renderer.getRenderOutput().should.deep.equal(
+        <div className="navigation__article navigation__article--active">
+          <h2 className="navigation__article-title">Here is my title</h2>
+          <span>Here is my text</span>
+        </div>
+      );
     });
 
   });
