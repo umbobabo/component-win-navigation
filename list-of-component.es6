@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import List from '@economist/component-list';
 
-import isComponentType from './is-proptype-component';
+import isPropTypeComponent from './is-proptype-component';
 
 export default class ListOfComponent extends React.Component {
 
@@ -10,7 +10,7 @@ export default class ListOfComponent extends React.Component {
     return {
       className: PropTypes.string,
       data: PropTypes.arrayOf(PropTypes.object),
-      component: isComponentType,
+      component: isPropTypeComponent,
       childMetadata: PropTypes.object,
       handleFocusChange: PropTypes.func,
     };
