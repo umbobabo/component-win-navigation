@@ -25,7 +25,11 @@ describe('SubcategoryCard', () => {
     });
 
     it('renders a basic subcategory card', () => {
-      renderer.render(<SubcategoryCard childs={[]} />, {});
+      renderer.render(
+        <SubcategoryCard
+          childs={[]}
+          activeArticleId={null}
+        />, {});
       const childMetadata = {
         activeArticleId: null,
       };

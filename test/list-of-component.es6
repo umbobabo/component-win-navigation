@@ -41,6 +41,7 @@ describe('ListOfComponent', () => {
           className="stub-class"
           component={StubComponent}
           data={data}
+          handleFocusChange={null}
         />, {});
       renderer.getRenderOutput().should.deep.equal(
         <List className="stub-class">
