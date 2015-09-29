@@ -88,6 +88,25 @@ describe('ArticleItem', () => {
       );
     });
 
+    it('renders unpublished', () => {
+      renderer.render(
+        <ArticleItem
+          id={25}
+          title={'Here is my title'}
+          text={'Here is my text'}
+          slug={'here-is-my-text'}
+          activeArticleId={null}
+          publishedOn={'2016-09-30'}
+        />, {});
+      renderer.getRenderOutput().should.deep.equal(
+        <div className="navigation__article navigation__article--unpublished">
+          <h2 className="navigation__article-title">Here is my title</h2>
+          <span className="navigation__article-text">Here is my text</span>
+          <span className="navigation__article-published-state navigation__article-published-state--unpublished">Coming soon</span>
+        </div>
+      );
+    });
+
   });
 
 });
