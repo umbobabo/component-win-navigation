@@ -1,3 +1,4 @@
+/* eslint max-len: 0 */
 import React from 'react/addons';
 
 import Subcategory from '../subcategory';

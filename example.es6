@@ -102,7 +102,7 @@ import json from './test/data/large';
 // ]
 const data = json;
 const focusCategorySlug = 'world';
-const focusSubcategorySlug = 'africa';
+const focusSubcategorySlug = 'britain';
 const activeCategorySlug = 'world';
 const activeSubcategorySlug = 'africa';
 const activeArticleId = 55;

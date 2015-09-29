@@ -3,11 +3,8 @@ import classes from 'classnames';
 
 import CategoryCard from './category-card';
 
-function identity(v) {
-  return v;
-}
-
 function categoryUrl(category) {
+  /* eslint prefer-template: 0 */
   return '?category=' + category;
 }
 

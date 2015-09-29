@@ -3,11 +3,8 @@ import classes from 'classnames';
 
 import SubcategoryCard from './subcategory-card';
 
-function identity(v) {
-  return v;
-}
-
 function subcategoryUrl(category, subcategory) {
+  /* eslint prefer-template: 0 */
   return '?category=' + category + '&subcategory=' + subcategory;
 }
 
@@ -18,6 +15,7 @@ export default class Subcategory extends React.Component {
       title: PropTypes.string,
       slug: PropTypes.string,
       childs: PropTypes.arrayOf(PropTypes.object),
+      focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
       activeSubcategorySlug: PropTypes.string,
       handleFocusChange: PropTypes.func,

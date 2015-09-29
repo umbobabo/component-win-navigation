@@ -1,4 +1,4 @@
-/* eslint no-console: 0 */
+/* eslint no-console: 0, max-len: 0 */
 import chai from 'chai';
 import spies from 'chai-spies';
 chai.use(spies);
@@ -61,9 +61,10 @@ describe('ArticleItem', () => {
         />, {});
       renderer.getRenderOutput().should.deep.equal(
         <a href="/article/10/here-is-my-text">
-          <div className="navigation__article">
+          <div className="navigation__article navigation__article--published">
             <h2 className="navigation__article-title">Here is my title</h2>
-            <span>Here is my text</span>
+            <span className="navigation__article-text">Here is my text</span>
+            <span className="navigation__article-published-state navigation__article-published-state--published">Published</span>
           </div>
         </a>
       );
@@ -79,9 +80,10 @@ describe('ArticleItem', () => {
           activeArticleId={25}
         />, {});
       renderer.getRenderOutput().should.deep.equal(
-        <div className="navigation__article navigation__article--active">
+        <div className="navigation__article navigation__article--active navigation__article--published">
           <h2 className="navigation__article-title">Here is my title</h2>
-          <span>Here is my text</span>
+          <span className="navigation__article-text">Here is my text</span>
+          <span className="navigation__article-published-state navigation__article-published-state--published">Published</span>
         </div>
       );
     });

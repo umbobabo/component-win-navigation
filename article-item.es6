@@ -10,7 +10,7 @@ function articleUrl(id, slug) {
   const urlParts = [
     '/article',
     id,
-    slug
+    slug,
   ].filter(identity);
   return urlParts.join('/');
 }
@@ -29,21 +29,31 @@ export default class ArticleItem extends React.Component {
   }
 
   render() {
-    const { title, text, slug, id, activeArticleId } = this.props;
-    const isActive = id && id === activeArticleId;
+    const { title, text, slug, id, activeArticleId, publishedOn } = this.props;
+    const isActive = Boolean(id) && id === activeArticleId;
+    const isNotPublished = Boolean(publishedOn);
     const containerClasses = classes({
       'navigation__article': true,
       'navigation__article--active': isActive,
+      'navigation__article--unpublished': isNotPublished,
+      'navigation__article--published': !isNotPublished,
     });
-
+    const publishedStateClasses = classes({
+      'navigation__article-published-state': true,
+      'navigation__article-published-state--unpublished': isNotPublished,
+      'navigation__article-published-state--published': !isNotPublished,
+    });
     const body = (
       <div className={containerClasses}>
         <h2 className="navigation__article-title">{title}</h2>
-        <span>{text}</span>
+        <span className="navigation__article-text">{text}</span>
+        <span className={publishedStateClasses}>{isNotPublished ? 'Coming soon' : 'Published'}</span>
       </div>
     );
-
     if (isActive) {
+      return body;
+    }
+    if (isNotPublished) {
       return body;
     }
 
