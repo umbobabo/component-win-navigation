@@ -1,10 +1,10 @@
 import chai from 'chai';
-const should = chai.should();
 
 import React from 'react';
 
 import isPropTypeComponent from '../is-proptype-component';
 
+const should = chai.should();
 class StubComponent extends React.Component {
 
   render() {

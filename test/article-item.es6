@@ -51,9 +51,27 @@ describe('ArticleItem', () => {
       renderer = createRenderer();
     });
 
-    it('renders a basic article item', () => {
-      renderer.render(<ArticleItem title={'Here is my title'} text={'Here is my text'} />, {});
+    it('renders inactive', () => {
+      renderer.render(
+        <ArticleItem
+          title={'Here is my title'}
+          text={'Here is my text'}
+        />, {});
       renderer.getRenderOutput().should.deep.equal(<div className="navigation__article">
+        <h2 className="navigation__article-title">Here is my title</h2>
+        <span>Here is my text</span>
+      </div>);
+    });
+
+    it('renders active', () => {
+      renderer.render(
+        <ArticleItem
+          id={25}
+          title={'Here is my title'}
+          text={'Here is my text'}
+          activeArticleId={25}
+        />, {});
+      renderer.getRenderOutput().should.deep.equal(<div className="navigation__article navigation__article--active">
         <h2 className="navigation__article-title">Here is my title</h2>
         <span>Here is my text</span>
       </div>);
