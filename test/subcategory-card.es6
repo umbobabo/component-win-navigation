@@ -24,17 +24,76 @@ describe('SubcategoryCard', () => {
       renderer = createRenderer();
     });
 
-    it('renders a basic subcategory card', () => {
+    it('renders unfocused and inactive', () => {
       renderer.render(
         <SubcategoryCard
           childs={[]}
+          focusCategorySlug={null}
+          focusSubcategorySlug={null}
+          activeCategorySlug={null}
+          activeSubcategorySlug={null}
           activeArticleId={null}
+          handleFocusChange={null}
         />, {});
       const childMetadata = {
         activeArticleId: null,
       };
       renderer.getRenderOutput().should.deep.equal(
         <nav className="navigation__subcategory-card">
+          <ListOfComponent
+            className="navigation__articles"
+            component={ArticleItem}
+            data={[]}
+            childMetadata={childMetadata}
+          />
+        </nav>
+      );
+    });
+
+    it('renders focused', () => {
+      renderer.render(
+        <SubcategoryCard
+          childs={[]}
+          slug={'make-me-focused'}
+          focusCategorySlug={null}
+          focusSubcategorySlug={'make-me-focused'}
+          activeCategorySlug={null}
+          activeSubcategorySlug={null}
+          activeArticleId={null}
+          handleFocusChange={null}
+        />, {});
+      const childMetadata = {
+        activeArticleId: null,
+      };
+      renderer.getRenderOutput().should.deep.equal(
+        <nav className="navigation__subcategory-card navigation__subcategory-card--focus">
+          <ListOfComponent
+            className="navigation__articles"
+            component={ArticleItem}
+            data={[]}
+            childMetadata={childMetadata}
+          />
+        </nav>
+      );
+    });
+
+    it('renders active', () => {
+      renderer.render(
+        <SubcategoryCard
+          childs={[]}
+          slug={'make-me-focused'}
+          focusCategorySlug={null}
+          focusSubcategorySlug={null}
+          activeCategorySlug={null}
+          activeSubcategorySlug={'make-me-focused'}
+          activeArticleId={null}
+          handleFocusChange={null}
+        />, {});
+      const childMetadata = {
+        activeArticleId: null,
+      };
+      renderer.getRenderOutput().should.deep.equal(
+        <nav className="navigation__subcategory-card navigation__subcategory-card--active">
           <ListOfComponent
             className="navigation__articles"
             component={ArticleItem}
