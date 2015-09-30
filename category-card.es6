@@ -21,15 +21,19 @@ export default class CategoryCard extends React.Component {
     };
   }
 
+  get defaultSubcategorySlug() {
+    // By default the first subcategory of a category should have focus
+    // unless you are using a mobile browser.
+    const isNotMobileBrowser = !isMobile();
+    const children = this.props.childs;
+    const defaultSubcategorySlug = isNotMobileBrowser && children[0] ? children[0].slug : null;
+    return defaultSubcategorySlug;
+  }
+
   render() {
     const handleFocusChange = this.props.handleFocusChange;
 
     const children = this.props.childs;
-
-    // By default the first subcategory of a category should have focus
-    // unless you are using a mobile browser.
-    const isNotMobileBrowser = !isMobile();
-    const defaultSubcategorySlug = isNotMobileBrowser && children[0] ? children[0].slug : null;
 
     const { slug, focusCategorySlug, activeCategorySlug } = this.props;
     const isFocused = Boolean(slug) && slug === focusCategorySlug;
@@ -42,7 +46,7 @@ export default class CategoryCard extends React.Component {
 
     const childMetadata = {
       focusCategorySlug: this.props.focusCategorySlug,
-      focusSubcategorySlug: this.props.focusSubcategorySlug || defaultSubcategorySlug,
+      focusSubcategorySlug: this.props.focusSubcategorySlug || this.defaultSubcategorySlug,
       activeCategorySlug: this.props.activeCategorySlug,
       activeSubcategorySlug: this.props.activeSubcategorySlug,
       activeArticleId: this.props.activeArticleId,
