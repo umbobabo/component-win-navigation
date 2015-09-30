@@ -40,6 +40,13 @@ export default class Navigation extends React.Component {
     });
   }
 
+  resetFocus() {
+    this.setState({
+      focusCategorySlug: null,
+      focusSubcategorySlug: null,
+    });
+  }
+
   handleFocusChange(focusChange) {
     this.setState(focusChange);
   }
