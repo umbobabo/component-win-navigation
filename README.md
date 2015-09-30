@@ -5,7 +5,7 @@ Given a list of articles, categorised by subcategory and category, `Navigation` 
 
 ## Usage
 
-[See example for usage instructions.]
+[See `example.es6` for usage instructions.](./blob/master/example.es6)
 
 ## Install
 
