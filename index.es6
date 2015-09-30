@@ -62,6 +62,7 @@ export default class Navigation extends React.Component {
           childMetadata={childMetadata}
           handleFocusChange={this.handleFocusChange}
         />
+        <div className="navigation__menu-button"></div> 
       </nav>
     );
   }
