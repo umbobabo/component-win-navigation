@@ -2,10 +2,6 @@
 
 ## TODO
 
-### Tests
-
-- [x] Test that clicking focus when already focused defocuses.
-
 ### Refactor
 
 - [ ] Write documentation.
