@@ -16,7 +16,7 @@ npm install --save @economist/component-win-navigation;
 ## Run tests
 
 ```
-npm run test;
+npm test;
 ```
 
 ## TODO
