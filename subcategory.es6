@@ -25,13 +25,15 @@ export default class Subcategory extends React.Component {
   constructor(props) {
     super(props);
 
-    this.focus = this.focus.bind(this);
+    this.focusToggle = this.focusToggle.bind(this);
   }
 
-  focus(slug) {
-    const handleFocusChange = this.props.handleFocusChange;
+  focusToggle(slug) {
+    const { handleFocusChange, focusSubcategorySlug } = this.props;
+    // The focus state is toggled.
+    const isFocused = Boolean(slug) && slug === focusSubcategorySlug;
     const newFocus = {
-      focusSubcategorySlug: slug,
+      focusSubcategorySlug: !isFocused ? slug : slug + ':focus-off',
     };
     return (event) => {
       event.preventDefault();
@@ -43,8 +45,8 @@ export default class Subcategory extends React.Component {
 
   render() {
     const { title, slug, focusCategorySlug, focusSubcategorySlug, activeSubcategorySlug } = this.props;
-    const isFocused = slug === focusSubcategorySlug;
-    const isActive = slug === activeSubcategorySlug;
+    const isFocused = Boolean(slug) && slug === focusSubcategorySlug;
+    const isActive = Boolean(slug) && slug === activeSubcategorySlug;
     const titleClasses = classes({
       'navigation__subcategory-title': true,
       'navigation__subcategory-title--focus': isFocused,
@@ -53,7 +55,7 @@ export default class Subcategory extends React.Component {
     return (
       <div className="navigation__subcategory">
         <h2 className={titleClasses}>
-          <a href={subcategoryUrl(focusCategorySlug, slug)} onClick={this.focus(slug)}>{title}</a>
+          <a href={subcategoryUrl(focusCategorySlug, slug)} onClick={this.focusToggle(slug)}>{title}</a>
         </h2>
         {isFocused ? <SubcategoryCard {...this.props} /> : ''}
       </div>
