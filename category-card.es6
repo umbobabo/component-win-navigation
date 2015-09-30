@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import classes from 'classnames';
 
+import isMobile from 'is-mobile';
+
 import ListOfComponent from './list-of-component';
 import Subcategory from './subcategory';
 
@@ -24,8 +26,10 @@ export default class CategoryCard extends React.Component {
 
     const children = this.props.childs;
 
-    // By default the first subcategory of a category should have focus.
-    const defaultSubcategorySlug = children[0] ? children[0].slug : null;
+    // By default the first subcategory of a category should have focus
+    // unless you are using a mobile browser.
+    const isNotMobileBrowser = !isMobile();
+    const defaultSubcategorySlug = isNotMobileBrowser && children[0] ? children[0].slug : null;
 
     const { slug, focusCategorySlug, activeCategorySlug } = this.props;
     const isFocused = Boolean(slug) && slug === focusCategorySlug;

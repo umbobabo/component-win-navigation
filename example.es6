@@ -101,8 +101,8 @@ import json from './test/data/large';
 //   ... etc ...
 // ]
 const data = json;
-const focusCategorySlug = 'world';
-const focusSubcategorySlug = 'britain';
+const focusCategorySlug = null;
+const focusSubcategorySlug = null;
 const activeCategorySlug = 'world';
 const activeSubcategorySlug = 'africa';
 const activeArticleId = 55;
