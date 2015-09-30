@@ -2,6 +2,10 @@
 
 ## TODO
 
+### Tests
+
+- [ ] Test that clicking focus when alreading focused defocuses.
+
 ### Refactor
 
 - [ ] Write documentation.
