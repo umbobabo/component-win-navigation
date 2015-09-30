@@ -1,7 +1,15 @@
+import chai from 'chai';
+import spies from 'chai-spies';
+chai.use(spies);
+
 import React from 'react/addons';
 
 import Category from '../category';
 import CategoryCard from '../category-card';
+
+const fakeSyntheticMouseEvent = {
+  preventDefault: () => {},
+};
 
 const { createRenderer } = React.addons.TestUtils;
 describe('Category', () => {
@@ -84,6 +92,60 @@ describe('Category', () => {
           {''}
         </div>
       );
+    });
+
+  });
+
+  describe('focusing', () => {
+    /* eslint init-declarations: 0 */
+
+    let renderer;
+    beforeEach(() => {
+      renderer = createRenderer();
+    });
+
+    it('focuses when clicked and not focused', () => {
+      const handleFocusChangeSpy = chai.spy();
+      renderer.render(
+        <Category
+          title={'The category'}
+          slug={'the-category'}
+          focusCategorySlug={null}
+          childs={[]}
+          handleFocusChange={handleFocusChangeSpy}
+        />, {});
+      const renderOutput = renderer.getRenderOutput();
+      // It would be nice to use `Simulate.click` here but it's not supported
+      // [yet](https://github.com/facebook/react/issues/1445) for shallow
+      // rendering, so...
+      const clicker = renderOutput.props.children[0].props.children.props.onClick;
+      clicker(fakeSyntheticMouseEvent);
+      handleFocusChangeSpy.should.have.been.called.with({
+        focusCategorySlug: 'the-category',
+        focusSubcategorySlug: null,
+      });
+    });
+
+    it('defocuses when clicked and already focused', () => {
+      const handleFocusChangeSpy = chai.spy();
+      renderer.render(
+        <Category
+          title={'The category'}
+          slug={'the-category'}
+          focusCategorySlug={'the-category'}
+          childs={[]}
+          handleFocusChange={handleFocusChangeSpy}
+        />, {});
+      const renderOutput = renderer.getRenderOutput();
+      // It would be nice to use `Simulate.click` here but it's not supported
+      // [yet](https://github.com/facebook/react/issues/1445) for shallow
+      // rendering, so...
+      const clicker = renderOutput.props.children[0].props.children.props.onClick;
+      clicker(fakeSyntheticMouseEvent);
+      handleFocusChangeSpy.should.have.been.called.with({
+        focusCategorySlug: 'the-category:focus-off',
+        focusSubcategorySlug: null,
+      });
     });
 
   });

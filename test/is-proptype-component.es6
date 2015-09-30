@@ -24,11 +24,23 @@ describe('isPropTypeComponent', () => {
     should.not.exist(ret);
   });
 
-  it('should return error if not a component', () => {
-    const ret = isPropTypeComponent({
-      'propKey': null,
-    }, 'propKey', 'Component');
-    ret.message.should.equal('Component was not passed a valid renderable class inside its \'propKey\' prop.');
+  describe('should return an error if', () => {
+    /* eslint no-undefined: 0 */
+    [
+      null,
+      undefined,
+      'string',
+      100,
+      45.23,
+      function () {},
+    ].forEach((value) => {
+      it(`passed a non-component such as ${value}`, () => {
+        const ret = isPropTypeComponent({
+          'propKey': value,
+        }, 'propKey', 'Component');
+        ret.message.should.equal('Component was not passed a valid renderable class inside its \'propKey\' prop.');
+      });
+    });
   });
 
 });

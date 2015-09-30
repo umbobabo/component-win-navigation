@@ -4,7 +4,7 @@
 
 ### Tests
 
-- [ ] Test that clicking focus when alreading focused defocuses.
+- [x] Test that clicking focus when already focused defocuses.
 
 ### Refactor
 
@@ -24,4 +24,5 @@ Potentially need to wait for this: https://github.com/Pomax/react-onclickoutside
 
 ### Fix
 
+- [ ] Define working anchors for categories and subcategories that are used with JavaScript and without.
 - [ ] [NPM or eslint need to fix a bug with estraverse not being installed. Until then we need to install it manually.](https://github.com/EconomistDigitalSolutions/fe-component-devpack/issues/18#issuecomment-142613986)
