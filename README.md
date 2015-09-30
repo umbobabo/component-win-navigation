@@ -1,7 +1,7 @@
-# component-win-navigation
+# [component-win-navigation](http://economist-components.github.io/component-library/#@economist/component-win-navigation)
 > Multi-level navigation of articles.
 
-Given a list of articles, categorised by subcategory and category, `Navigation` will generate a nested list structure.
+Given a list of articles in a category/subcategory hierarchy, `Navigation` generates a nested list structure.
 
 ## Usage
 
