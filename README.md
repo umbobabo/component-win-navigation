@@ -24,6 +24,7 @@ npm run test;
 ### Refactor
 
 - [ ] Write documentation.
+- [ ] The testing if not a mobile browser that exists when setting the default subcategory is complicating what otherwise should have been simple.
 - [ ] Decide how the whole component or smaller parts can be shared with the rest of the Economist. Removing the `win-` prefix.
 - [ ] Refactor so that delegating elements are pass-through as opposed to knowing their arguments.
 
