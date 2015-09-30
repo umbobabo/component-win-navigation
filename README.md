@@ -1,4 +1,23 @@
 # component-win-navigation
+> Multi-level navigation of articles.
+
+Given a list of articles, categorised by subcategory and category, `Navigation` will generate a nested list structure.
+
+## Usage
+
+[See example for usage instructions.]
+
+## Install
+
+```
+npm install --save @economist/component-win-navigation;
+```
+
+## Run tests
+
+```
+npm run test;
+```
 
 ## TODO
 
