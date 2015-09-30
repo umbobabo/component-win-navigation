@@ -4,6 +4,7 @@
 
 ### Refactor
 
+- [ ] Write documentation.
 - [ ] Decide how the whole component or smaller parts can be shared with the rest of the Economist. Removing the `win-` prefix.
 - [ ] Refactor so that delegating elements are pass-through as opposed to knowing their arguments.
 
