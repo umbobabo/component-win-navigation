@@ -1,7 +1,7 @@
 {
   "name": "component-win-navigation",
   "version": "1.0.0",
-  "description": "A component to allow navigation.",
+  "description": "Multi-level navigation of articles",
   "author": "The Economist (http://economist.com)",
   "license": "ISC",
   "repository": "git@github.com:economist-components/component-win-navigation.git",
