@@ -21,14 +21,8 @@ npm test;
 
 ## TODO
 
-### Today
-
-- [ ] On mobile the categories should not be visible by default. They should become visible on focusing and unfocusing the `.navigation__menu-button`.
-
 ### Refactor
 
-- [ ] A short-circuiting is-proptype-component.
-- [ ] Refactor so that delegating elements are pass-through as opposed to knowing their arguments. Potential use case for [context](https://discuss.reactjs.org/t/documentation-on-context/130).
 - [ ] Remove the `win-` prefix, in a new version of the component. That is refactored, along these lines:
     - Look into how to correctly extend components using composition.
     See [react-router](https://github.com/gaearon/flux-react-router-example/blob/master/scripts/utils/connectToStores.js), [high order components](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750), and Relay.
@@ -44,13 +38,13 @@ npm test;
     - The boolean 'if running within a desktop browser' that exists when setting the default subcategory (within the category-card) should be injectable, and otherwise might exist within the `ListOfComponent` itself through a flag.
     - The default components have win specific interfaces which should be fully tested. However, the internal components and the message passing should be generalised.
     - Original props sent into `Navigation` would be like `{ handlers: {}, optionN: '', ... }``
+- [ ] Refactor so that delegating elements are pass-through as opposed to knowing their arguments.
 - [ ] Assets should be pulled in.
 - [ ] Some of the CSS and fonts should be componentized.
 - [ ] Write documentation.
 
 ### Functionality
 
-- [ ] On mobile the categories should not be visible by default. They should become visible on focusing and unfocusing the `.navigation__menu-button`.
 - [ ] Clicking outside of navigation component should reset its focus. See: https://github.com/Pomax/react-onclickoutside
 Potentially need to wait for this: https://github.com/Pomax/react-onclickoutside/issues/18#issuecomment-137430184
 

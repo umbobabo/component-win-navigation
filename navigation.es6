@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import ListOfComponent from './list-of-component';
 import Category from './category';
 
+import isMobileWidth from './is-mobile';
+
 export default class Navigation extends React.Component {
 
   static get propTypes() {
@@ -27,9 +29,11 @@ export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
 
+    this.toggleNavigation = this.toggleNavigation.bind(this);
     this.handleFocusChange = this.handleFocusChange.bind(this);
 
     this.state = {
+      focusNavigation: !isMobileWidth(),
       focusCategorySlug: null,
       focusSubcategorySlug: null,
       activeCategorySlug: null,
@@ -59,6 +63,18 @@ export default class Navigation extends React.Component {
     this.setState(focusChange);
   }
 
+  toggleNavigation(event) {
+    event.preventDefault();
+
+    const isFocused = this.state.focusNavigation;
+    const newFocus = {
+      focusNavigation: !isFocused,
+      focusCategorySlug: null,
+      focusSubcategorySlug: null,
+    };
+    this.handleFocusChange(newFocus);
+  }
+
   render() {
     const data = this.props.data;
     const childMetadata = {
@@ -68,16 +84,25 @@ export default class Navigation extends React.Component {
       activeSubcategorySlug: this.state.activeSubcategorySlug,
       activeArticleId: this.state.activeArticleId,
     };
+    const navigationListClasses = {
+      'navigation__categories--focus': this.state.focusNavigation,
+    };
+    const menuButtonClasses = {
+      'navigation__menu-button--focus': this.state.focusNavigation,
+    };
     return (
       <nav className={classnames(this.props.className, 'navigation')}>
         <ListOfComponent
-          className="navigation__categories"
+          className={classnames('navigation__categories', navigationListClasses)}
           component={Category}
           data={data}
           childMetadata={childMetadata}
           handleFocusChange={this.handleFocusChange}
         />
-        <div className="navigation__menu-button"></div>
+        <div
+          className={classnames('navigation__menu-button', menuButtonClasses)}
+          onClick={this.toggleNavigation}
+        ></div>
       </nav>
     );
   }

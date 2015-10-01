@@ -460,6 +460,13 @@ ul, li {
 
 @media screen and (max-width: 600px) {
 
+.navigation__categories {
+  display: none;
+}
+.navigation__categories--focus {
+  display: inline;
+}
+
 .navigation__category-card {
    animation: animationFramesOut ease-out 4s;
    animation-iteration-count: 1;
