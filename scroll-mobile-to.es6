@@ -6,7 +6,7 @@ export default function scrollMobileBrowserTo(slugClass) {
     const wait = 100;
     setTimeout(() => {
       scrollTo(slugClass, {
-        offset: 0
+        offset: 0,
       });
     }, wait);
   }
