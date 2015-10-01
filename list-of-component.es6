@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
 import List from '@economist/component-list';
 
@@ -19,6 +20,7 @@ export default class ListOfComponent extends React.Component {
   static get defaultProps() {
     return {
       data: [],
+      childMetadata: {},
     };
   }
 
@@ -43,10 +45,10 @@ export default class ListOfComponent extends React.Component {
   }
 
   render() {
-    const { data, className } = this.props;
+    const { data } = this.props;
     if (data.length) {
       return (
-        <List className={className}>{data.map(this.renderChildComponent)}</List>
+        <List className={classnames(this.props.className)}>{data.map(this.renderChildComponent)}</List>
       );
     }
     return null;

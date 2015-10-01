@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import classes from 'classnames';
+import classnames from 'classnames';
 
 import isMobile from 'is-mobile';
 
@@ -10,14 +10,21 @@ export default class CategoryCard extends React.Component {
 
   static get propTypes() {
     return {
+      className: PropTypes.string,
+      slug: PropTypes.string.isRequired,
       childs: PropTypes.arrayOf(PropTypes.object),
-      slug: PropTypes.string,
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,
       activeSubcategorySlug: PropTypes.string,
       activeArticleId: PropTypes.number,
       handleFocusChange: PropTypes.func,
+    };
+  }
+
+  static get defaultProps() {
+    return {
+      childs: [],
     };
   }
 
@@ -38,12 +45,10 @@ export default class CategoryCard extends React.Component {
     const { slug, focusCategorySlug, activeCategorySlug } = this.props;
     const isFocused = Boolean(slug) && slug === focusCategorySlug;
     const isActive = Boolean(slug) && slug === activeCategorySlug;
-    const containerClasses = classes({
-      'navigation__category-card': true,
+    const containerClasses = {
       'navigation__category-card--focus': isFocused,
       'navigation__category-card--active': isActive,
-    });
-
+    };
     const childMetadata = {
       focusCategorySlug: this.props.focusCategorySlug,
       focusSubcategorySlug: this.props.focusSubcategorySlug || this.defaultSubcategorySlug,
@@ -52,7 +57,7 @@ export default class CategoryCard extends React.Component {
       activeArticleId: this.props.activeArticleId,
     };
     return (
-      <nav className={containerClasses}>
+      <nav className={classnames(this.props.className, 'navigation__category-card', containerClasses)}>
         <ListOfComponent
           className="navigation__subcategories"
           component={Subcategory}

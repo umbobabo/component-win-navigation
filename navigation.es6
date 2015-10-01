@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
 import ListOfComponent from './list-of-component';
 import Category from './category';
@@ -7,12 +8,19 @@ export default class Navigation extends React.Component {
 
   static get propTypes() {
     return {
+      className: PropTypes.string,
       data: PropTypes.arrayOf(PropTypes.object),
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,
       activeSubcategorySlug: PropTypes.string,
       activeArticleId: PropTypes.number,
+    };
+  }
+
+  static get defaultProps() {
+    return {
+      data: [],
     };
   }
 
@@ -61,7 +69,7 @@ export default class Navigation extends React.Component {
       activeArticleId: this.state.activeArticleId,
     };
     return (
-      <nav className="navigation">
+      <nav className={classnames(this.props.className, 'navigation')}>
         <ListOfComponent
           className="navigation__categories"
           component={Category}

@@ -23,7 +23,7 @@ describe('ArticleItem', () => {
 
     let renderer;
     // We must check console.warn to test validation: http://stackoverflow.com/a/31835256/130566
-    const oldConsoleError = console.error;
+    const oldConsoleError = console.error.bind(console);
     beforeEach(() => {
       renderer = createRenderer();
 
@@ -34,8 +34,17 @@ describe('ArticleItem', () => {
       console.error = oldConsoleError;
     });
 
+    /*
+    it('requires an id', () => {
+      renderer.render(<ArticleItem title={'stub-title'} />, {});
+
+      const message = 'Warning: Failed propType: Required prop `id` was not specified in `ArticleItem`.';
+      console.error.should.have.been.called.with(message);
+    });
+    */
+
     it('requires a title', () => {
-      renderer.render(<ArticleItem />, {});
+      renderer.render(<ArticleItem id={1} />, {});
 
       const message = 'Warning: Failed propType: Required prop `title` was not specified in `ArticleItem`.';
       console.error.should.have.been.called.with(message);

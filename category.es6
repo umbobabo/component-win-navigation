@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import classes from 'classnames';
+import classnames from 'classnames';
 
 import CategoryCard from './category-card';
 
@@ -12,11 +12,19 @@ export default class Category extends React.Component {
 
   static get propTypes() {
     return {
+      className: PropTypes.string,
       title: PropTypes.string.isRequired,
       slug: PropTypes.string.isRequired,
+      childs: PropTypes.arrayOf(PropTypes.object),
       focusCategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,
       handleFocusChange: PropTypes.func,
+    };
+  }
+
+  static get defaultProps() {
+    return {
+      childs: [],
     };
   }
 
@@ -46,14 +54,13 @@ export default class Category extends React.Component {
     const { title, slug, focusCategorySlug, activeCategorySlug } = this.props;
     const isFocused = Boolean(slug) && slug === focusCategorySlug;
     const isActive = Boolean(slug) && slug === activeCategorySlug;
-    const titleClasses = classes({
-      'navigation__category-title': true,
+    const titleClasses = {
       'navigation__category-title--focus': isFocused,
       'navigation__category-title--active': isActive,
-    });
+    };
     return (
-      <div className="navigation__category">
-        <h2 className={titleClasses}>
+      <div className={classnames(this.props.className, 'navigation__category')}>
+        <h2 className={classnames('navigation__category-title', titleClasses)}>
           <a href={categoryUrl(slug)} onClick={this.focusToggle(slug)}>{title}</a>
         </h2>
         {isFocused ? <CategoryCard {...this.props} /> : ''}

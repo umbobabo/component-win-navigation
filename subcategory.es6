@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import classes from 'classnames';
+import classnames from 'classnames';
 
 import SubcategoryCard from './subcategory-card';
 
@@ -12,8 +12,9 @@ export default class Subcategory extends React.Component {
 
   static get propTypes() {
     return {
-      title: PropTypes.string,
-      slug: PropTypes.string,
+      className: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
       childs: PropTypes.arrayOf(PropTypes.object),
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
@@ -47,14 +48,13 @@ export default class Subcategory extends React.Component {
     const { title, slug, focusCategorySlug, focusSubcategorySlug, activeSubcategorySlug } = this.props;
     const isFocused = Boolean(slug) && slug === focusSubcategorySlug;
     const isActive = Boolean(slug) && slug === activeSubcategorySlug;
-    const titleClasses = classes({
-      'navigation__subcategory-title': true,
+    const titleClasses = {
       'navigation__subcategory-title--focus': isFocused,
       'navigation__subcategory-title--active': isActive,
-    });
+    };
     return (
-      <div className="navigation__subcategory">
-        <h2 className={titleClasses}>
+      <div className={classnames(this.props.className, 'navigation__subcategory')}>
+        <h2 className={classnames('navigation__subcategory-title', titleClasses)}>
           <a href={subcategoryUrl(focusCategorySlug, slug)} onClick={this.focusToggle(slug)}>{title}</a>
         </h2>
         {isFocused ? <SubcategoryCard {...this.props} /> : ''}

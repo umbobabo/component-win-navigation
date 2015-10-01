@@ -21,9 +21,9 @@ npm test;
 
 ## TODO
 
-### Tests
+### Today
 
-- [ ] Write a `test/navigation.es6`.
+- [ ] On mobile the categories should not be visible by default. They should become visible on focusing and unfocusing the `.navigation__menu-button`.
 
 ### Refactor
 
@@ -56,7 +56,6 @@ Potentially need to wait for this: https://github.com/Pomax/react-onclickoutside
 
 ### Fix
 
-- [ ] Add some isRequired to some of the propTypes, and test for their inclusion.
 - [ ] Define working anchors for categories and subcategories that are used with JavaScript and without.
 - [ ] [NPM or eslint need to fix a bug with estraverse not being installed. Until then we need to install it manually.](https://github.com/EconomistDigitalSolutions/fe-component-devpack/issues/18#issuecomment-142613986)
 
