@@ -43,8 +43,9 @@ export default class ArticleItem extends React.Component {
       'navigation__article-published-state--unpublished': isNotPublished,
       'navigation__article-published-state--published': !isNotPublished,
     };
+    const slugClass = slug && [ 'navigation__article', slug ].filter((val) => val).join('-');
     const body = (
-      <div className={classnames(this.props.className, 'navigation__article', containerClasses)}>
+      <div className={classnames(this.props.className, 'navigation__article', slugClass, containerClasses)}>
         <h2 className="navigation__article-title">{title}</h2>
         <span className="navigation__article-text">{text}</span>
         <span className={classnames(publishedStateClasses)}>{isNotPublished ? 'Coming soon' : 'Published'}</span>

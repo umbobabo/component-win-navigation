@@ -1,13 +1,10 @@
 function getBrowserWidth() {
-  if (global.window) {
-    return global.window.innerWidth;
-  }
-  if (global.document) {
-    return global.document.documentElement.clientWidth || global.document.body.clientWidth;
+  if (!global.window && !global.document) {
+    // If we're on the server then return 0.
+    return 0;
   }
 
-  // If we're on the server then return 0.
-  return 0;
+  return global.window.innerWidth || global.document.documentElement.clientWidth || global.document.body.clientWidth;
 }
 
 export default function isMobileWidth() {

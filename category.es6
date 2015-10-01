@@ -3,6 +3,8 @@ import classnames from 'classnames';
 
 import CategoryCard from './category-card';
 
+import scrollMobileBrowserTo from './scroll-mobile-to';
+
 function categoryUrl(category) {
   /* eslint prefer-template: 0 */
   return '?category=' + category;
@@ -46,6 +48,9 @@ export default class Category extends React.Component {
       event.preventDefault();
       if (handleFocusChange) {
         handleFocusChange(newFocus);
+
+        const slugClass = slug && '.' + [ 'navigation__category', slug ].filter((val) => val).join('-');
+        scrollMobileBrowserTo(slugClass);
       }
     };
   }
@@ -58,8 +63,9 @@ export default class Category extends React.Component {
       'navigation__category-title--focus': isFocused,
       'navigation__category-title--active': isActive,
     };
+    const slugClass = slug && [ 'navigation__category', slug ].filter((val) => val).join('-');
     return (
-      <div className={classnames(this.props.className, 'navigation__category')}>
+      <div className={classnames(this.props.className, 'navigation__category', slugClass)}>
         <h2 className={classnames('navigation__category-title', titleClasses)}>
           <a href={categoryUrl(slug)} onClick={this.focusToggle(slug)}>{title}</a>
         </h2>

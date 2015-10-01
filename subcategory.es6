@@ -3,6 +3,8 @@ import classnames from 'classnames';
 
 import SubcategoryCard from './subcategory-card';
 
+import scrollMobileBrowserTo from './scroll-mobile-to';
+
 function subcategoryUrl(category, subcategory) {
   /* eslint prefer-template: 0 */
   return '?category=' + category + '&subcategory=' + subcategory;
@@ -40,6 +42,9 @@ export default class Subcategory extends React.Component {
       event.preventDefault();
       if (handleFocusChange) {
         handleFocusChange(newFocus);
+
+        const slugClass = slug && '.' + [ 'navigation__subcategory', slug ].filter((val) => val).join('-');
+        scrollMobileBrowserTo(slugClass);
       }
     };
   }
@@ -52,8 +57,9 @@ export default class Subcategory extends React.Component {
       'navigation__subcategory-title--focus': isFocused,
       'navigation__subcategory-title--active': isActive,
     };
+    const slugClass = slug && [ 'navigation__subcategory', slug ].filter((val) => val).join('-');
     return (
-      <div className={classnames(this.props.className, 'navigation__subcategory')}>
+      <div className={classnames(this.props.className, 'navigation__subcategory', slugClass)}>
         <h2 className={classnames('navigation__subcategory-title', titleClasses)}>
           <a href={subcategoryUrl(focusCategorySlug, slug)} onClick={this.focusToggle(slug)}>{title}</a>
         </h2>
