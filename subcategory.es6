@@ -43,7 +43,7 @@ export default class Subcategory extends React.Component {
       if (handleFocusChange) {
         handleFocusChange(newFocus);
 
-        const slugClass = slug && '.' + [ 'navigation__subcategory', slug ].filter((val) => val).join('-');
+        const slugClass = slug && [ 'navigation__subcategory', slug ].filter((val) => val).join('-');
         scrollMobileBrowserTo(slugClass);
       }
     };
