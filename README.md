@@ -3,7 +3,7 @@
 
 Given a list of articles in a category/subcategory hierarchy, `Navigation` generates a nested list structure with focus and active states.
 
-State is held within the parent component, and clicking on its child `NavigationItem`s modifies it. The resultant nested list structure is then decorated with `--focus` and `--active` classes.
+State is held within the parent component, and clicking on a child `NavigationItem`s modifies it. The resultant nested list structure is decorated with `--focus` and `--active` classes.
 
 ## Usage
 
