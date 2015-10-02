@@ -42,7 +42,7 @@ describe('Subcategory', () => {
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
       renderOutput.should.deep.equal(
-        <div className="navigation__subcategory">
+        <div className="navigation__subcategory navigation__subcategory-here-is-my-title">
           <h2 className="navigation__subcategory-title">
             <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
@@ -63,7 +63,7 @@ describe('Subcategory', () => {
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
       renderOutput.should.deep.equal(
-        <div className="navigation__subcategory">
+        <div className="navigation__subcategory navigation__subcategory-here-is-my-title">
           <h2 className="navigation__subcategory-title navigation__subcategory-title--focus">
             <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
@@ -90,7 +90,7 @@ describe('Subcategory', () => {
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
       renderOutput.should.deep.equal(
-        <div className="navigation__subcategory">
+        <div className="navigation__subcategory navigation__subcategory-here-is-my-title">
           <h2 className="navigation__subcategory-title navigation__subcategory-title--active">
             <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
