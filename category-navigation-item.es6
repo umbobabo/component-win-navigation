@@ -15,8 +15,8 @@ export default class CategoryNavigationItem extends React.Component {
   static get propTypes() {
     return {
       className: PropTypes.string,
-      title: PropTypes.string.isRequired,
       slug: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
       childs: PropTypes.arrayOf(PropTypes.object),
       focusCategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,

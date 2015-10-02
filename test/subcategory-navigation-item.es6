@@ -45,9 +45,9 @@ describe('SubcategoryNavigationItem', () => {
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
       renderOutput.should.deep.equal(
         <div className="navigation__subcategory navigation__subcategory-here-is-my-title">
-          <h2 className="navigation__subcategory-title">
+          <h3 className="navigation__subcategory-title">
             <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
-          </h2>
+          </h3>
           {''}
         </div>
       );
@@ -66,9 +66,9 @@ describe('SubcategoryNavigationItem', () => {
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
       renderOutput.should.deep.equal(
         <div className="navigation__subcategory navigation__subcategory-here-is-my-title">
-          <h2 className="navigation__subcategory-title navigation__subcategory-title--focus">
+          <h3 className="navigation__subcategory-title navigation__subcategory-title--focus">
             <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
-          </h2>
+          </h3>
           <SubcategoryNavigationCard
             title={'Here is my title'}
             slug={'here-is-my-title'}
@@ -93,9 +93,9 @@ describe('SubcategoryNavigationItem', () => {
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
       renderOutput.should.deep.equal(
         <div className="navigation__subcategory navigation__subcategory-here-is-my-title">
-          <h2 className="navigation__subcategory-title navigation__subcategory-title--active">
+          <h3 className="navigation__subcategory-title navigation__subcategory-title--active">
             <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
-          </h2>
+          </h3>
           {''}
         </div>
       );

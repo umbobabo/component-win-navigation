@@ -71,7 +71,7 @@ describe('ArticleNavigationItem', () => {
       renderer.getRenderOutput().should.deep.equal(
         <a href="/article/10/here-is-my-text">
           <div className="navigation__article navigation__article-here-is-my-text navigation__article--published">
-            <h2 className="navigation__article-title">Here is my title</h2>
+            <h4 className="navigation__article-title">Here is my title</h4>
             <span className="navigation__article-text">Here is my text</span>
             <span className="navigation__article-published-state navigation__article-published-state--published">Published</span>
           </div>
@@ -90,7 +90,7 @@ describe('ArticleNavigationItem', () => {
         />, {});
       renderer.getRenderOutput().should.deep.equal(
         <div className="navigation__article navigation__article-here-is-my-text navigation__article--active navigation__article--published">
-          <h2 className="navigation__article-title">Here is my title</h2>
+          <h4 className="navigation__article-title">Here is my title</h4>
           <span className="navigation__article-text">Here is my text</span>
           <span className="navigation__article-published-state navigation__article-published-state--published">Published</span>
         </div>
@@ -109,7 +109,7 @@ describe('ArticleNavigationItem', () => {
         />, {});
       renderer.getRenderOutput().should.deep.equal(
         <div className="navigation__article navigation__article-here-is-my-text navigation__article--unpublished">
-          <h2 className="navigation__article-title">Here is my title</h2>
+          <h4 className="navigation__article-title">Here is my title</h4>
           <span className="navigation__article-text">Here is my text</span>
           <span className="navigation__article-published-state navigation__article-published-state--unpublished">Coming soon</span>
         </div>

@@ -15,13 +15,19 @@ export default class SubcategoryNavigationItem extends React.Component {
   static get propTypes() {
     return {
       className: PropTypes.string,
-      title: PropTypes.string.isRequired,
       slug: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
       childs: PropTypes.arrayOf(PropTypes.object),
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
       activeSubcategorySlug: PropTypes.string,
       handleFocusChange: PropTypes.func,
+    };
+  }
+
+  static get defaultProps() {
+    return {
+      childs: [],
     };
   }
 
@@ -60,9 +66,9 @@ export default class SubcategoryNavigationItem extends React.Component {
     const slugClass = slug && [ 'navigation__subcategory', slug ].filter((val) => val).join('-');
     return (
       <div className={classnames(this.props.className, 'navigation__subcategory', slugClass)}>
-        <h2 className={classnames('navigation__subcategory-title', titleClasses)}>
+        <h3 className={classnames('navigation__subcategory-title', titleClasses)}>
           <a href={subcategoryUrl(focusCategorySlug, slug)} onClick={this.focusToggle(slug)}>{title}</a>
-        </h2>
+        </h3>
         {isFocused ? <SubcategoryNavigationCard {...this.props} /> : ''}
       </div>
     );
