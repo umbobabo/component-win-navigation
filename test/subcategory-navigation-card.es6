@@ -1,19 +1,21 @@
 import React from 'react/addons';
 
-import SubcategoryCard from '../subcategory-card';
+import SubcategoryNavigationCard from '../subcategory-navigation-card';
 
 import ListOfComponent from '../list-of-component';
-import ArticleItem from '../article-item';
+import ArticleNavigationItem from '../article-navigation-item';
 
 const { createRenderer } = React.addons.TestUtils;
-describe('SubcategoryCard', () => {
+describe('SubcategoryNavigationCard', () => {
 
   it('is compatible with React.Component', () => {
-    SubcategoryCard.should.be.a('function').and.respondTo('render');
+    SubcategoryNavigationCard.should.be.a('function').and.respondTo('render');
   });
 
   it('renders a React element', () => {
-    React.isValidElement(<SubcategoryCard title={'Here is a title'} />).should.equal(true);
+    React.isValidElement(
+      <SubcategoryNavigationCard title={'Here is a title'} />
+    ).should.equal(true);
   });
 
   describe('rendering', () => {
@@ -26,7 +28,7 @@ describe('SubcategoryCard', () => {
 
     it('renders unfocused and inactive', () => {
       renderer.render(
-        <SubcategoryCard
+        <SubcategoryNavigationCard
           childs={[]}
           focusCategorySlug={null}
           focusSubcategorySlug={null}
@@ -42,7 +44,7 @@ describe('SubcategoryCard', () => {
         <nav className="navigation__subcategory-card">
           <ListOfComponent
             className="navigation__articles"
-            component={ArticleItem}
+            component={ArticleNavigationItem}
             data={[]}
             childMetadata={childMetadata}
           />
@@ -52,7 +54,7 @@ describe('SubcategoryCard', () => {
 
     it('renders focused', () => {
       renderer.render(
-        <SubcategoryCard
+        <SubcategoryNavigationCard
           childs={[]}
           slug={'make-me-focused'}
           focusCategorySlug={null}
@@ -69,7 +71,7 @@ describe('SubcategoryCard', () => {
         <nav className="navigation__subcategory-card navigation__subcategory-card--focus">
           <ListOfComponent
             className="navigation__articles"
-            component={ArticleItem}
+            component={ArticleNavigationItem}
             data={[]}
             childMetadata={childMetadata}
           />
@@ -79,7 +81,7 @@ describe('SubcategoryCard', () => {
 
     it('renders active', () => {
       renderer.render(
-        <SubcategoryCard
+        <SubcategoryNavigationCard
           childs={[]}
           slug={'make-me-focused'}
           focusCategorySlug={null}
@@ -96,7 +98,7 @@ describe('SubcategoryCard', () => {
         <nav className="navigation__subcategory-card navigation__subcategory-card--active">
           <ListOfComponent
             className="navigation__articles"
-            component={ArticleItem}
+            component={ArticleNavigationItem}
             data={[]}
             childMetadata={childMetadata}
           />

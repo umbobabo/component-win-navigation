@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
 import ListOfComponent from './list-of-component';
-import ArticleItem from './article-item';
+import ArticleNavigationItem from './article-navigation-item';
 
-export default class CategoryCard extends React.Component {
+export default class SubcategoryNavigationCard extends React.Component {
 
   static get propTypes() {
     return {
@@ -40,7 +40,7 @@ export default class CategoryCard extends React.Component {
       <nav className={classnames(this.props.className, 'navigation__subcategory-card', containerClasses)}>
         <ListOfComponent
           className="navigation__articles"
-          component={ArticleItem}
+          component={ArticleNavigationItem}
           data={children}
           childMetadata={childMetadata}
         />

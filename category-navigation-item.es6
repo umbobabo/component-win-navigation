@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-import CategoryCard from './category-card';
+import CategoryNavigationCard from './category-navigation-card';
 
 import scrollMobileBrowserTo from './scroll-mobile-to';
 
@@ -10,7 +10,7 @@ function categoryUrl(category) {
   return '?category=' + category;
 }
 
-export default class Category extends React.Component {
+export default class CategoryNavigationItem extends React.Component {
 
   static get propTypes() {
     return {
@@ -69,7 +69,7 @@ export default class Category extends React.Component {
         <h2 className={classnames('navigation__category-title', titleClasses)}>
           <a href={categoryUrl(slug)} onClick={this.focusToggle(slug)}>{title}</a>
         </h2>
-        {isFocused ? <CategoryCard {...this.props} /> : ''}
+        {isFocused ? <CategoryNavigationCard {...this.props} /> : ''}
       </div>
     );
   }

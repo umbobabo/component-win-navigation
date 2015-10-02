@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-import SubcategoryCard from './subcategory-card';
+import SubcategoryNavigationCard from './subcategory-navigation-card';
 
 import scrollMobileBrowserTo from './scroll-mobile-to';
 
@@ -10,7 +10,7 @@ function subcategoryUrl(category, subcategory) {
   return '?category=' + category + '&subcategory=' + subcategory;
 }
 
-export default class Subcategory extends React.Component {
+export default class SubcategoryNavigationItem extends React.Component {
 
   static get propTypes() {
     return {
@@ -63,7 +63,7 @@ export default class Subcategory extends React.Component {
         <h2 className={classnames('navigation__subcategory-title', titleClasses)}>
           <a href={subcategoryUrl(focusCategorySlug, slug)} onClick={this.focusToggle(slug)}>{title}</a>
         </h2>
-        {isFocused ? <SubcategoryCard {...this.props} /> : ''}
+        {isFocused ? <SubcategoryNavigationCard {...this.props} /> : ''}
       </div>
     );
   }

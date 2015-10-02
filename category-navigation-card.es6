@@ -4,9 +4,9 @@ import classnames from 'classnames';
 import isMobileWidth from './is-mobile';
 
 import ListOfComponent from './list-of-component';
-import Subcategory from './subcategory';
+import SubcategoryNavigationItem from './subcategory-navigation-item';
 
-export default class CategoryCard extends React.Component {
+export default class CategoryNavigationCard extends React.Component {
 
   static get propTypes() {
     return {
@@ -60,7 +60,7 @@ export default class CategoryCard extends React.Component {
       <nav className={classnames(this.props.className, 'navigation__category-card', containerClasses)}>
         <ListOfComponent
           className="navigation__subcategories"
-          component={Subcategory}
+          component={SubcategoryNavigationItem}
           data={children}
           childMetadata={childMetadata}
           handleFocusChange={handleFocusChange}

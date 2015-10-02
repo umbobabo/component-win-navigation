@@ -2,20 +2,16 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-function identity(v) {
-  return v;
-}
-
 function articleUrl(id, slug) {
   const urlParts = [
     '/article',
     id,
     slug,
-  ].filter(identity);
+  ].filter((val) => val);
   return urlParts.join('/');
 }
 
-export default class ArticleItem extends React.Component {
+export default class ArticleNavigationItem extends React.Component {
 
   static get propTypes() {
     return {

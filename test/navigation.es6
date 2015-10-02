@@ -3,7 +3,7 @@ import React from 'react/addons';
 import Navigation from '../navigation';
 
 import ListOfComponent from '../list-of-component';
-import Category from '../category';
+import CategoryNavigationItem from '../category-navigation-item';
 
 const { createRenderer } = React.addons.TestUtils;
 describe('Navigation', () => {
@@ -13,7 +13,9 @@ describe('Navigation', () => {
   });
 
   it('renders a React element', () => {
-    React.isValidElement(<Navigation title={'Here is a title'} slug={'here-is-my-title'} />).should.equal(true);
+    React.isValidElement(
+      <Navigation title={'Here is a title'} slug={'here-is-my-title'} />
+    ).should.equal(true);
   });
 
   describe('rendering', () => {
@@ -48,7 +50,7 @@ describe('Navigation', () => {
         <nav className={'navigation'}>
           <ListOfComponent
             className="navigation__categories"
-            component={Category}
+            component={CategoryNavigationItem}
             data={data}
             childMetadata={childMetadata}
             handleFocusChange={stubFocusChange}

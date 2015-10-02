@@ -20,7 +20,9 @@ describe('ListOfComponent', () => {
   });
 
   it('renders a React element', () => {
-    React.isValidElement(<ListOfComponent component={StubComponent} />).should.equal(true);
+    React.isValidElement(
+      <ListOfComponent component={StubComponent} />
+    ).should.equal(true);
   });
 
   describe('rendering', () => {

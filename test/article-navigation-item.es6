@@ -5,49 +5,49 @@ chai.use(spies);
 
 import React from 'react/addons';
 
-import ArticleItem from '../article-item';
+import ArticleNavigationItem from '../article-navigation-item';
 
 const { createRenderer } = React.addons.TestUtils;
-describe('ArticleItem', () => {
+describe('ArticleNavigationItem', () => {
 
   it('is compatible with React.Component', () => {
-    ArticleItem.should.be.a('function').and.respondTo('render');
+    ArticleNavigationItem.should.be.a('function').and.respondTo('render');
   });
 
   it('renders a React element', () => {
-    React.isValidElement(<ArticleItem title={'Here is a title'} />).should.equal(true);
+    React.isValidElement(
+      <ArticleNavigationItem title={'Here is a title'} />
+    ).should.equal(true);
   });
 
-  describe('validates propTypes', () => {
+  xdescribe('validates propTypes', () => {
     /* eslint init-declarations: 0 */
 
     let renderer;
     // We must check console.warn to test validation: http://stackoverflow.com/a/31835256/130566
-    const oldConsoleError = console.error.bind(console);
+    const oldConsoleWarn = console.warn.bind(console);
     beforeEach(() => {
       renderer = createRenderer();
 
       const spy = chai.spy(() => {});
-      console.error = spy;
+      console.warn = spy;
     });
     afterEach(() => {
-      console.error = oldConsoleError;
+      console.warn = oldConsoleWarn;
     });
 
-    /*
     it('requires an id', () => {
-      renderer.render(<ArticleItem title={'stub-title'} />, {});
+      renderer.render(<ArticleNavigationItem title={'stub-title'} />, {});
 
       const message = 'Warning: Failed propType: Required prop `id` was not specified in `ArticleItem`.';
-      console.error.should.have.been.called.with(message);
+      console.warn.should.have.been.called.with(message);
     });
-    */
 
     it('requires a title', () => {
-      renderer.render(<ArticleItem id={1} />, {});
+      renderer.render(<ArticleNavigationItem id={1} />, {});
 
       const message = 'Warning: Failed propType: Required prop `title` was not specified in `ArticleItem`.';
-      console.error.should.have.been.called.with(message);
+      console.warn.should.have.been.called.with(message);
     });
 
   });
@@ -62,7 +62,7 @@ describe('ArticleItem', () => {
 
     it('renders inactive', () => {
       renderer.render(
-        <ArticleItem
+        <ArticleNavigationItem
           title={'Here is my title'}
           text={'Here is my text'}
           slug={'here-is-my-text'}
@@ -81,7 +81,7 @@ describe('ArticleItem', () => {
 
     it('renders active', () => {
       renderer.render(
-        <ArticleItem
+        <ArticleNavigationItem
           id={25}
           title={'Here is my title'}
           text={'Here is my text'}
@@ -99,7 +99,7 @@ describe('ArticleItem', () => {
 
     it('renders unpublished', () => {
       renderer.render(
-        <ArticleItem
+        <ArticleNavigationItem
           id={25}
           title={'Here is my title'}
           text={'Here is my text'}

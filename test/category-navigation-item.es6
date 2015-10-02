@@ -2,25 +2,26 @@ import chai from 'chai';
 import spies from 'chai-spies';
 chai.use(spies);
 
-/* eslint max-len: 0 */
 import React from 'react/addons';
 
-import Subcategory from '../subcategory';
-import SubcategoryCard from '../subcategory-card';
+import CategoryNavigationItem from '../category-navigation-item';
+import CategoryNavigationCard from '../category-navigation-card';
 
 const fakeSyntheticMouseEvent = {
   preventDefault: () => {},
 };
 
 const { createRenderer } = React.addons.TestUtils;
-describe('Subcategory', () => {
+describe('CategoryNavigationItem', () => {
 
   it('is compatible with React.Component', () => {
-    Subcategory.should.be.a('function').and.respondTo('render');
+    CategoryNavigationItem.should.be.a('function').and.respondTo('render');
   });
 
   it('renders a React element', () => {
-    React.isValidElement(<Subcategory title={'Here is a title'} />).should.equal(true);
+    React.isValidElement(
+      <CategoryNavigationItem title={'Here is a title'} slug={'here-is-my-title'} />
+    ).should.equal(true);
   });
 
   describe('rendering', () => {
@@ -33,18 +34,17 @@ describe('Subcategory', () => {
 
     it('renders unfocused and inactive', () => {
       renderer.render(
-        <Subcategory
+        <CategoryNavigationItem
           title={'Here is my title'}
           slug={'here-is-my-title'}
-          focusCategorySlug={'previously-selected-category'}
           childs={[]}
         />, {});
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
       renderOutput.should.deep.equal(
-        <div className="navigation__subcategory navigation__subcategory-here-is-my-title">
-          <h2 className="navigation__subcategory-title">
-            <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+        <div className="navigation__category navigation__category-here-is-my-title">
+          <h2 className="navigation__category-title">
+            <a href="?category=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
           {''}
         </div>
@@ -53,26 +53,24 @@ describe('Subcategory', () => {
 
     it('renders focused', () => {
       renderer.render(
-        <Subcategory
+        <CategoryNavigationItem
           title={'Here is my title'}
           slug={'here-is-my-title'}
-          focusCategorySlug={'previously-selected-category'}
-          focusSubcategorySlug={'here-is-my-title'}
           childs={[]}
+          focusCategorySlug={'here-is-my-title'}
         />, {});
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
       renderOutput.should.deep.equal(
-        <div className="navigation__subcategory navigation__subcategory-here-is-my-title">
-          <h2 className="navigation__subcategory-title navigation__subcategory-title--focus">
-            <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+        <div className="navigation__category navigation__category-here-is-my-title">
+          <h2 className="navigation__category-title navigation__category-title--focus">
+            <a href="?category=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
-          <SubcategoryCard
+          <CategoryNavigationCard
             title={'Here is my title'}
             slug={'here-is-my-title'}
-            focusCategorySlug={'previously-selected-category'}
-            focusSubcategorySlug={'here-is-my-title'}
             childs={[]}
+            focusCategorySlug={'here-is-my-title'}
           />
         </div>
       );
@@ -80,19 +78,18 @@ describe('Subcategory', () => {
 
     it('renders active', () => {
       renderer.render(
-        <Subcategory
+        <CategoryNavigationItem
           title={'Here is my title'}
           slug={'here-is-my-title'}
-          focusCategorySlug={'previously-selected-category'}
-          activeSubcategorySlug={'here-is-my-title'}
           childs={[]}
+          activeCategorySlug={'here-is-my-title'}
         />, {});
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
       renderOutput.should.deep.equal(
-        <div className="navigation__subcategory navigation__subcategory-here-is-my-title">
-          <h2 className="navigation__subcategory-title navigation__subcategory-title--active">
-            <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+        <div className="navigation__category navigation__category-here-is-my-title">
+          <h2 className="navigation__category-title navigation__category-title--active">
+            <a href="?category=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
           {''}
         </div>
@@ -112,10 +109,10 @@ describe('Subcategory', () => {
     it('focuses when clicked and not focused', () => {
       const handleFocusChangeSpy = chai.spy();
       renderer.render(
-        <Subcategory
-          title={'The subcategory'}
-          slug={'the-subcategory'}
-          focusCategorySlug={'the-category'}
+        <CategoryNavigationItem
+          title={'The category'}
+          slug={'the-category'}
+          focusCategorySlug={null}
           childs={[]}
           handleFocusChange={handleFocusChangeSpy}
         />, {});
@@ -126,18 +123,18 @@ describe('Subcategory', () => {
       const clicker = renderOutput.props.children[0].props.children.props.onClick;
       clicker(fakeSyntheticMouseEvent);
       handleFocusChangeSpy.should.have.been.called.with({
-        focusSubcategorySlug: 'the-subcategory',
+        focusCategorySlug: 'the-category',
+        focusSubcategorySlug: null,
       });
     });
 
     it('defocuses when clicked and already focused', () => {
       const handleFocusChangeSpy = chai.spy();
       renderer.render(
-        <Subcategory
-          title={'The subcategory'}
-          slug={'the-subcategory'}
+        <CategoryNavigationItem
+          title={'The category'}
+          slug={'the-category'}
           focusCategorySlug={'the-category'}
-          focusSubcategorySlug={'the-subcategory'}
           childs={[]}
           handleFocusChange={handleFocusChangeSpy}
         />, {});
@@ -148,7 +145,8 @@ describe('Subcategory', () => {
       const clicker = renderOutput.props.children[0].props.children.props.onClick;
       clicker(fakeSyntheticMouseEvent);
       handleFocusChangeSpy.should.have.been.called.with({
-        focusSubcategorySlug: 'the-subcategory:focus-off',
+        focusCategorySlug: 'the-category:focus-off',
+        focusSubcategorySlug: null,
       });
     });
 

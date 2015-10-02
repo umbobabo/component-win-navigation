@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
 import ListOfComponent from './list-of-component';
-import Category from './category';
+import CategoryNavigationItem from './category-navigation-item';
 
 import isMobileWidth from './is-mobile';
 
@@ -95,7 +95,7 @@ export default class Navigation extends React.Component {
       <nav className={classnames(this.props.className, 'navigation')}>
         <ListOfComponent
           className={classnames('navigation__categories', navigationListClasses)}
-          component={Category}
+          component={CategoryNavigationItem}
           data={data}
           childMetadata={childMetadata}
           handleFocusChange={this.handleFocusChange}
