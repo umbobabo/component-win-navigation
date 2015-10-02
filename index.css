@@ -460,11 +460,12 @@ ul, li {
 
 @media screen and (max-width: 600px) {
 
-.navigation__categories {
-  display: none;
+.navigation__root-card {
+   display: none;
 }
-.navigation__categories--focus {
-  display: inline;
+
+.navigation__root-card--focus {
+  display: block;
 }
 
 .navigation__category-card {

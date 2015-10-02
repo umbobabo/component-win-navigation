@@ -9,7 +9,7 @@ export default class RootNavigationCard extends React.Component {
   static get propTypes() {
     return {
       className: PropTypes.string,
-      data: PropTypes.arrayOf(PropTypes.object),
+      childs: PropTypes.arrayOf(PropTypes.object),
       focusNavigation: PropTypes.string,
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
@@ -20,8 +20,17 @@ export default class RootNavigationCard extends React.Component {
     };
   }
 
+  static get defaultProps() {
+    return {
+      childs: [],
+    };
+  }
+
   render() {
-    const data = this.props.data;
+    const handleFocusChange = this.props.handleFocusChange;
+
+    const children = this.props.childs;
+
     const childMetadata = {
       focusCategorySlug: this.props.focusCategorySlug,
       focusSubcategorySlug: this.props.focusSubcategorySlug,
@@ -30,17 +39,20 @@ export default class RootNavigationCard extends React.Component {
       activeArticleId: this.props.activeArticleId,
     };
 
-    const navigationListClasses = {
-      'navigation__categories--focus': this.props.focusNavigation,
+    const isFocused = this.props.focusNavigation;
+    const containerClasses = {
+      'navigation__root-card--focus': isFocused,
     };
     return (
-      <ListOfComponent
-        className={classnames('navigation__categories', navigationListClasses)}
-        component={CategoryNavigationItem}
-        data={data}
-        childMetadata={childMetadata}
-        handleFocusChange={this.props.handleFocusChange}
-      />
+      <nav className={classnames(this.props.className, 'navigation__root-card', containerClasses)}>
+        <ListOfComponent
+          className="navigation__categories"
+          component={CategoryNavigationItem}
+          data={children}
+          childMetadata={childMetadata}
+          handleFocusChange={handleFocusChange}
+        />
+      </nav>
     );
   }
 

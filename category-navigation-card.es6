@@ -33,6 +33,7 @@ export default class CategoryNavigationCard extends React.Component {
     // unless you are using a mobile browser.
     const isDesktop = !isMobileWidth();
     const children = this.props.childs;
+
     const defaultSubcategorySlug = isDesktop && children[0] ? children[0].slug : null;
     return defaultSubcategorySlug;
   }
@@ -42,19 +43,20 @@ export default class CategoryNavigationCard extends React.Component {
 
     const children = this.props.childs;
 
-    const { slug, focusCategorySlug, activeCategorySlug } = this.props;
-    const isFocused = Boolean(slug) && slug === focusCategorySlug;
-    const isActive = Boolean(slug) && slug === activeCategorySlug;
-    const containerClasses = {
-      'navigation__category-card--focus': isFocused,
-      'navigation__category-card--active': isActive,
-    };
     const childMetadata = {
       focusCategorySlug: this.props.focusCategorySlug,
       focusSubcategorySlug: this.props.focusSubcategorySlug || this.defaultSubcategorySlug,
       activeCategorySlug: this.props.activeCategorySlug,
       activeSubcategorySlug: this.props.activeSubcategorySlug,
       activeArticleId: this.props.activeArticleId,
+    };
+
+    const { slug, focusCategorySlug, activeCategorySlug } = this.props;
+    const isFocused = Boolean(slug) && slug === focusCategorySlug;
+    const isActive = Boolean(slug) && slug === activeCategorySlug;
+    const containerClasses = {
+      'navigation__category-card--focus': isFocused,
+      'navigation__category-card--active': isActive,
     };
     return (
       <nav className={classnames(this.props.className, 'navigation__category-card', containerClasses)}>
