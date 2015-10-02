@@ -3,7 +3,7 @@ import isMobileWidth from './is-mobile';
 
 export default function scrollMobileBrowserTo(slugClass) {
   const isBrowser = Boolean(global.document && global.window);
-  if (isMobileWidth() && isBrowser) {
+  if (isBrowser && isMobileWidth()) {
     const wait = 100;
     const scrollToElement = global.document.getElementsByClassName(slugClass)[0];
     if (scrollToElement) {

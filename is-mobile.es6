@@ -1,5 +1,6 @@
 function getBrowserWidth() {
-  if (!global.window && !global.document) {
+  const isBrowser = global.window && global.document;
+  if (!isBrowser) {
     // If we're on the server then return 0.
     return 0;
   }

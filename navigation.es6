@@ -88,7 +88,8 @@ export default class Navigation extends React.Component {
       'navigation__categories--focus': this.state.focusNavigation,
     };
     const menuButtonClasses = {
-      'navigation__menu-button--focus': this.state.focusNavigation,
+      'navigation__menu-button--open': this.state.focusNavigation,
+      'navigation__menu-button--closed': !this.state.focusNavigation,
     };
     return (
       <nav className={classnames(this.props.className, 'navigation')}>
