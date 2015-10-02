@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-import ListOfComponent from './list-of-component';
-import CategoryNavigationItem from './category-navigation-item';
-
 import isMobileWidth from './is-mobile';
+
+import RootNavigationCard from './root-navigation-card';
+import NavigationMenuButton from './navigation-menu-button';
 
 export default class Navigation extends React.Component {
 
@@ -29,8 +29,8 @@ export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
 
-    this.toggleNavigation = this.toggleNavigation.bind(this);
     this.handleFocusChange = this.handleFocusChange.bind(this);
+    this.handleToggleNavigation = this.handleToggleNavigation.bind(this);
 
     this.state = {
       focusNavigation: !isMobileWidth(),
@@ -63,47 +63,20 @@ export default class Navigation extends React.Component {
     this.setState(focusChange);
   }
 
-  toggleNavigation(event) {
-    event.preventDefault();
-
-    const isFocused = this.state.focusNavigation;
-    const newFocus = {
-      focusNavigation: !isFocused,
-      focusCategorySlug: null,
-      focusSubcategorySlug: null,
-    };
-    this.handleFocusChange(newFocus);
+  handleToggleNavigation(focusChange) {
+    this.setState(focusChange);
   }
 
   render() {
     const data = this.props.data;
-    const childMetadata = {
-      focusCategorySlug: this.state.focusCategorySlug,
-      focusSubcategorySlug: this.state.focusSubcategorySlug,
-      activeCategorySlug: this.state.activeCategorySlug,
-      activeSubcategorySlug: this.state.activeSubcategorySlug,
-      activeArticleId: this.state.activeArticleId,
-    };
-    const navigationListClasses = {
-      'navigation__categories--focus': this.state.focusNavigation,
-    };
-    const menuButtonClasses = {
-      'navigation__menu-button--open': this.state.focusNavigation,
-      'navigation__menu-button--closed': !this.state.focusNavigation,
-    };
+    const focusNavigation = this.state.focusNavigation;
     return (
       <nav className={classnames(this.props.className, 'navigation')}>
-        <ListOfComponent
-          className={classnames('navigation__categories', navigationListClasses)}
-          component={CategoryNavigationItem}
-          data={data}
-          childMetadata={childMetadata}
-          handleFocusChange={this.handleFocusChange}
+        <RootNavigationCard data={data} handleFocusChange={this.handleFocusChange} {...this.state} />
+        <NavigationMenuButton
+          handleToggleNavigation={this.handleToggleNavigation}
+          focusNavigation={focusNavigation}
         />
-        <div
-          className={classnames('navigation__menu-button', menuButtonClasses)}
-          onClick={this.toggleNavigation}
-        ></div>
       </nav>
     );
   }
