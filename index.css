@@ -51,7 +51,6 @@ ul, li {
 
 .navigation {
    -webkit-font-smoothing: antialiased;
-   position: relative;
    height: 100%;
    background-color: var(--color-white);
    display: flex;
@@ -70,12 +69,12 @@ ul, li {
 }
 
 .navigation ::-webkit-scrollbar-track {
-    border-radius: 0px;
+    border-radius: 0;
     background-color: transparent;
 }
 
 .navigation ::-webkit-scrollbar-thumb {
-    border-radius: 0px;
+    border-radius: 0;
     background-color: var(--color-mid-grey);
 }
 
@@ -89,6 +88,10 @@ ul, li {
 
 .navigation__categories .list__item {
   display: flex;
+}
+
+.navigation__root-card {
+  width: 100%;
 }
 
 .win__logo-container {
@@ -174,7 +177,6 @@ ul, li {
 
 .navigation__subcategory-title a {
    text-decoration: none;
-   width: 100%;
    color: grey;
    font-family: "Officina_bold";
    font-weight: normal;
@@ -198,8 +200,8 @@ ul, li {
    overflow: hidden;
    left: 0;
    width: 100%;
-   background-color: var(--color-white);
    height: 435px;
+   background-color: var(--color-white);
    border-bottom: 1px solid var(--color-econ-red);
 }
 
@@ -210,7 +212,7 @@ ul, li {
    -moz-columns: 2 150px;
    columns: 2 150px;
    height: 100%;
-   padding-bottom: 40px;
+   padding: 47px 0;
 }
 
 .navigation__articles li a {
@@ -272,7 +274,7 @@ ul, li {
    width: 70%;
    max-height: 100%;
    text-align: left;
-   padding-top: 47px;
+   /*padding-top: 47px;*/
    overflow-x: hidden;
    overflow-y: scroll;
 }
@@ -383,13 +385,11 @@ ul, li {
 .navigation__subcategory-card {
    position: relative;
    left: 0;
-   height: 100%;
    padding: 10px 25px;
    display: inline;
 }
 
 .navigation__subcategories {
-   width: 100%;
    text-align: left;
    padding-top: 16px;
    display: inline;
@@ -409,7 +409,7 @@ ul, li {
 .navigation__subcategory-title:after {
    content: '';
    width: 0;
-	height: 0;
+	 height: 0;
    border-top: 8px solid transparent;
    border-left: 19px solid var(--color-econ-red);
    border-bottom: 8px solid transparent;
@@ -422,7 +422,7 @@ ul, li {
 .navigation__subcategory-title--focus:after {
    content: '';
    width: 0;
-	height: 0;
+	 height: 0;
    border-left: 8px solid transparent;
    border-right: 8px solid transparent;
    border-top: 19px solid var(--color-econ-red);
@@ -437,7 +437,7 @@ ul, li {
 }
 
 .navigation__articles {
- -webkit-columns: initial;
+ columns: initial;
  min-height: 0;
 }
 
@@ -448,7 +448,6 @@ ul, li {
 
 .navigation__menu-button {
    position: absolute;
-   top: 0;
    width: 67px;
    height: 67px;
    background-color: var(--color-econ-red);
