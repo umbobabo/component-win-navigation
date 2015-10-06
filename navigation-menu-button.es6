@@ -48,6 +48,7 @@ export default class NavigationMenuButton extends React.Component {
       <a
         href={navigationOpenUrl(focusNavigation)}
         onClick={this.toggleNavigation()}
+        className="navigation__menu-button-wrapper-link"
       >
         <div className={classnames(this.props.className, 'navigation__menu-button', menuButtonClasses)}>
           <Icon
