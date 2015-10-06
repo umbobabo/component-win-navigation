@@ -47,7 +47,10 @@ describe('Navigation', () => {
       };
       const stubFocusChange = renderOutput.props.children[0].props.handleFocusChange;
       renderOutput.should.deep.equal(
-        <nav className={'navigation'}>
+        <nav
+          role="navigation"
+          className={'navigation'}
+        >
           <ListOfComponent
             className="navigation__categories"
             component={CategoryNavigationItem}

@@ -45,6 +45,7 @@ export default class RootNavigationCard extends React.Component {
     };
     return (
       <nav className={classnames(this.props.className, 'navigation__root-card', containerClasses)}>
+        <h1 className="navigation__header--hidden">Menu</h1>
         <ListOfComponent
           className="navigation__categories"
           component={CategoryNavigationItem}

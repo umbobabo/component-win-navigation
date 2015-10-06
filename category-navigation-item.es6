@@ -7,7 +7,7 @@ import scrollMobileBrowserTo from './scroll-mobile-to';
 
 function categoryUrl(category) {
   /* eslint prefer-template: 0 */
-  return '?category=' + category;
+  return '?navigation=true&category=' + category;
 }
 
 export default class CategoryNavigationItem extends React.Component {

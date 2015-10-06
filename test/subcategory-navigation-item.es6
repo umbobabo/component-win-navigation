@@ -46,7 +46,7 @@ describe('SubcategoryNavigationItem', () => {
       renderOutput.should.deep.equal(
         <div className="navigation__subcategory navigation__subcategory-here-is-my-title">
           <h3 className="navigation__subcategory-title">
-            <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+            <a href="?navigation=true&category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h3>
           {''}
         </div>
@@ -67,7 +67,7 @@ describe('SubcategoryNavigationItem', () => {
       renderOutput.should.deep.equal(
         <div className="navigation__subcategory navigation__subcategory-here-is-my-title">
           <h3 className="navigation__subcategory-title navigation__subcategory-title--focus">
-            <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+            <a href="?navigation=true&category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h3>
           <SubcategoryNavigationCard
             title={'Here is my title'}
@@ -94,7 +94,7 @@ describe('SubcategoryNavigationItem', () => {
       renderOutput.should.deep.equal(
         <div className="navigation__subcategory navigation__subcategory-here-is-my-title">
           <h3 className="navigation__subcategory-title navigation__subcategory-title--active">
-            <a href="?category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+            <a href="?navigation=true&category=previously-selected-category&subcategory=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h3>
           {''}
         </div>

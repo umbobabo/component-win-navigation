@@ -44,7 +44,7 @@ describe('CategoryNavigationItem', () => {
       renderOutput.should.deep.equal(
         <div className="navigation__category navigation__category-here-is-my-title">
           <h2 className="navigation__category-title">
-            <a href="?category=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+            <a href="?navigation=true&category=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
           {''}
         </div>
@@ -64,7 +64,7 @@ describe('CategoryNavigationItem', () => {
       renderOutput.should.deep.equal(
         <div className="navigation__category navigation__category-here-is-my-title">
           <h2 className="navigation__category-title navigation__category-title--focus">
-            <a href="?category=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+            <a href="?navigation=true&category=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
           <CategoryNavigationCard
             title={'Here is my title'}
@@ -89,7 +89,7 @@ describe('CategoryNavigationItem', () => {
       renderOutput.should.deep.equal(
         <div className="navigation__category navigation__category-here-is-my-title">
           <h2 className="navigation__category-title navigation__category-title--active">
-            <a href="?category=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
+            <a href="?navigation=true&category=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
           {''}
         </div>

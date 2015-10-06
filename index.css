@@ -60,6 +60,10 @@ ul, li {
    width: 100%;
 }
 
+.navigation__header--hidden {
+  display: none;
+}
+
 .navigation__menu-button {
    display: none;
 }

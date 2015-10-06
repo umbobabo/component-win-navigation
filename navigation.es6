@@ -71,12 +71,15 @@ export default class Navigation extends React.Component {
     const data = this.props.data;
     const focusNavigation = this.state.focusNavigation;
     return (
-      <nav className={classnames(this.props.className, 'navigation')}>
-        <RootNavigationCard childs={data} handleFocusChange={this.handleFocusChange} {...this.state} />
+      <nav
+        role="navigation"
+        className={classnames(this.props.className, 'navigation')}
+      >
         <NavigationMenuButton
           handleToggleNavigation={this.handleToggleNavigation}
           focusNavigation={focusNavigation}
         />
+        <RootNavigationCard childs={data} handleFocusChange={this.handleFocusChange} {...this.state} />
       </nav>
     );
   }

@@ -7,7 +7,7 @@ import scrollMobileBrowserTo from './scroll-mobile-to';
 
 function subcategoryUrl(category, subcategory) {
   /* eslint prefer-template: 0 */
-  return '?category=' + category + '&subcategory=' + subcategory;
+  return '?navigation=true&category=' + category + '&subcategory=' + subcategory;
 }
 
 export default class SubcategoryNavigationItem extends React.Component {
