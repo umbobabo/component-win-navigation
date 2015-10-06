@@ -33,7 +33,7 @@ export default class Navigation extends React.Component {
     this.handleToggleNavigation = this.handleToggleNavigation.bind(this);
 
     this.state = {
-      focusNavigation: !isMobileWidth(),
+      focusNavigation: !isMobileWidth(global),
       focusCategorySlug: null,
       focusSubcategorySlug: null,
       activeCategorySlug: null,

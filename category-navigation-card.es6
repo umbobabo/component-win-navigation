@@ -31,7 +31,7 @@ export default class CategoryNavigationCard extends React.Component {
   get defaultSubcategorySlug() {
     // By default the first subcategory of a category should have focus
     // unless you are using a mobile browser.
-    const isDesktop = !isMobileWidth();
+    const isDesktop = !isMobileWidth(global);
     const children = this.props.childs;
 
     const defaultSubcategorySlug = isDesktop && children[0] ? children[0].slug : null;

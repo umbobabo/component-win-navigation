@@ -50,7 +50,7 @@ export default class CategoryNavigationItem extends React.Component {
         handleFocusChange(newFocus);
 
         const slugClass = slug && [ 'navigation__category', slug ].filter((val) => val).join('-');
-        scrollMobileBrowserTo(slugClass);
+        scrollMobileBrowserTo(slugClass, global);
       }
     };
   }

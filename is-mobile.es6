@@ -1,13 +1,14 @@
-function getBrowserWidth() {
-  const isBrowser = global.window && global.document;
+const mobileWidth = 600;
+function getBrowserWidth(scope = {}) {
+  const isBrowser = scope.window && scope.document;
   if (!isBrowser) {
     // If we're on the server then return 0.
     return 0;
   }
 
-  return global.window.innerWidth || global.document.documentElement.clientWidth || global.document.body.clientWidth;
+  return scope.window.innerWidth || scope.document.documentElement.clientWidth || scope.document.body.clientWidth;
 }
 
-export default function isMobileWidth() {
-  return getBrowserWidth() <= 600;
+export default function isMobileWidth(scope = {}) {
+  return getBrowserWidth(scope) <= mobileWidth;
 }

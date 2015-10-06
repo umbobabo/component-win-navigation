@@ -52,12 +52,7 @@ export default class NavigationMenuButton extends React.Component {
       >
         <div className={classnames(this.props.className, 'navigation__menu-button', menuButtonClasses)}>
           <Icon
-            icon="hamburger"
-            color="white"
-            background="transparent"
-          />
-          <Icon
-            icon="close"
+            icon={focusNavigation ? 'close' : 'hamburger'}
             color="white"
             background="transparent"
           />
