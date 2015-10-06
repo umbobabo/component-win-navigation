@@ -321,6 +321,15 @@ ul, li {
    display: none;
 }
 
+.Icon-hamburger {
+   padding: 4px;
+}
+
+.navigation__menu-button:hover {
+  background-color: var(--color-econ-red-hover);
+}
+
+
 .navigation__category-title a, .navigation__category-title--focus a {
    background-color: transparent;
    color: grey;

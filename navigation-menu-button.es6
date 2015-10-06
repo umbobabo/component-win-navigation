@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import Icon from '@economist/component-icon';
 
 export default class NavigationMenuButton extends React.Component {
 
@@ -41,7 +42,11 @@ export default class NavigationMenuButton extends React.Component {
       <div
         className={classnames(this.props.className, 'navigation__menu-button', menuButtonClasses)}
         onClick={this.toggleNavigation()}
-      ></div>
+      >
+      <Icon icon="hamburger" color="white"
+              background="transparent"
+            />
+      </div>
     );
   }
 
