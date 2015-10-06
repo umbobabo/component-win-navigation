@@ -99,6 +99,7 @@
     "ghpages_files": "*.html *.css *.js assets/"
   },
   "scripts": {
+    "build": "echo ''",
     "ci": "./build.sh",
     "doc": "parallelshell 'npm run doc:html' 'npm run doc:js' 'npm run doc:css'",
     "doc:css": "cssnext --sourcemap example.css bundle.css",
