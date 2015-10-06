@@ -325,14 +325,21 @@ ul, li {
    display: none;
 }
 
-.Icon-hamburger {
+.Icon-hamburger, .Icon-close {
    padding: 4px;
+}
+
+.navigation__menu-button--open .Icon-hamburger, .navigation__menu-button--closed .Icon-close {
+  display: none;
+}
+
+.navigation__menu-button--closed .Icon-hamburger, .navigation__menu-button--open .Icon-close {
+  display: block;
 }
 
 .navigation__menu-button:hover {
   background-color: var(--color-econ-red-hover);
 }
-
 
 .navigation__category-title a, .navigation__category-title--focus a {
    background-color: transparent;
@@ -452,6 +459,11 @@ ul, li {
 .navigation__articles {
  columns: initial;
  min-height: 0;
+ padding: 0;
+}
+
+.navigation__articles li:last-of-type .navigation__article-published-state {
+  margin-bottom: 0;
 }
 
 .navigation__subcategory-title a {

@@ -56,6 +56,11 @@ export default class NavigationMenuButton extends React.Component {
             color="white"
             background="transparent"
           />
+          <Icon
+            icon="close"
+            color="white"
+            background="transparent"
+          />
         </div>
       </a>
     );
