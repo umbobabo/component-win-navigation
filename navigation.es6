@@ -59,12 +59,12 @@ export default class Navigation extends React.Component {
     });
   }
 
-  handleFocusChange(focusChange) {
-    this.setState(focusChange);
+  handleFocusChange(focusChange, afterNewStateRenderedCallback = () => {}) {
+    this.setState(focusChange, afterNewStateRenderedCallback);
   }
 
-  handleToggleNavigation(focusChange) {
-    this.setState(focusChange);
+  handleToggleNavigation(focusChange, afterNewStateRenderedCallback = () => {}) {
+    this.setState(focusChange, afterNewStateRenderedCallback);
   }
 
   render() {
