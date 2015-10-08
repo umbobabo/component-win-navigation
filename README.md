@@ -10,18 +10,18 @@ State is held within the parent component, and clicking on a child `NavigationIt
 ```json
 [
   {
-    title: 'World',
-    slug: 'world',
-    navigationItems: [
+    "title": "World",
+    "slug": "world",
+    "navigationItems": [
       {
-        title: 'Britain',
-        slug: 'britain',
-        navigationItems: [
+        "title": "Britain",
+        "slug": "britain",
+        "navigationItems": [
           {
-            id: 10,
-            slug: 'coalition-the-sequel',
-            title: 'Coalition, the Sequel',
-            text: 'Hung Parliament'
+            "id": 10,
+            "slug": "coalition-the-sequel",
+            "title": "Coalition, the Sequel",
+            "text": "Hung Parliament"
           }
         ]
       }
