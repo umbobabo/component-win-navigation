@@ -9,7 +9,7 @@ export default class RootNavigationCard extends React.Component {
   static get propTypes() {
     return {
       className: PropTypes.string,
-      childs: PropTypes.arrayOf(PropTypes.object),
+      navigationItems: PropTypes.arrayOf(PropTypes.object),
       focusNavigation: PropTypes.string,
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
@@ -22,14 +22,14 @@ export default class RootNavigationCard extends React.Component {
 
   static get defaultProps() {
     return {
-      childs: [],
+      navigationItems: [],
     };
   }
 
   render() {
     const handleFocusChange = this.props.handleFocusChange;
 
-    const children = this.props.childs;
+    const categoryNavigationItems = this.props.navigationItems;
 
     const childMetadata = {
       focusCategorySlug: this.props.focusCategorySlug,
@@ -49,7 +49,7 @@ export default class RootNavigationCard extends React.Component {
         <ListOfComponent
           className="navigation__categories"
           component={CategoryNavigationItem}
-          data={children}
+          items={categoryNavigationItems}
           childMetadata={childMetadata}
           handleFocusChange={handleFocusChange}
         />

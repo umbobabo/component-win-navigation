@@ -34,7 +34,7 @@ describe('ListOfComponent', () => {
     });
 
     it('renders a basic list of a particular component', () => {
-      const data = [
+      const items = [
         {},
         {},
       ];
@@ -42,7 +42,7 @@ describe('ListOfComponent', () => {
         <ListOfComponent
           className="stub-class"
           component={StubComponent}
-          data={data}
+          items={items}
           handleFocusChange={null}
         />, {});
       renderer.getRenderOutput().should.deep.equal(

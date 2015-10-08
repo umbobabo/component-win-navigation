@@ -30,10 +30,10 @@ describe('Navigation', () => {
     // Shallow rendering is broken when `componentWillMount` calls `setState`.
     // See: https://github.com/facebook/react/issues/4461#issuecomment-144753237
     xit('renders', () => {
-      const data = [];
+      const navigationItems = [];
       renderer.render(
         <Navigation
-          data={data}
+          navigationItems={navigationItems}
         />, {});
       const renderOutput = renderer.getRenderOutput();
 
@@ -54,7 +54,7 @@ describe('Navigation', () => {
           <ListOfComponent
             className="navigation__categories"
             component={CategoryNavigationItem}
-            data={data}
+            items={navigationItems}
             childMetadata={childMetadata}
             handleFocusChange={stubFocusChange}
           />

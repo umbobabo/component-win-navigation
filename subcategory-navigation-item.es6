@@ -14,7 +14,7 @@ export default class SubcategoryNavigationItem extends React.Component {
       className: PropTypes.string,
       slug: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      childs: PropTypes.arrayOf(PropTypes.object),
+      navigationItems: PropTypes.arrayOf(PropTypes.object),
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
       activeSubcategorySlug: PropTypes.string,
@@ -24,7 +24,7 @@ export default class SubcategoryNavigationItem extends React.Component {
 
   static get defaultProps() {
     return {
-      childs: [],
+      navigationItems: [],
     };
   }
 

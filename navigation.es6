@@ -11,7 +11,7 @@ export default class Navigation extends React.Component {
   static get propTypes() {
     return {
       className: PropTypes.string,
-      data: PropTypes.arrayOf(PropTypes.object),
+      navigationItems: PropTypes.arrayOf(PropTypes.object),
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,
@@ -22,7 +22,7 @@ export default class Navigation extends React.Component {
 
   static get defaultProps() {
     return {
-      data: [],
+      navigationItems: [],
     };
   }
 
@@ -68,7 +68,7 @@ export default class Navigation extends React.Component {
   }
 
   render() {
-    const data = this.props.data;
+    const navigationItems = this.props.navigationItems;
     const focusNavigation = this.state.focusNavigation;
     return (
       <nav
@@ -79,7 +79,11 @@ export default class Navigation extends React.Component {
           handleToggleNavigation={this.handleToggleNavigation}
           focusNavigation={focusNavigation}
         />
-        <RootNavigationCard childs={data} handleFocusChange={this.handleFocusChange} {...this.state} />
+        <RootNavigationCard
+          navigationItems={navigationItems}
+          handleFocusChange={this.handleFocusChange}
+          {...this.state}
+        />
       </nav>
     );
   }

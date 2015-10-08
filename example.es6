@@ -7,11 +7,11 @@ import json from './test/data/large';
 //   {
 //     title: 'Leaders',
 //     slug: 'leaders',
-//     childs: [
+//     navigationItems: [
 //       {
 //         title: 'Leaders',
 //         slug: 'leaders',
-//         childs: [
+//         navigationItems: [
 //           {
 //             id: 1,
 //             title: 'Who should lead the world',
@@ -77,11 +77,11 @@ import json from './test/data/large';
 //   {
 //     title: 'World',
 //     slug: 'world',
-//     childs: [
+//     navigationItems: [
 //       {
 //         title: 'Britain',
 //         slug: 'britain',
-//         childs: [
+//         navigationItems: [
 //           {
 //             id: 10,
 //             title: 'Coalition, the Sequel',
@@ -100,7 +100,7 @@ import json from './test/data/large';
 //   }
 //   ... etc ...
 // ]
-const data = json;
+const navigationItems = json;
 const focusCategorySlug = null;
 const focusSubcategorySlug = null;
 const activeCategorySlug = 'world';
@@ -108,7 +108,7 @@ const activeSubcategorySlug = 'africa';
 const activeArticleId = 55;
 export default (
   <Navigation
-    data={data}
+    navigationItems={navigationItems}
     focusCategorySlug={focusCategorySlug}
     focusSubcategorySlug={focusSubcategorySlug}
     activeCategorySlug={activeCategorySlug}

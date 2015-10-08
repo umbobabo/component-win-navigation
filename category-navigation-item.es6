@@ -14,7 +14,7 @@ export default class CategoryNavigationItem extends React.Component {
       className: PropTypes.string,
       slug: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      childs: PropTypes.arrayOf(PropTypes.object),
+      navigationItems: PropTypes.arrayOf(PropTypes.object),
       focusCategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,
       handleFocusChange: PropTypes.func,
@@ -23,7 +23,7 @@ export default class CategoryNavigationItem extends React.Component {
 
   static get defaultProps() {
     return {
-      childs: [],
+      navigationItems: [],
     };
   }
 

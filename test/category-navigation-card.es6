@@ -29,7 +29,7 @@ describe('CategoryNavigationCard', () => {
     it('renders unfocused and inactive', () => {
       renderer.render(
         <CategoryNavigationCard
-          childs={[]}
+          navigationItems={[]}
           focusCategorySlug={null}
           focusSubcategorySlug={null}
           activeCategorySlug={null}
@@ -49,7 +49,7 @@ describe('CategoryNavigationCard', () => {
           <ListOfComponent
             className="navigation__subcategories"
             component={SubcategoryNavigationItem}
-            data={[]}
+            items={[]}
             childMetadata={childMetadata}
             handleFocusChange={null}
           />
@@ -60,7 +60,7 @@ describe('CategoryNavigationCard', () => {
     it('renders focused', () => {
       renderer.render(
         <CategoryNavigationCard
-          childs={[]}
+          navigationItems={[]}
           slug={'make-me-focused'}
           focusCategorySlug={'make-me-focused'}
           focusSubcategorySlug={null}
@@ -81,7 +81,7 @@ describe('CategoryNavigationCard', () => {
           <ListOfComponent
             className="navigation__subcategories"
             component={SubcategoryNavigationItem}
-            data={[]}
+            items={[]}
             childMetadata={childMetadata}
             handleFocusChange={null}
           />
@@ -92,7 +92,7 @@ describe('CategoryNavigationCard', () => {
     it('renders active', () => {
       renderer.render(
         <CategoryNavigationCard
-          childs={[]}
+          navigationItems={[]}
           slug={'make-me-focused'}
           focusCategorySlug={null}
           focusSubcategorySlug={null}
@@ -113,7 +113,7 @@ describe('CategoryNavigationCard', () => {
           <ListOfComponent
             className="navigation__subcategories"
             component={SubcategoryNavigationItem}
-            data={[]}
+            items={[]}
             childMetadata={childMetadata}
             handleFocusChange={null}
           />

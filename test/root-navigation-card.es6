@@ -29,7 +29,7 @@ describe('RootNavigationCard', () => {
     it('renders unfocused', () => {
       renderer.render(
         <RootNavigationCard
-          childs={[]}
+          navigationItems={[]}
           focusCategorySlug={null}
           focusSubcategorySlug={null}
           activeCategorySlug={null}
@@ -50,7 +50,7 @@ describe('RootNavigationCard', () => {
           <ListOfComponent
             className="navigation__categories"
             component={CategoryNavigationItem}
-            data={[]}
+            items={[]}
             childMetadata={childMetadata}
             handleFocusChange={null}
           />
@@ -61,7 +61,7 @@ describe('RootNavigationCard', () => {
     it('renders focused', () => {
       renderer.render(
         <RootNavigationCard
-          childs={[]}
+          navigationItems={[]}
           focusNavigation
           focusCategorySlug={null}
           focusSubcategorySlug={null}
@@ -83,7 +83,7 @@ describe('RootNavigationCard', () => {
           <ListOfComponent
             className="navigation__categories"
             component={CategoryNavigationItem}
-            data={[]}
+            items={[]}
             childMetadata={childMetadata}
             handleFocusChange={null}
           />

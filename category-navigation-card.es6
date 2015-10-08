@@ -12,7 +12,7 @@ export default class CategoryNavigationCard extends React.Component {
     return {
       className: PropTypes.string,
       slug: PropTypes.string.isRequired,
-      childs: PropTypes.arrayOf(PropTypes.object),
+      navigationItems: PropTypes.arrayOf(PropTypes.object),
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,
@@ -24,7 +24,7 @@ export default class CategoryNavigationCard extends React.Component {
 
   static get defaultProps() {
     return {
-      childs: [],
+      navigationItems: [],
     };
   }
 
@@ -32,16 +32,18 @@ export default class CategoryNavigationCard extends React.Component {
     // By default the first subcategory of a category should have focus
     // unless you are using a mobile browser.
     const isDesktop = !isMobileWidth(global);
-    const children = this.props.childs;
+    const subcategoryNavigationItems = this.props.navigationItems;
 
-    const defaultSubcategorySlug = isDesktop && children[0] ? children[0].slug : null;
+    const defaultSubcategorySlug = isDesktop && subcategoryNavigationItems[0] ?
+                                   subcategoryNavigationItems[0].slug :
+                                   null;
     return defaultSubcategorySlug;
   }
 
   render() {
     const handleFocusChange = this.props.handleFocusChange;
 
-    const children = this.props.childs;
+    const subcategoryNavigationItems = this.props.navigationItems;
 
     const childMetadata = {
       focusCategorySlug: this.props.focusCategorySlug,
@@ -63,7 +65,7 @@ export default class CategoryNavigationCard extends React.Component {
         <ListOfComponent
           className="navigation__subcategories"
           component={SubcategoryNavigationItem}
-          data={children}
+          items={subcategoryNavigationItems}
           childMetadata={childMetadata}
           handleFocusChange={handleFocusChange}
         />

@@ -37,7 +37,7 @@ describe('CategoryNavigationItem', () => {
         <CategoryNavigationItem
           title={'Here is my title'}
           slug={'here-is-my-title'}
-          childs={[]}
+          navigationItems={[]}
         />, {});
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
@@ -56,7 +56,7 @@ describe('CategoryNavigationItem', () => {
         <CategoryNavigationItem
           title={'Here is my title'}
           slug={'here-is-my-title'}
-          childs={[]}
+          navigationItems={[]}
           focusCategorySlug={'here-is-my-title'}
         />, {});
       const renderOutput = renderer.getRenderOutput();
@@ -69,7 +69,7 @@ describe('CategoryNavigationItem', () => {
           <CategoryNavigationCard
             title={'Here is my title'}
             slug={'here-is-my-title'}
-            childs={[]}
+            navigationItems={[]}
             focusCategorySlug={'here-is-my-title'}
           />
         </div>
@@ -81,7 +81,7 @@ describe('CategoryNavigationItem', () => {
         <CategoryNavigationItem
           title={'Here is my title'}
           slug={'here-is-my-title'}
-          childs={[]}
+          navigationItems={[]}
           activeCategorySlug={'here-is-my-title'}
         />, {});
       const renderOutput = renderer.getRenderOutput();
@@ -113,7 +113,7 @@ describe('CategoryNavigationItem', () => {
           title={'The category'}
           slug={'the-category'}
           focusCategorySlug={null}
-          childs={[]}
+          navigationItems={[]}
           handleFocusChange={handleFocusChangeSpy}
         />, {});
       const renderOutput = renderer.getRenderOutput();
@@ -135,7 +135,7 @@ describe('CategoryNavigationItem', () => {
           title={'The category'}
           slug={'the-category'}
           focusCategorySlug={'the-category'}
-          childs={[]}
+          navigationItems={[]}
           handleFocusChange={handleFocusChangeSpy}
         />, {});
       const renderOutput = renderer.getRenderOutput();

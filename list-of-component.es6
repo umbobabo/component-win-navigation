@@ -10,7 +10,7 @@ export default class ListOfComponent extends React.Component {
   static get propTypes() {
     return {
       className: PropTypes.string,
-      data: PropTypes.arrayOf(PropTypes.object),
+      items: PropTypes.arrayOf(PropTypes.object),
       component: isPropTypeComponent,
       childMetadata: PropTypes.object,
       handleFocusChange: PropTypes.func,
@@ -19,7 +19,7 @@ export default class ListOfComponent extends React.Component {
 
   static get defaultProps() {
     return {
-      data: [],
+      items: [],
       childMetadata: {},
     };
   }
@@ -45,10 +45,10 @@ export default class ListOfComponent extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
-    if (data.length) {
+    const { items } = this.props;
+    if (items.length) {
       return (
-        <List className={classnames(this.props.className)}>{data.map(this.renderChildComponent)}</List>
+        <List className={classnames(this.props.className)}>{items.map(this.renderChildComponent)}</List>
       );
     }
     return null;

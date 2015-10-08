@@ -39,7 +39,7 @@ describe('SubcategoryNavigationItem', () => {
           title={'Here is my title'}
           slug={'here-is-my-title'}
           focusCategorySlug={'previously-selected-category'}
-          childs={[]}
+          navigationItems={[]}
         />, {});
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
@@ -60,7 +60,7 @@ describe('SubcategoryNavigationItem', () => {
           slug={'here-is-my-title'}
           focusCategorySlug={'previously-selected-category'}
           focusSubcategorySlug={'here-is-my-title'}
-          childs={[]}
+          navigationItems={[]}
         />, {});
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
@@ -74,7 +74,7 @@ describe('SubcategoryNavigationItem', () => {
             slug={'here-is-my-title'}
             focusCategorySlug={'previously-selected-category'}
             focusSubcategorySlug={'here-is-my-title'}
-            childs={[]}
+            navigationItems={[]}
           />
         </div>
       );
@@ -87,7 +87,7 @@ describe('SubcategoryNavigationItem', () => {
           slug={'here-is-my-title'}
           focusCategorySlug={'previously-selected-category'}
           activeSubcategorySlug={'here-is-my-title'}
-          childs={[]}
+          navigationItems={[]}
         />, {});
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
@@ -118,7 +118,7 @@ describe('SubcategoryNavigationItem', () => {
           title={'The subcategory'}
           slug={'the-subcategory'}
           focusCategorySlug={'the-category'}
-          childs={[]}
+          navigationItems={[]}
           handleFocusChange={handleFocusChangeSpy}
         />, {});
       const renderOutput = renderer.getRenderOutput();
@@ -140,7 +140,7 @@ describe('SubcategoryNavigationItem', () => {
           slug={'the-subcategory'}
           focusCategorySlug={'the-category'}
           focusSubcategorySlug={'the-subcategory'}
-          childs={[]}
+          navigationItems={[]}
           handleFocusChange={handleFocusChangeSpy}
         />, {});
       const renderOutput = renderer.getRenderOutput();

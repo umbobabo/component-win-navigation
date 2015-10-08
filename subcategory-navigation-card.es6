@@ -10,7 +10,7 @@ export default class SubcategoryNavigationCard extends React.Component {
     return {
       className: PropTypes.string,
       slug: PropTypes.string.isRequired,
-      childs: PropTypes.arrayOf(PropTypes.object),
+      navigationItems: PropTypes.arrayOf(PropTypes.object),
       focusSubcategorySlug: PropTypes.string,
       activeSubcategorySlug: PropTypes.string,
       activeArticleId: PropTypes.number,
@@ -19,12 +19,12 @@ export default class SubcategoryNavigationCard extends React.Component {
 
   static get defaultProps() {
     return {
-      childs: [],
+      navigationItems: [],
     };
   }
 
   render() {
-    const children = this.props.childs;
+    const articleNavigationItems = this.props.navigationItems;
 
     const childMetadata = {
       activeArticleId: this.props.activeArticleId,
@@ -42,7 +42,7 @@ export default class SubcategoryNavigationCard extends React.Component {
         <ListOfComponent
           className="navigation__articles"
           component={ArticleNavigationItem}
-          data={children}
+          items={articleNavigationItems}
           childMetadata={childMetadata}
         />
       </nav>
