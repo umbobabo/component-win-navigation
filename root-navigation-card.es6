@@ -10,7 +10,7 @@ export default class RootNavigationCard extends React.Component {
     return {
       className: PropTypes.string,
       navigationItems: PropTypes.arrayOf(PropTypes.object),
-      focusNavigation: PropTypes.string,
+      focusNavigation: PropTypes.bool,
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,

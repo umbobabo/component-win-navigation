@@ -14,7 +14,9 @@ describe('SubcategoryNavigationCard', () => {
 
   it('renders a React element', () => {
     React.isValidElement(
-      <SubcategoryNavigationCard title={'Here is a title'} />
+      <SubcategoryNavigationCard
+        slug={'here-is-a-title'}
+      />
     ).should.equal(true);
   });
 

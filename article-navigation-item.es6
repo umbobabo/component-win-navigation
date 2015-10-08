@@ -9,10 +9,10 @@ export default class ArticleNavigationItem extends React.Component {
   static get propTypes() {
     return {
       className: PropTypes.string,
-      slug: PropTypes.string,
+      slug: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
-      text: PropTypes.string,
+      text: PropTypes.string.isRequired,
       publishedOn: PropTypes.string,
       activeArticleId: PropTypes.number,
     };

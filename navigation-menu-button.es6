@@ -9,7 +9,7 @@ export default class NavigationMenuButton extends React.Component {
   static get propTypes() {
     return {
       className: PropTypes.string,
-      focusNavigation: PropTypes.string,
+      focusNavigation: PropTypes.bool,
       handleToggleNavigation: PropTypes.func,
     };
   }

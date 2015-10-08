@@ -21,7 +21,10 @@ describe('SubcategoryNavigationItem', () => {
 
   it('renders a React element', () => {
     React.isValidElement(
-      <SubcategoryNavigationItem title={'Here is a title'} />
+      <SubcategoryNavigationItem
+        slug={'here-is-a-title'}
+        title={'Here is a title'}
+      />
     ).should.equal(true);
   });
 

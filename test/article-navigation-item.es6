@@ -12,7 +12,10 @@ describe('ArticleNavigationItem', () => {
 
   it('renders a React element', () => {
     React.isValidElement(
-      <ArticleNavigationItem title={'Here is a title'} />
+      <ArticleNavigationItem
+        slug={'here-is-a-title'}
+        title={'Here is a title'}
+      />
     ).should.equal(true);
   });
 

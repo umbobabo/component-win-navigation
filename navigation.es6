@@ -11,7 +11,27 @@ export default class Navigation extends React.Component {
   static get propTypes() {
     return {
       className: PropTypes.string,
-      navigationItems: PropTypes.arrayOf(PropTypes.object),
+      navigationItems: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          slug: PropTypes.string.isRequired,
+          navigationItems: PropTypes.arrayOf(
+            PropTypes.shape({
+              title: PropTypes.string.isRequired,
+              slug: PropTypes.string.isRequired,
+              navigationItems: PropTypes.arrayOf(
+                PropTypes.shape({
+                  id: PropTypes.number.isRequired,
+                  slug: PropTypes.string.isRequired,
+                  title: PropTypes.string.isRequired,
+                  text: PropTypes.string.isRequired,
+                  publishedOn: PropTypes.string,
+                })
+              )
+            })
+          )
+        })
+      ),
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,
