@@ -2,10 +2,7 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import Icon from '@economist/component-icon';
 
-function navigationOpenUrl(oldFocusNavigation) {
-  /* eslint prefer-template: 0 */
-  return '?navigation=' + !oldFocusNavigation;
-}
+import { navigationOpenUrl } from './urls';
 
 export default class NavigationMenuButton extends React.Component {
 

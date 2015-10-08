@@ -5,10 +5,7 @@ import CategoryNavigationCard from './category-navigation-card';
 
 import scrollMobileBrowserTo from './scroll-mobile-to';
 
-function categoryUrl(category) {
-  /* eslint prefer-template: 0 */
-  return '?navigation=true&category=' + category;
-}
+import { categoryUrl } from './urls';
 
 export default class CategoryNavigationItem extends React.Component {
 
@@ -41,7 +38,7 @@ export default class CategoryNavigationItem extends React.Component {
     // The focus state is toggled.
     const isFocused = Boolean(slug) && slug === focusCategorySlug;
     const newFocus = {
-      focusCategorySlug: !isFocused ? slug : slug + ':focus-off',
+      focusCategorySlug: !isFocused ? slug : `${slug}:focus-off`,
       focusSubcategorySlug: null,
     };
     return (event) => {

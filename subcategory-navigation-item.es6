@@ -5,10 +5,7 @@ import SubcategoryNavigationCard from './subcategory-navigation-card';
 
 import scrollMobileBrowserTo from './scroll-mobile-to';
 
-function subcategoryUrl(category, subcategory) {
-  /* eslint prefer-template: 0 */
-  return '?navigation=true&category=' + category + '&subcategory=' + subcategory;
-}
+import { subcategoryUrl } from './urls';
 
 export default class SubcategoryNavigationItem extends React.Component {
 
@@ -42,7 +39,7 @@ export default class SubcategoryNavigationItem extends React.Component {
     // The focus state is toggled.
     const isFocused = Boolean(slug) && slug === focusSubcategorySlug;
     const newFocus = {
-      focusSubcategorySlug: !isFocused ? slug : slug + ':focus-off',
+      focusSubcategorySlug: !isFocused ? slug : `${slug}:focus-off`,
     };
     return (event) => {
       event.preventDefault();

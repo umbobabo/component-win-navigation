@@ -2,14 +2,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-function articleUrl(id, slug) {
-  const urlParts = [
-    '/article',
-    id,
-    slug,
-  ].filter((val) => val);
-  return urlParts.join('/');
-}
+import { articleUrl } from './urls';
 
 export default class ArticleNavigationItem extends React.Component {
 
