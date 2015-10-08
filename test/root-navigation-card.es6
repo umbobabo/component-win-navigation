@@ -46,7 +46,7 @@ describe('RootNavigationCard', () => {
       };
       renderer.getRenderOutput().should.deep.equal(
         <nav className="navigation__root-card">
-          <h1 className="navigation__header--hidden">Menu</h1>
+          <h1 className="navigation__header navigation__header--hidden">Menu</h1>
           <ListOfComponent
             className="navigation__categories"
             component={CategoryNavigationItem}
@@ -79,7 +79,7 @@ describe('RootNavigationCard', () => {
       };
       renderer.getRenderOutput().should.deep.equal(
         <nav className="navigation__root-card navigation__root-card--focus">
-          <h1 className="navigation__header--hidden">Menu</h1>
+          <h1 className="navigation__header navigation__header--hidden">Menu</h1>
           <ListOfComponent
             className="navigation__categories"
             component={CategoryNavigationItem}
