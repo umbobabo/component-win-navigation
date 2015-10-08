@@ -1,8 +1,4 @@
-/* eslint no-console: 0, max-len: 0 */
-import chai from 'chai';
-import spies from 'chai-spies';
-chai.use(spies);
-
+/* eslint max-len: 0 */
 import React from 'react/addons';
 
 import ArticleNavigationItem from '../article-navigation-item';
@@ -18,38 +14,6 @@ describe('ArticleNavigationItem', () => {
     React.isValidElement(
       <ArticleNavigationItem title={'Here is a title'} />
     ).should.equal(true);
-  });
-
-  xdescribe('validates propTypes', () => {
-    /* eslint init-declarations: 0 */
-
-    let renderer;
-    // We must check console.warn to test validation: http://stackoverflow.com/a/31835256/130566
-    const oldConsoleWarn = console.warn.bind(console);
-    beforeEach(() => {
-      renderer = createRenderer();
-
-      const spy = chai.spy(() => {});
-      console.warn = spy;
-    });
-    afterEach(() => {
-      console.warn = oldConsoleWarn;
-    });
-
-    it('requires an id', () => {
-      renderer.render(<ArticleNavigationItem title={'stub-title'} />, {});
-
-      const message = 'Warning: Failed propType: Required prop `id` was not specified in `ArticleItem`.';
-      console.warn.should.have.been.called.with(message);
-    });
-
-    it('requires a title', () => {
-      renderer.render(<ArticleNavigationItem id={1} />, {});
-
-      const message = 'Warning: Failed propType: Required prop `title` was not specified in `ArticleItem`.';
-      console.warn.should.have.been.called.with(message);
-    });
-
   });
 
   describe('rendering', () => {
