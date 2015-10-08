@@ -27,13 +27,7 @@ export default class CategoryNavigationItem extends React.Component {
     };
   }
 
-  constructor(props) {
-    super(props);
-
-    this.focusToggle = this.focusToggle.bind(this);
-  }
-
-  focusToggle(slug) {
+  focusToggle = (slug) => {
     const { handleFocusChange, focusCategorySlug } = this.props;
     // The focus state is toggled.
     const isFocused = Boolean(slug) && slug === focusCategorySlug;

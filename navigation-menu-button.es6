@@ -14,13 +14,7 @@ export default class NavigationMenuButton extends React.Component {
     };
   }
 
-  constructor(props) {
-    super(props);
-
-    this.toggleNavigation = this.toggleNavigation.bind(this);
-  }
-
-  toggleNavigation() {
+  toggleNavigation = () => {
     const { handleToggleNavigation, focusNavigation } = this.props;
     const newFocus = {
       focusNavigation: !focusNavigation,
