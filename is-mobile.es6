@@ -9,6 +9,10 @@ function getBrowserWidth(scope = {}) {
   return scope.window.innerWidth || scope.document.documentElement.clientWidth || scope.document.body.clientWidth;
 }
 
+/*
+ * This is a mobile-only screen width behavioural breakpoint
+ * to help assign different behaviours to mobile or desktop.
+ */
 export default function isMobileWidth(scope = {}) {
   return getBrowserWidth(scope) <= mobileWidth;
 }
