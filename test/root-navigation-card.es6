@@ -37,12 +37,13 @@ describe('RootNavigationCard', () => {
           activeArticleId={null}
           handleFocusChange={null}
         />, {});
-      const childMetadata = {
+      const sharedProps = {
         focusCategorySlug: null,
         focusSubcategorySlug: null,
         activeCategorySlug: null,
         activeSubcategorySlug: null,
         activeArticleId: null,
+        handleFocusChange: null,
       };
       renderer.getRenderOutput().should.deep.equal(
         <nav className="navigation__root-card">
@@ -51,8 +52,7 @@ describe('RootNavigationCard', () => {
             className="navigation__categories"
             component={CategoryNavigationItem}
             items={[]}
-            childMetadata={childMetadata}
-            handleFocusChange={null}
+            sharedProps={sharedProps}
           />
         </nav>
       );
@@ -70,12 +70,13 @@ describe('RootNavigationCard', () => {
           activeArticleId={null}
           handleFocusChange={null}
         />, {});
-      const childMetadata = {
+      const sharedProps = {
         focusCategorySlug: null,
         focusSubcategorySlug: null,
         activeCategorySlug: null,
         activeSubcategorySlug: null,
         activeArticleId: null,
+        handleFocusChange: null,
       };
       renderer.getRenderOutput().should.deep.equal(
         <nav className="navigation__root-card navigation__root-card--focus">
@@ -84,8 +85,7 @@ describe('RootNavigationCard', () => {
             className="navigation__categories"
             component={CategoryNavigationItem}
             items={[]}
-            childMetadata={childMetadata}
-            handleFocusChange={null}
+            sharedProps={sharedProps}
           />
         </nav>
       );

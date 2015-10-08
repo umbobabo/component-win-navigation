@@ -37,15 +37,15 @@ describe('Navigation', () => {
         />, {});
       const renderOutput = renderer.getRenderOutput();
 
-      /* eslint no-undefined: 0 */
-      const childMetadata = {
+      const stubFocusChange = renderOutput.props.children[0].props.handleFocusChange;
+      const sharedProps = {
         focusCategorySlug: null,
         focusSubcategorySlug: null,
         activeCategorySlug: null,
         activeSubcategorySlug: null,
         activeArticleId: null,
+        handleFocusChange: stubFocusChange,
       };
-      const stubFocusChange = renderOutput.props.children[0].props.handleFocusChange;
       renderOutput.should.deep.equal(
         <nav
           role="navigation"
@@ -55,8 +55,7 @@ describe('Navigation', () => {
             className="navigation__categories"
             component={CategoryNavigationItem}
             items={navigationItems}
-            childMetadata={childMetadata}
-            handleFocusChange={stubFocusChange}
+            sharedProps={sharedProps}
           />
           <div className="navigation__menu-button"></div>
         </nav>

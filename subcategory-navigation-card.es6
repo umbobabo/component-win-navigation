@@ -26,7 +26,7 @@ export default class SubcategoryNavigationCard extends React.Component {
   render() {
     const articleNavigationItems = this.props.navigationItems;
 
-    const childMetadata = {
+    const sharedProps = {
       activeArticleId: this.props.activeArticleId,
     };
 
@@ -43,7 +43,7 @@ export default class SubcategoryNavigationCard extends React.Component {
           className="navigation__articles"
           component={ArticleNavigationItem}
           items={articleNavigationItems}
-          childMetadata={childMetadata}
+          sharedProps={sharedProps}
         />
       </nav>
     );

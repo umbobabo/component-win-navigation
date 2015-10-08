@@ -37,12 +37,13 @@ describe('CategoryNavigationCard', () => {
           activeArticleId={null}
           handleFocusChange={null}
         />, {});
-      const childMetadata = {
+      const sharedProps = {
         focusCategorySlug: null,
         focusSubcategorySlug: null,
         activeCategorySlug: null,
         activeSubcategorySlug: null,
         activeArticleId: null,
+        handleFocusChange: null,
       };
       renderer.getRenderOutput().should.deep.equal(
         <nav className="navigation__category-card">
@@ -50,8 +51,7 @@ describe('CategoryNavigationCard', () => {
             className="navigation__subcategories"
             component={SubcategoryNavigationItem}
             items={[]}
-            childMetadata={childMetadata}
-            handleFocusChange={null}
+            sharedProps={sharedProps}
           />
         </nav>
       );
@@ -69,12 +69,13 @@ describe('CategoryNavigationCard', () => {
           activeArticleId={null}
           handleFocusChange={null}
         />, {});
-      const childMetadata = {
+      const sharedProps = {
         focusCategorySlug: 'make-me-focused',
         focusSubcategorySlug: null,
         activeCategorySlug: null,
         activeSubcategorySlug: null,
         activeArticleId: null,
+        handleFocusChange: null,
       };
       renderer.getRenderOutput().should.deep.equal(
         <nav className="navigation__category-card navigation__category-card--focus">
@@ -82,8 +83,7 @@ describe('CategoryNavigationCard', () => {
             className="navigation__subcategories"
             component={SubcategoryNavigationItem}
             items={[]}
-            childMetadata={childMetadata}
-            handleFocusChange={null}
+            sharedProps={sharedProps}
           />
         </nav>
       );
@@ -101,12 +101,13 @@ describe('CategoryNavigationCard', () => {
           activeArticleId={null}
           handleFocusChange={null}
         />, {});
-      const childMetadata = {
+      const sharedProps = {
         focusCategorySlug: null,
         focusSubcategorySlug: null,
         activeCategorySlug: 'make-me-focused',
         activeSubcategorySlug: null,
         activeArticleId: null,
+        handleFocusChange: null,
       };
       renderer.getRenderOutput().should.deep.equal(
         <nav className="navigation__category-card navigation__category-card--active">
@@ -114,8 +115,7 @@ describe('CategoryNavigationCard', () => {
             className="navigation__subcategories"
             component={SubcategoryNavigationItem}
             items={[]}
-            childMetadata={childMetadata}
-            handleFocusChange={null}
+            sharedProps={sharedProps}
           />
         </nav>
       );

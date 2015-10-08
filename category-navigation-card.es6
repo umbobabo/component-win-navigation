@@ -41,16 +41,15 @@ export default class CategoryNavigationCard extends React.Component {
   }
 
   render() {
-    const handleFocusChange = this.props.handleFocusChange;
-
     const subcategoryNavigationItems = this.props.navigationItems;
 
-    const childMetadata = {
+    const sharedProps = {
       focusCategorySlug: this.props.focusCategorySlug,
       focusSubcategorySlug: this.props.focusSubcategorySlug || this.defaultSubcategorySlug,
       activeCategorySlug: this.props.activeCategorySlug,
       activeSubcategorySlug: this.props.activeSubcategorySlug,
       activeArticleId: this.props.activeArticleId,
+      handleFocusChange: this.props.handleFocusChange,
     };
 
     const { slug, focusCategorySlug, activeCategorySlug } = this.props;
@@ -66,8 +65,7 @@ export default class CategoryNavigationCard extends React.Component {
           className="navigation__subcategories"
           component={SubcategoryNavigationItem}
           items={subcategoryNavigationItems}
-          childMetadata={childMetadata}
-          handleFocusChange={handleFocusChange}
+          sharedProps={sharedProps}
         />
       </nav>
     );

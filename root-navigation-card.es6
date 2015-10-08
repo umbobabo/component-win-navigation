@@ -27,16 +27,15 @@ export default class RootNavigationCard extends React.Component {
   }
 
   render() {
-    const handleFocusChange = this.props.handleFocusChange;
-
     const categoryNavigationItems = this.props.navigationItems;
 
-    const childMetadata = {
+    const sharedProps = {
       focusCategorySlug: this.props.focusCategorySlug,
       focusSubcategorySlug: this.props.focusSubcategorySlug,
       activeCategorySlug: this.props.activeCategorySlug,
       activeSubcategorySlug: this.props.activeSubcategorySlug,
       activeArticleId: this.props.activeArticleId,
+      handleFocusChange: this.props.handleFocusChange,
     };
 
     const isFocused = this.props.focusNavigation;
@@ -50,8 +49,7 @@ export default class RootNavigationCard extends React.Component {
           className="navigation__categories"
           component={CategoryNavigationItem}
           items={categoryNavigationItems}
-          childMetadata={childMetadata}
-          handleFocusChange={handleFocusChange}
+          sharedProps={sharedProps}
         />
       </nav>
     );

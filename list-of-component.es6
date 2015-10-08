@@ -12,28 +12,25 @@ export default class ListOfComponent extends React.Component {
       className: PropTypes.string,
       items: PropTypes.arrayOf(PropTypes.object),
       component: isPropTypeComponent,
-      childMetadata: PropTypes.object,
-      handleFocusChange: PropTypes.func,
+      sharedProps: PropTypes.object,
     };
   }
 
   static get defaultProps() {
     return {
       items: [],
-      childMetadata: {},
+      sharedProps: {},
     };
   }
 
   renderChildComponent = (object, key) => {
     const ChildComponent = this.props.component;
-    const childMetadata = this.props.childMetadata || {};
-    const handleFocusChange = this.props.handleFocusChange;
+    const sharedProps = this.props.sharedProps || {};
     return (
       <ChildComponent
         key={key}
         {...object}
-        {...childMetadata}
-        handleFocusChange={handleFocusChange}
+        {...sharedProps}
       />
     );
   }

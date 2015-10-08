@@ -37,7 +37,7 @@ describe('SubcategoryNavigationCard', () => {
           activeArticleId={null}
           handleFocusChange={null}
         />, {});
-      const childMetadata = {
+      const sharedProps = {
         activeArticleId: null,
       };
       renderer.getRenderOutput().should.deep.equal(
@@ -46,7 +46,7 @@ describe('SubcategoryNavigationCard', () => {
             className="navigation__articles"
             component={ArticleNavigationItem}
             items={[]}
-            childMetadata={childMetadata}
+            sharedProps={sharedProps}
           />
         </nav>
       );
@@ -64,7 +64,7 @@ describe('SubcategoryNavigationCard', () => {
           activeArticleId={null}
           handleFocusChange={null}
         />, {});
-      const childMetadata = {
+      const sharedProps = {
         activeArticleId: null,
       };
       renderer.getRenderOutput().should.deep.equal(
@@ -73,7 +73,7 @@ describe('SubcategoryNavigationCard', () => {
             className="navigation__articles"
             component={ArticleNavigationItem}
             items={[]}
-            childMetadata={childMetadata}
+            sharedProps={sharedProps}
           />
         </nav>
       );
@@ -91,7 +91,7 @@ describe('SubcategoryNavigationCard', () => {
           activeArticleId={null}
           handleFocusChange={null}
         />, {});
-      const childMetadata = {
+      const sharedProps = {
         activeArticleId: null,
       };
       renderer.getRenderOutput().should.deep.equal(
@@ -100,7 +100,7 @@ describe('SubcategoryNavigationCard', () => {
             className="navigation__articles"
             component={ArticleNavigationItem}
             items={[]}
-            childMetadata={childMetadata}
+            sharedProps={sharedProps}
           />
         </nav>
       );
