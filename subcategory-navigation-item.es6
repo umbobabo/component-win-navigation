@@ -28,14 +28,10 @@ export default class SubcategoryNavigationItem extends React.Component {
     };
   }
 
-  focusToggle = (slug) => {
+  getFocusToggler = (slug) => {
     const { handleFocusChange, focusSubcategorySlug } = this.props;
-    // The focus state is toggled.
-    const isFocused = Boolean(slug) && slug === focusSubcategorySlug;
-    const newFocus = {
-      focusSubcategorySlug: !isFocused ? slug : `${slug}:focus-off`,
-    };
-    return (event) => {
+
+    function sendFocusStateToParent(newFocus, event) {
       event.preventDefault();
       if (handleFocusChange) {
         handleFocusChange(newFocus, () => {
@@ -43,7 +39,22 @@ export default class SubcategoryNavigationItem extends React.Component {
           scrollMobileBrowserTo(slugClass, global);
         });
       }
-    };
+    }
+
+    function focus(event) {
+      sendFocusStateToParent({
+        focusSubcategorySlug: slug,
+      }, event);
+    }
+
+    function unfocus(event) {
+      sendFocusStateToParent({
+        focusSubcategorySlug: `${slug}:focus-off`,
+      }, event);
+    }
+
+    const isFocused = Boolean(slug) && slug === focusSubcategorySlug;
+    return isFocused ? unfocus : focus;
   }
 
   render() {
@@ -58,7 +69,7 @@ export default class SubcategoryNavigationItem extends React.Component {
     return (
       <div className={classnames(this.props.className, 'navigation__subcategory', slugClass)}>
         <h3 className={classnames('navigation__subcategory-title', titleClasses)}>
-          <a href={subcategoryUrl(focusCategorySlug, slug)} onClick={this.focusToggle(slug)}>{title}</a>
+          <a href={subcategoryUrl(focusCategorySlug, slug)} onClick={this.getFocusToggler(slug)}>{title}</a>
         </h3>
         {isFocused ? <SubcategoryNavigationCard {...this.props} /> : ''}
       </div>

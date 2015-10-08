@@ -14,19 +14,34 @@ export default class NavigationMenuButton extends React.Component {
     };
   }
 
-  toggleNavigation = () => {
+  getFocusToggler = (slug) => {
     const { handleToggleNavigation, focusNavigation } = this.props;
-    const newFocus = {
-      focusNavigation: !focusNavigation,
-      focusCategorySlug: null,
-      focusSubcategorySlug: null,
-    };
-    return (event) => {
+
+    function sendFocusStateToParent(newFocus, event) {
       event.preventDefault();
       if (handleToggleNavigation) {
         handleToggleNavigation(newFocus);
       }
-    };
+    }
+
+    function focus(event) {
+      sendFocusStateToParent({
+        focusNavigation: true,
+        focusCategorySlug: null,
+        focusSubcategorySlug: null,
+      }, event);
+    }
+
+    function unfocus(event) {
+      sendFocusStateToParent({
+        focusNavigation: false,
+        focusCategorySlug: null,
+        focusSubcategorySlug: null,
+      }, event);
+    }
+
+    const isFocused = focusNavigation;
+    return isFocused ? unfocus : focus;
   }
 
   render() {
@@ -38,7 +53,7 @@ export default class NavigationMenuButton extends React.Component {
     return (
       <a
         href={navigationOpenUrl(focusNavigation)}
-        onClick={this.toggleNavigation()}
+        onClick={this.getFocusToggler()}
         className="navigation__menu-button-wrapper-link"
       >
         <div className={classnames(this.props.className, 'navigation__menu-button', menuButtonClasses)}>
