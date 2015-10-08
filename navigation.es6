@@ -26,20 +26,13 @@ export default class Navigation extends React.Component {
     };
   }
 
-  constructor(props) {
-    super(props);
-
-    this.handleFocusChange = this.handleFocusChange.bind(this);
-    this.handleToggleNavigation = this.handleToggleNavigation.bind(this);
-
-    this.state = {
-      focusNavigation: !isMobileWidth(global),
-      focusCategorySlug: null,
-      focusSubcategorySlug: null,
-      activeCategorySlug: null,
-      activeSubcategorySlug: null,
-      activeArticleId: null,
-    };
+  state = {
+    focusNavigation: !isMobileWidth(global),
+    focusCategorySlug: null,
+    focusSubcategorySlug: null,
+    activeCategorySlug: null,
+    activeSubcategorySlug: null,
+    activeArticleId: null,
   }
 
   componentWillMount() {
@@ -52,18 +45,18 @@ export default class Navigation extends React.Component {
     });
   }
 
-  resetFocus() {
+  resetFocus = () => {
     this.setState({
       focusCategorySlug: null,
       focusSubcategorySlug: null,
     });
   }
 
-  handleFocusChange(focusChange, afterNewStateRenderedCallback = () => {}) {
+  handleFocusChange = (focusChange, afterNewStateRenderedCallback = () => {}) => {
     this.setState(focusChange, afterNewStateRenderedCallback);
   }
 
-  handleToggleNavigation(focusChange, afterNewStateRenderedCallback = () => {}) {
+  handleToggleNavigation = (focusChange, afterNewStateRenderedCallback = () => {}) => {
     this.setState(focusChange, afterNewStateRenderedCallback);
   }
 

@@ -24,13 +24,7 @@ export default class ListOfComponent extends React.Component {
     };
   }
 
-  constructor(props) {
-    super(props);
-
-    this.renderChildComponent = this.renderChildComponent.bind(this);
-  }
-
-  renderChildComponent(object, key) {
+  renderChildComponent = (object, key) => {
     const ChildComponent = this.props.component;
     const childMetadata = this.props.childMetadata || {};
     const handleFocusChange = this.props.handleFocusChange;
