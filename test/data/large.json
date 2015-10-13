@@ -1,0 +1,823 @@
+[
+  {
+    "title": "Leaders",
+    "slug": "leaders",
+    "navigationItems": [
+      {
+        "title": "Leaders",
+        "slug": "leaders",
+        "navigationItems": [
+          {
+            "id": 1,
+            "title": "Who should lead the world",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 2,
+            "title": "Into Africa",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 3,
+            "title": "Europe renegotiated",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 4,
+            "title": "The feminisation of business",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 5,
+            "title": "All change for the world economy",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 6,
+            "title": "Faster, higher, stronger: how to succeed at the Olympics",
+            "text": "",
+            "slug": "",
+            "publishedOn": "2015-10-25T10:39:31.712Z"
+          },
+          {
+            "id": 7,
+            "title": "Tech's year of the unicorn",
+            "text": "",
+            "slug": "",
+            "publishedOn": "2015-10-25T10:39:31.712Z"
+          },
+          {
+            "id": 8,
+            "title": "What the UN drugs summit should decide",
+            "text": "",
+            "slug": "",
+            "publishedOn": "2015-10-25T10:39:31.712Z"
+          },
+          {
+            "id": 9,
+            "title": "Big is beautiful",
+            "text": "",
+            "slug": "",
+            "publishedOn": "2015-09-25T10:39:31.712Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "World",
+    "slug": "world",
+    "navigationItems": [
+      {
+        "title": "Britain",
+        "slug": "britain",
+        "navigationItems": [
+          {
+            "id": 10,
+            "title": "Coalition, the Sequel",
+            "text": "Hung Parliament",
+            "slug": ""
+          },
+          {
+            "id": 11,
+            "title": "After the referendum",
+            "text": "What happens next for Scotland",
+            "slug": ""
+          },
+          {
+            "id": 12,
+            "title": "Italian lessons",
+            "text": "Friendly advice for 2015",
+            "slug": ""
+          },
+          {
+            "id": 13,
+            "title": "Land Rover Defender, RIP",
+            "text": "The end of the line for the boneshaker",
+            "slug": ""
+          },
+          {
+            "id": 14,
+            "title": "Plane thinking",
+            "text": "Where to fit London's new airport",
+            "slug": ""
+          },
+          {
+            "id": 15,
+            "title": "Keeping the light on",
+            "text": "Britain will avoid a blackout-Just",
+            "slug": ""
+          },
+          {
+            "id": 16,
+            "title": "Estente frugale",
+            "text": "Francois Heisbourg on Britain's relations with France",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "title": "Europe",
+        "slug": "europe",
+        "navigationItems": [
+          {
+            "id": 17,
+            "title": "Leaders and laggards",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 18,
+            "title": "Russia's squeeze",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 19,
+            "title": "The race to succeed Merkel",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 20,
+            "title": "Waiting for Sarko",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 21,
+            "title": "Italy's renaissance",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 22,
+            "title": "Humboldt Forum",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 23,
+            "title": "A century of daylight savings",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 24,
+            "title": "The coalition of the scared: a Nordic mini-Nato",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 25,
+            "title": "Ireland remembers: the Easter rising and the Somme",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 26,
+            "title": "Europe's southern challenge",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "title": "United States",
+        "slug": "united-states",
+        "navigationItems": [
+          {
+            "id": 27,
+            "title": "Clinton v Bush, again",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 28,
+            "title": "Lame duck quacking: Barack Obama's final year",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 29,
+            "title": "The economy: living with higher interest rates",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 30,
+            "title": "The next culture wars",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 31,
+            "title": "At last, the Museum of African-American history",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 32,
+            "title": "The Super Bowl at 50",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "title": "The Americas",
+        "slug": "the-americas",
+        "navigationItems": [
+          {
+            "id": 33,
+            "title": "Rio goes for gold",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 34,
+            "title": "A regional-round up",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 35,
+            "title": "The new Panama canal",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 36,
+            "title": "The agenda for post-eletion Canada",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 37,
+            "title": "When the world comes to Rio",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "title": "Asia",
+        "slug": "asia",
+        "navigationItems": [
+          {
+            "id": 38,
+            "title": "Responding to China's rise",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 39,
+            "title": "All (well, some) change in Vietnam and Laos",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 40,
+            "title": "India hosts Cricket's T20 World Cup",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 41,
+            "title": "Controversy over Japan's constitution",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 42,
+            "title": "Japan v China: digging at the Marianas trench",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 43,
+            "title": "Australia heads for an early election",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 44,
+            "title": "The reform raj",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 45,
+            "title": "Educating Asia",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "title": "China",
+        "slug": "china",
+        "navigationItems": [
+          {
+            "id": 46,
+            "title": "Questions of clout",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 47,
+            "title": "The new China-Russia rail link",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 48,
+            "title": "Slowly does it",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 49,
+            "title": "The new economic model",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "title": "Middle East",
+        "slug": "middle-east",
+        "navigationItems": [
+          {
+            "id": 50,
+            "title": "Saudia Arabia v Iran",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 51,
+            "title": "The Gulf moment",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 52,
+            "title": "Israel's democratic deficit",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 53,
+            "title": "Philanthropy's impact",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "title": "Africa",
+        "slug": "africa",
+        "navigationItems": [
+          {
+            "id": 54,
+            "title": "The rise of the African middle class",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 55,
+            "title": "Fake rhino horns",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 56,
+            "title": "A sub-saharan tour",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 57,
+            "title": "African democratic renewal",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "title": "International",
+        "slug": "international",
+        "navigationItems": [
+          {
+            "id": 58,
+            "title": "Roman Catholicism's holy year",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 59,
+            "title": "The Orthodox summit",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 60,
+            "title": "The power game: big men v smooth",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 61,
+            "title": "Right and wrong",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 62,
+            "title": "The future of crime",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Business & Finance",
+    "slug": "business-finance",
+    "navigationItems": [
+      {
+        "title": "Business",
+        "slug": "business",
+        "navigationItems": [
+          {
+            "id": 63,
+            "title": "Follow the corporate cash",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 64,
+            "title": "Prepare for VR and AR",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 65,
+            "title": "The onslaugh of tech regulation",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 66,
+            "title": "A web revolution from below",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 67,
+            "title": "The rise of the blue economy",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 68,
+            "title": "The China cost and its consequences",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 69,
+            "title": "Keeping it in the family?",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 70,
+            "title": "Business fads of 2016",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 71,
+            "title": "The corporate scandals of 2016",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 72,
+            "title": "The anti-drone business",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 73,
+            "title": "End of an open era for software",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 74,
+            "title": "Tesla goes mass-market",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 75,
+            "title": "Ranking the virtuous companies",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 76,
+            "title": "A matter of trust",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 77,
+            "title": "In praise of the disrupters",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "title": "Finance and Economics",
+        "slug": "finance-and-economics",
+        "navigationItems": [
+          {
+            "id": 78,
+            "title": "Wherever next? The direction of global markets",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 79,
+            "title": "The smart money in 2016",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 80,
+            "title": "The economist of 2016",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 81,
+            "title": "India's new banks",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 82,
+            "title": "Fintech's coming inroads",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 83,
+            "title": "City slicker",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 84,
+            "title": "FDI bounces back",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 85,
+            "title": "Lessons for 2016",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 86,
+            "title": "Blockchain and banks",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "title": "The world in numbers",
+        "slug": "the-world-in-numbers",
+        "navigationItems": [
+
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Science & Tech",
+    "slug": "science-tech",
+    "navigationItems": [
+      {
+        "title": "Science and Technology",
+        "slug": "science-and-technology",
+        "navigationItems": [
+          {
+            "id": 87,
+            "title": "Prescription for 2016: personal diets",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 88,
+            "title": "Hello, Jupiter",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 89,
+            "title": "High Loon",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 90,
+            "title": "The great plastic clear-up",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 91,
+            "title": "Where man's best friends came from",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 92,
+            "title": "The war on cancer",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 93,
+            "title": "The web at 25",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Culture",
+    "slug": "culture",
+    "navigationItems": [
+      {
+        "title": "Culture",
+        "slug": "culture",
+        "navigationItems": [
+          {
+            "id": 94,
+            "title": "India on display",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 95,
+            "title": "The Naqba museum opens",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 96,
+            "title": "All about Goya",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 97,
+            "title": "Happy birthday, Heronymous",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "title": "Obituary",
+        "slug": "",
+        "navigationItems": [
+          {
+            "id": 98,
+            "title": "SAT words",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Specials",
+    "slug": "specials",
+    "navigationItems": [
+      {
+        "title": "The Predictors",
+        "slug": "the-predictors",
+        "navigationItems": [
+          {
+            "id": 99,
+            "title": "What the superforecasters say",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 100,
+            "title": "What the polls say",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 101,
+            "title": "What the astrologers say",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 102,
+            "title": "Stuart Candy (futurist)",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 103,
+            "title": "Neri Oxman (architect of the future at MIT Media Labs)",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 104,
+            "title": "Rory Hyde (curator of exhibition of the future, V&A)",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 105,
+            "title": "Margaret Atwood (writer)",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 106,
+            "title": "Faith Popcorn (trends forecaster)",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 107,
+            "title": "Jeremy Bentham (head of Shell scenarios)",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 108,
+            "title": "Bill Frey (demographer)",
+            "text": "",
+            "slug": ""
+          },
+          {
+            "id": 109,
+            "title": "Hal Varian (of Google)",
+            "text": "",
+            "slug": ""
+          }
+        ]
+      },
+      {
+        "title": "Archive",
+        "navigationItems": [
+
+        ]
+      },
+      {
+        "title": "KAL",
+        "navigationItems": [
+
+        ]
+      },
+      {
+        "title": "Video",
+        "navigationItems": [
+
+        ]
+      },
+      {
+        "title": "Cartoon",
+        "navigationItems": [
+
+        ]
+      }
+    ]
+  }
+]
