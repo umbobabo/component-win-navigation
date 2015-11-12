@@ -47,7 +47,7 @@ export default class Navigation extends React.Component {
   }
 
   state = {
-    focusNavigation: !isMobileWidth(global),
+    focusNavigation: isMobileWidth(global),
     focusCategorySlug: null,
     focusSubcategorySlug: null,
     activeCategorySlug: null,
