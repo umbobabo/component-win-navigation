@@ -187,6 +187,11 @@ ul, li {
    display: block;
 }
 
+.navigation__article-published-state--published {
+  opacity: 0;
+}
+
+
 .navigation__article-text {
    margin-bottom: 8px;
    font-size: 14px;

@@ -47,7 +47,7 @@ export default class Navigation extends React.Component {
   }
 
   state = {
-    focusNavigation: false,
+    focusNavigation: !isMobileWidth(global),
     focusCategorySlug: null,
     focusSubcategorySlug: null,
     activeCategorySlug: null,
@@ -73,6 +73,11 @@ export default class Navigation extends React.Component {
   }
 
   handleFocusChange = (focusChange, afterNewStateRenderedCallback = () => {}) => {
+    if (focusChange === false) {
+      this.resetFocus();
+      return;
+    }
+
     this.setState(focusChange, afterNewStateRenderedCallback);
   }
 
