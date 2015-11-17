@@ -3,8 +3,6 @@ import classnames from 'classnames';
 
 import CategoryNavigationCard from './category-navigation-card';
 
-import scrollMobileBrowserTo from './scroll-mobile-to';
-
 import { categoryUrl } from './urls';
 
 export default class CategoryNavigationItem extends React.Component {
@@ -33,10 +31,7 @@ export default class CategoryNavigationItem extends React.Component {
     function sendFocusStateToParent(newFocus, event) {
       event.preventDefault();
       if (handleFocusChange) {
-        handleFocusChange(newFocus, () => {
-          const slugClass = slug && [ 'navigation__category', slug ].filter((val) => val).join('-');
-          scrollMobileBrowserTo(slugClass, global);
-        });
+        handleFocusChange(newFocus);
       }
     }
 

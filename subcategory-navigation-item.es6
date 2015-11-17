@@ -3,8 +3,6 @@ import classnames from 'classnames';
 
 import SubcategoryNavigationCard from './subcategory-navigation-card';
 
-import scrollMobileBrowserTo from './scroll-mobile-to';
-
 import { subcategoryUrl } from './urls';
 
 export default class SubcategoryNavigationItem extends React.Component {
@@ -34,10 +32,7 @@ export default class SubcategoryNavigationItem extends React.Component {
     function sendFocusStateToParent(newFocus, event) {
       event.preventDefault();
       if (handleFocusChange) {
-        handleFocusChange(newFocus, () => {
-          const slugClass = slug && [ 'navigation__subcategory', slug ].filter((val) => val).join('-');
-          scrollMobileBrowserTo(slugClass, global);
-        });
+        handleFocusChange(newFocus);
       }
     }
 
