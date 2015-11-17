@@ -15,7 +15,13 @@ export default class ArticleNavigationItem extends React.Component {
       text: PropTypes.string.isRequired,
       publishedOn: PropTypes.string,
       activeArticleId: PropTypes.number,
+      handleFocusChange: PropTypes.func,
     };
+  }
+
+  handleClick = (event) => {
+    const { handleFocusChange } = this.props;
+    handleFocusChange(false);
   }
 
   render() {
@@ -48,7 +54,7 @@ export default class ArticleNavigationItem extends React.Component {
     }
 
     return (
-      <a href={articleUrl(id, slug)}>
+      <a href={articleUrl(id, slug)} onClick={this.handleClick}>
         {body}
       </a>
     );

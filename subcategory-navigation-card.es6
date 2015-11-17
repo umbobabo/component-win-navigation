@@ -14,6 +14,7 @@ export default class SubcategoryNavigationCard extends React.Component {
       focusSubcategorySlug: PropTypes.string,
       activeSubcategorySlug: PropTypes.string,
       activeArticleId: PropTypes.number,
+      handleFocusChange: PropTypes.func,
     };
   }
 
@@ -28,6 +29,7 @@ export default class SubcategoryNavigationCard extends React.Component {
 
     const sharedProps = {
       activeArticleId: this.props.activeArticleId,
+      handleFocusChange: this.props.handleFocusChange,
     };
 
     const { slug, focusSubcategorySlug, activeSubcategorySlug } = this.props;

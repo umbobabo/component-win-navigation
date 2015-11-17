@@ -73,6 +73,11 @@ export default class Navigation extends React.Component {
   }
 
   handleFocusChange = (focusChange, afterNewStateRenderedCallback = () => {}) => {
+    if (focusChange === false) {
+      this.resetFocus();
+      return;
+    }
+
     this.setState(focusChange, afterNewStateRenderedCallback);
   }
 
