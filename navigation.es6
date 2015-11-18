@@ -67,6 +67,7 @@ export default class Navigation extends React.Component {
 
   resetFocus = () => {
     this.setState({
+      focusNavigation: false,
       focusCategorySlug: null,
       focusSubcategorySlug: null,
     });
