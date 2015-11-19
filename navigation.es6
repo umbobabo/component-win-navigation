@@ -32,6 +32,7 @@ class Navigation extends React.Component {
           )
         })
       ),
+      focusNavigation: PropTypes.bool,
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,
@@ -57,6 +58,7 @@ class Navigation extends React.Component {
 
   componentWillMount() {
     this.setState({
+      focusNavigation: this.props.focusNavigation || false,
       focusCategorySlug: this.props.focusCategorySlug,
       focusSubcategorySlug: this.props.focusSubcategorySlug,
       activeCategorySlug: this.props.activeCategorySlug,
