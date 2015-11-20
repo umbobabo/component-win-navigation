@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-import isMobileWidth from './is-mobile';
+import listensToClickOutside from 'react-click-outside';
 
 import RootNavigationCard from './root-navigation-card';
 import NavigationMenuButton from './navigation-menu-button';
 
-export default class Navigation extends React.Component {
+class Navigation extends React.Component {
 
   static get propTypes() {
     return {
@@ -32,6 +32,7 @@ export default class Navigation extends React.Component {
           )
         })
       ),
+      focusNavigation: PropTypes.bool,
       focusCategorySlug: PropTypes.string,
       focusSubcategorySlug: PropTypes.string,
       activeCategorySlug: PropTypes.string,
@@ -57,6 +58,7 @@ export default class Navigation extends React.Component {
 
   componentWillMount() {
     this.setState({
+      focusNavigation: this.props.focusNavigation || false,
       focusCategorySlug: this.props.focusCategorySlug,
       focusSubcategorySlug: this.props.focusSubcategorySlug,
       activeCategorySlug: this.props.activeCategorySlug,
@@ -71,6 +73,10 @@ export default class Navigation extends React.Component {
       focusCategorySlug: null,
       focusSubcategorySlug: null,
     });
+  }
+
+  handleClickOutside() {
+    this.resetFocus();
   }
 
   handleFocusChange = (focusChange, afterNewStateRenderedCallback = () => {}) => {
@@ -108,3 +114,5 @@ export default class Navigation extends React.Component {
   }
 
 }
+
+export default listensToClickOutside(Navigation);
