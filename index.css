@@ -83,7 +83,7 @@ ul, li {
 
 .navigation__category-title {
   background-color: var(--color-econ-red);
-  padding: 0 6%;
+  padding: 0 0.3rem;
   margin: 0;
   color: var(--color-white);
   white-space: nowrap;
