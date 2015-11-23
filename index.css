@@ -13,9 +13,8 @@
   --color-published-blue: #367FB6;
 
   --arrow-width: 16px;
-  --card-height: 435px;
+  --card-height: 470px;
 };
-
 
 ul, li {
    padding: 0;
@@ -41,7 +40,10 @@ ul, li {
    display: none;
 }
 
-.navigation
+
+/*keep for now might need this*/
+
+/*.navigation
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -56,7 +58,7 @@ ul, li {
 ::-webkit-scrollbar-thumb {
     border-radius: 0;
     background-color: var(--color-mid-grey);
-}
+}*/
 
 .navigation__categories {
    display: flex;
@@ -81,7 +83,7 @@ ul, li {
 
 .navigation__category-title {
   background-color: var(--color-econ-red);
-  padding: 0 6%;
+  padding: 0 0.3rem;
   margin: 0;
   color: var(--color-white);
   white-space: nowrap;
@@ -160,7 +162,7 @@ ul, li {
    position: absolute;
    overflow: hidden;
    left: 0;
-   width: 100%;
+   width: calc(100% + 170px);
    height: var(--card-height);
    background-color: var(--color-white);
    border-bottom: 1px solid var(--color-econ-red);
@@ -237,8 +239,8 @@ ul, li {
    width: 70%;
    max-height: 100%;
    text-align: left;
-   overflow-x: hidden;
-   overflow-y: scroll;
+   /*overflow-x: hidden;
+   overflow-y: scroll;*/
    z-index: 100;
 }
 
@@ -263,12 +265,23 @@ ul, li {
    }
 }
 
+@media screen and (max-width: 780px) {
+  .navigation__category-card  {
+    width: calc(100% + 116px);
+  }
+}
+
+
 @media screen and (max-width: 640px) {
 
+.navigation__categories li:last-child {
+  padding-bottom: 20px;
+}
+
 .navigation__root-card {
-  max-height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  max-height: calc(100vh - 60px);
 }
 
 .navigation__category-title {
@@ -342,9 +355,10 @@ ul, li {
 .navigation {
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid var(--color-econ-red);
   display: block;
   background: white;
+  box-shadow: 0px 12px 22px -8px rgba(0,0,0,0.75);
+  border-bottom: 0;
 }
 
 .navigation__category-card  {
