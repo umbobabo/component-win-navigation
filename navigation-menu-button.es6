@@ -61,6 +61,7 @@ export default class NavigationMenuButton extends React.Component {
             icon={focusNavigation ? 'close' : 'hamburger'}
             color="white"
             background="transparent"
+            size="46px"
           />
         </div>
       </a>
