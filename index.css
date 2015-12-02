@@ -157,7 +157,7 @@ ul, li {
    position: absolute;
    overflow: hidden;
    left: 0;
-   width: calc(100% + 170px);
+   width: calc(100% + 152px);
    height: var(--card-height);
    background-color: var(--color-white);
    border-bottom: 1px solid var(--color-econ-red);
@@ -262,7 +262,7 @@ ul, li {
 
 @media screen and (max-width: 780px) {
   .navigation__category-card  {
-    width: calc(100% + 116px);
+    width: calc(100% + 73px);
   }
 }
 
