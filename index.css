@@ -11,7 +11,6 @@
   --color-econ-red: #E3120B;
   --color-econ-red-hover: #a6130e;
   --color-published-blue: #367FB6;
-
   --arrow-width: 16px;
   --card-height: 470px;
 };
@@ -71,6 +70,7 @@ ul, li {
 
 .navigation__categories .list__item {
   display: flex;
+  flex-grow: 1;
 }
 
 .navigation__root-card {
@@ -79,28 +79,23 @@ ul, li {
 
 .navigation__category {
    width: 100%;
+   margin: 0 auto;
 }
 
 .navigation__category-title {
   background-color: var(--color-econ-red);
-  padding: 0 0.3rem;
   margin: 0;
   color: var(--color-white);
   white-space: nowrap;
   text-transform: uppercase;
   text-align: center;
-  width: 100%;
-  height: 65px;
-}
-
-.navigation__categories .list__item:last-of-type {
-   margin-right: 1%;
+  height: 40px;
 }
 
 .navigation__category-title a,
 .navigation__category-title--focus a {
    font-family: "Neutra2Display";
-   line-height: 65px;
+   line-height: 42px;
    font-size: 18px;
    color: var(--color-white);
    text-decoration: none;
@@ -162,7 +157,7 @@ ul, li {
    position: absolute;
    overflow: hidden;
    left: 0;
-   width: calc(100% + 170px);
+   width: calc(100% + 152px);
    height: var(--card-height);
    background-color: var(--color-white);
    border-bottom: 1px solid var(--color-econ-red);
@@ -267,7 +262,7 @@ ul, li {
 
 @media screen and (max-width: 780px) {
   .navigation__category-card  {
-    width: calc(100% + 116px);
+    width: calc(100% + 73px);
   }
 }
 
@@ -293,7 +288,7 @@ ul, li {
 }
 
 .Icon-hamburger, .Icon-close {
-   padding: 4px;
+   padding: 1px;
 }
 
 .navigation__menu-button--open .Icon-hamburger,
@@ -440,10 +435,10 @@ ul, li {
 
 .navigation__menu-button {
    position: absolute;
-   width: 67px;
-   height: 67px;
+   width: 48px;
+   height: 48px;
    background-color: var(--color-econ-red);
-   top: -67px;
+   top: -48px;
    right: 0;
    display: block;
 }
