@@ -39,26 +39,6 @@ ul, li {
    display: none;
 }
 
-
-/*keep for now might need this*/
-
-/*.navigation
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-.navigation
-::-webkit-scrollbar-track {
-    border-radius: 0;
-    background-color: transparent;
-}
-
-.navigation
-::-webkit-scrollbar-thumb {
-    border-radius: 0;
-    background-color: var(--color-mid-grey);
-}*/
-
 .navigation__categories {
    display: flex;
    flex: 1;
@@ -234,8 +214,6 @@ ul, li {
    width: 70%;
    max-height: 100%;
    text-align: left;
-   /*overflow-x: hidden;
-   overflow-y: scroll;*/
    z-index: 100;
 }
 
@@ -435,10 +413,10 @@ ul, li {
 
 .navigation__menu-button {
    position: absolute;
-   width: 48px;
-   height: 48px;
+   width: 49px;
+   height: 49px;
    background-color: var(--color-econ-red);
-   top: -48px;
+   top: -50px; /* takes into account 1px border */
    right: 0;
    display: block;
 }

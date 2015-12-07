@@ -1,5 +1,4 @@
 import React from 'react/addons';
-
 import NavigationMenuButton from '../navigation-menu-button';
 import Icon from '@economist/component-icon';
 
@@ -28,7 +27,7 @@ describe('NavigationMenuButton', () => {
       renderer.render(
         <NavigationMenuButton
           focusNavigation
-          handleToggleNavigation={() => {}}
+          handleToggleNavigation={() => {}} // eslint-disable-line
         />, {});
       const renderOutput = renderer.getRenderOutput();
       const onClickStub = renderOutput.props.onClick;
@@ -43,6 +42,7 @@ describe('NavigationMenuButton', () => {
               icon="close"
               color="white"
               background="transparent"
+              size="49px"
             />
           </div>
         </a>
@@ -52,7 +52,7 @@ describe('NavigationMenuButton', () => {
     it('renders closed', () => {
       renderer.render(
         <NavigationMenuButton
-          handleToggleNavigation={() => {}}
+          handleToggleNavigation={() => {}} // eslint-disable-line
         />, {});
       const renderOutput = renderer.getRenderOutput();
       const onClickStub = renderOutput.props.onClick;
@@ -67,12 +67,11 @@ describe('NavigationMenuButton', () => {
               icon="hamburger"
               color="white"
               background="transparent"
+              size="49px"
             />
           </div>
         </a>
       );
     });
-
   });
-
 });

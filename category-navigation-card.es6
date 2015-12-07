@@ -1,13 +1,10 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-
 import isMobileWidth from './is-mobile';
-
 import ListOfComponent from './list-of-component';
 import SubcategoryNavigationItem from './subcategory-navigation-item';
 
 export default class CategoryNavigationCard extends React.Component {
-
   static get propTypes() {
     return {
       className: PropTypes.string,
@@ -70,5 +67,4 @@ export default class CategoryNavigationCard extends React.Component {
       </nav>
     );
   }
-
 }

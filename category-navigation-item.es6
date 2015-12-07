@@ -1,12 +1,9 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-
 import CategoryNavigationCard from './category-navigation-card';
-
 import { categoryUrl } from './urls';
 
 export default class CategoryNavigationItem extends React.Component {
-
   static get propTypes() {
     return {
       className: PropTypes.string,
@@ -25,9 +22,13 @@ export default class CategoryNavigationItem extends React.Component {
     };
   }
 
-  getFocusToggler = (slug) => {
-    const { handleFocusChange, focusCategorySlug } = this.props;
+  constructor() {
+    super(...arguments);
+    this.getFocusToggler = this.getFocusToggler.bind(this);
+  }
 
+  getFocusToggler(slug) {
+    const { handleFocusChange, focusCategorySlug } = this.props;
     function sendFocusStateToParent(newFocus, event) {
       event.preventDefault();
       if (handleFocusChange) {

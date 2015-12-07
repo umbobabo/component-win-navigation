@@ -1,12 +1,9 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-
 import SubcategoryNavigationCard from './subcategory-navigation-card';
-
 import { subcategoryUrl } from './urls';
 
 export default class SubcategoryNavigationItem extends React.Component {
-
   static get propTypes() {
     return {
       className: PropTypes.string,
@@ -26,9 +23,13 @@ export default class SubcategoryNavigationItem extends React.Component {
     };
   }
 
-  getFocusToggler = (slug) => {
-    const { handleFocusChange, focusSubcategorySlug } = this.props;
+  constructor() {
+    super(...arguments);
+    this.getFocusToggler = this.getFocusToggler.bind(this);
+  }
 
+  getFocusToggler(slug) {
+    const { handleFocusChange, focusSubcategorySlug } = this.props;
     function sendFocusStateToParent(newFocus, event) {
       event.preventDefault();
       if (handleFocusChange) {
@@ -70,5 +71,4 @@ export default class SubcategoryNavigationItem extends React.Component {
       </div>
     );
   }
-
 }

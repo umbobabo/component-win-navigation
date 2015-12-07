@@ -1,13 +1,10 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-
 import listensToClickOutside from 'react-click-outside';
-
 import RootNavigationCard from './root-navigation-card';
 import NavigationMenuButton from './navigation-menu-button';
 
 class Navigation extends React.Component {
-
   static get propTypes() {
     return {
       className: PropTypes.string,
@@ -27,9 +24,9 @@ class Navigation extends React.Component {
                   text: PropTypes.string.isRequired,
                   publishedOn: PropTypes.string,
                 })
-              )
+              ),
             })
-          )
+          ),
         })
       ),
       focusNavigation: PropTypes.bool,
@@ -47,13 +44,19 @@ class Navigation extends React.Component {
     };
   }
 
-  state = {
-    focusNavigation: false,
-    focusCategorySlug: null,
-    focusSubcategorySlug: null,
-    activeCategorySlug: null,
-    activeSubcategorySlug: null,
-    activeArticleId: null,
+  constructor() {
+    super(...arguments);
+    this.resetFocus = this.resetFocus.bind(this);
+    this.handleFocusChange = this.handleFocusChange.bind(this);
+    this.handleToggleNavigation = this.handleToggleNavigation.bind(this);
+    this.state = {
+      focusNavigation: false,
+      focusCategorySlug: null,
+      focusSubcategorySlug: null,
+      activeCategorySlug: null,
+      activeSubcategorySlug: null,
+      activeArticleId: null,
+    };
   }
 
   componentWillMount() {
@@ -67,7 +70,7 @@ class Navigation extends React.Component {
     });
   }
 
-  resetFocus = () => {
+  resetFocus() {
     this.setState({
       focusNavigation: false,
       focusCategorySlug: null,
@@ -79,7 +82,7 @@ class Navigation extends React.Component {
     this.resetFocus();
   }
 
-  handleFocusChange = (focusChange, afterNewStateRenderedCallback = () => {}) => {
+  handleFocusChange(focusChange, afterNewStateRenderedCallback = () => {}) { // eslint-disable-line
     if (focusChange === false) {
       this.resetFocus();
       return;
@@ -88,7 +91,7 @@ class Navigation extends React.Component {
     this.setState(focusChange, afterNewStateRenderedCallback);
   }
 
-  handleToggleNavigation = (focusChange, afterNewStateRenderedCallback = () => {}) => {
+  handleToggleNavigation(focusChange, afterNewStateRenderedCallback = () => {}) { // eslint-disable-line
     this.setState(focusChange, afterNewStateRenderedCallback);
   }
 
@@ -112,7 +115,6 @@ class Navigation extends React.Component {
       </nav>
     );
   }
-
 }
 
 export default listensToClickOutside(Navigation);

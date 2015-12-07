@@ -1,11 +1,9 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-
 import ListOfComponent from './list-of-component';
 import CategoryNavigationItem from './category-navigation-item';
 
 export default class RootNavigationCard extends React.Component {
-
   static get propTypes() {
     return {
       className: PropTypes.string,
@@ -28,7 +26,6 @@ export default class RootNavigationCard extends React.Component {
 
   render() {
     const categoryNavigationItems = this.props.navigationItems;
-
     const sharedProps = {
       focusCategorySlug: this.props.focusCategorySlug,
       focusSubcategorySlug: this.props.focusSubcategorySlug,
@@ -37,7 +34,6 @@ export default class RootNavigationCard extends React.Component {
       activeArticleId: this.props.activeArticleId,
       handleFocusChange: this.props.handleFocusChange,
     };
-
     const isFocused = this.props.focusNavigation;
     const containerClasses = {
       'navigation__root-card--focus': isFocused,

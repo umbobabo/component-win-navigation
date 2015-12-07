@@ -1,8 +1,6 @@
 /* eslint max-len: 0 */
 import React from 'react/addons';
-
 import ArticleNavigationItem from '../article-navigation-item';
-
 const { createRenderer } = React.addons.TestUtils;
 describe('ArticleNavigationItem', () => {
 
@@ -33,10 +31,11 @@ describe('ArticleNavigationItem', () => {
           title={'Here is my title'}
           text={'Here is my text'}
           slug={'here-is-my-text'}
-          id={10}
+          id={10} // eslint-disable-line
         />, {});
-      renderer.getRenderOutput().should.deep.equal(
-        <a href="/article/10/here-is-my-text">
+      const out = renderer.getRenderOutput();
+      out.should.deep.equal(
+        <a href="/article/10/here-is-my-text" onClick={out.props.onClick}>
           <div className="navigation__article navigation__article-here-is-my-text navigation__article--published">
             <h4 className="navigation__article-title">Here is my title</h4>
             <span className="navigation__article-text">Here is my text</span>
@@ -49,11 +48,11 @@ describe('ArticleNavigationItem', () => {
     it('renders active', () => {
       renderer.render(
         <ArticleNavigationItem
-          id={25}
+          id={25} // eslint-disable-line
           title={'Here is my title'}
           text={'Here is my text'}
           slug={'here-is-my-text'}
-          activeArticleId={25}
+          activeArticleId={25} // eslint-disable-line
         />, {});
       renderer.getRenderOutput().should.deep.equal(
         <div className="navigation__article navigation__article-here-is-my-text navigation__article--active navigation__article--published">
@@ -67,7 +66,7 @@ describe('ArticleNavigationItem', () => {
     it('renders unpublished', () => {
       renderer.render(
         <ArticleNavigationItem
-          id={25}
+          id={25} // eslint-disable-line
           title={'Here is my title'}
           text={'Here is my text'}
           slug={'here-is-my-text'}
@@ -82,7 +81,5 @@ describe('ArticleNavigationItem', () => {
         </div>
       );
     });
-
   });
-
 });

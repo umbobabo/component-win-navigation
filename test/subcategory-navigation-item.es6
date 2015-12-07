@@ -1,15 +1,13 @@
 import chai from 'chai';
 import spies from 'chai-spies';
 chai.use(spies);
-
 /* eslint max-len: 0 */
 import React from 'react/addons';
-
 import SubcategoryNavigationItem from '../subcategory-navigation-item';
 import SubcategoryNavigationCard from '../subcategory-navigation-card';
 
 const fakeSyntheticMouseEvent = {
-  preventDefault: () => {},
+  preventDefault: () => {}, // eslint-disable-line
 };
 
 const { createRenderer } = React.addons.TestUtils;
@@ -156,7 +154,5 @@ describe('SubcategoryNavigationItem', () => {
         focusSubcategorySlug: 'the-subcategory:focus-off',
       });
     });
-
   });
-
 });
