@@ -1,12 +1,9 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-
 import List from '@economist/component-list';
-
 import isPropTypeComponent from './is-proptype-component';
 
 export default class ListOfComponent extends React.Component {
-
   static get propTypes() {
     return {
       className: PropTypes.string,
@@ -23,7 +20,12 @@ export default class ListOfComponent extends React.Component {
     };
   }
 
-  renderChildComponent = (object, key) => {
+  constructor() {
+    super(...arguments);
+    this.renderChildComponent = this.renderChildComponent.bind(this);
+  }
+
+  renderChildComponent(object, key) {
     const ChildComponent = this.props.component;
     const sharedProps = this.props.sharedProps || {};
     return (

@@ -1,14 +1,12 @@
 import chai from 'chai';
 import spies from 'chai-spies';
 chai.use(spies);
-
 import React from 'react/addons';
-
 import CategoryNavigationItem from '../category-navigation-item';
 import CategoryNavigationCard from '../category-navigation-card';
 
 const fakeSyntheticMouseEvent = {
-  preventDefault: () => {},
+  preventDefault: () => {}, // eslint-disable-line
 };
 
 const { createRenderer } = React.addons.TestUtils;

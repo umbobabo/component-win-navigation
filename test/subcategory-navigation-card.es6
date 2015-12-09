@@ -21,9 +21,7 @@ describe('SubcategoryNavigationCard', () => {
   });
 
   describe('rendering', () => {
-    /* eslint init-declarations: 0 */
-
-    let renderer;
+    let renderer = null;
     beforeEach(() => {
       renderer = createRenderer();
     });
@@ -38,9 +36,11 @@ describe('SubcategoryNavigationCard', () => {
           activeSubcategorySlug={null}
           activeArticleId={null}
           handleFocusChange={null}
+          slug={null}
         />, {});
       const sharedProps = {
         activeArticleId: null,
+        handleFocusChange: null,
       };
       renderer.getRenderOutput().should.deep.equal(
         <nav className="navigation__subcategory-card">
@@ -68,6 +68,7 @@ describe('SubcategoryNavigationCard', () => {
         />, {});
       const sharedProps = {
         activeArticleId: null,
+        handleFocusChange: null,
       };
       renderer.getRenderOutput().should.deep.equal(
         <nav className="navigation__subcategory-card navigation__subcategory-card--focus">
@@ -95,6 +96,7 @@ describe('SubcategoryNavigationCard', () => {
         />, {});
       const sharedProps = {
         activeArticleId: null,
+        handleFocusChange: null,
       };
       renderer.getRenderOutput().should.deep.equal(
         <nav className="navigation__subcategory-card navigation__subcategory-card--active">

@@ -1,11 +1,9 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import Icon from '@economist/component-icon';
-
 import { navigationOpenUrl } from './urls';
 
 export default class NavigationMenuButton extends React.Component {
-
   static get propTypes() {
     return {
       className: PropTypes.string,
@@ -14,9 +12,13 @@ export default class NavigationMenuButton extends React.Component {
     };
   }
 
-  getFocusToggler = (slug) => {
-    const { handleToggleNavigation, focusNavigation } = this.props;
+  constructor() {
+    super(...arguments);
+    this.getFocusToggler = this.getFocusToggler.bind(this);
+  }
 
+  getFocusToggler(slug) {
+    const { handleToggleNavigation, focusNavigation } = this.props;
     function sendFocusStateToParent(newFocus, event) {
       event.preventDefault();
       if (handleToggleNavigation) {
@@ -27,7 +29,7 @@ export default class NavigationMenuButton extends React.Component {
     function focus(event) {
       sendFocusStateToParent({
         focusNavigation: true,
-        focusCategorySlug: null,
+        focusCategorySlug: slug,
         focusSubcategorySlug: null,
       }, event);
     }
@@ -61,7 +63,7 @@ export default class NavigationMenuButton extends React.Component {
             icon={focusNavigation ? 'close' : 'hamburger'}
             color="white"
             background="transparent"
-            size="46px"
+            size="49px"
           />
         </div>
       </a>

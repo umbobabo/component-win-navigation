@@ -1,11 +1,9 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-
 import ListOfComponent from './list-of-component';
 import ArticleNavigationItem from './article-navigation-item';
 
 export default class SubcategoryNavigationCard extends React.Component {
-
   static get propTypes() {
     return {
       className: PropTypes.string,
@@ -26,12 +24,10 @@ export default class SubcategoryNavigationCard extends React.Component {
 
   render() {
     const articleNavigationItems = this.props.navigationItems;
-
     const sharedProps = {
       activeArticleId: this.props.activeArticleId,
       handleFocusChange: this.props.handleFocusChange,
     };
-
     const { slug, focusSubcategorySlug, activeSubcategorySlug } = this.props;
     const isFocused = Boolean(slug) && slug === focusSubcategorySlug;
     const isActive = Boolean(slug) && slug === activeSubcategorySlug;
@@ -50,5 +46,4 @@ export default class SubcategoryNavigationCard extends React.Component {
       </nav>
     );
   }
-
 }

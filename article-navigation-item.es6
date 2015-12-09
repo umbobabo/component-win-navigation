@@ -1,11 +1,9 @@
 /* eslint id-length: 0 */
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-
 import { articleUrl } from './urls';
 
 export default class ArticleNavigationItem extends React.Component {
-
   static get propTypes() {
     return {
       className: PropTypes.string,
@@ -19,7 +17,12 @@ export default class ArticleNavigationItem extends React.Component {
     };
   }
 
-  handleClick = (event) => {
+  constructor() {
+    super(...arguments);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
     const { handleFocusChange } = this.props;
     handleFocusChange(false);
   }

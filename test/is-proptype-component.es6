@@ -1,18 +1,14 @@
 import chai from 'chai';
-
 import React from 'react';
-
 import isPropTypeComponent from '../is-proptype-component';
 
 const should = chai.should();
 class StubComponent extends React.Component {
-
   render() {
     return (
       <span>This is a stub.</span>
     );
   }
-
 }
 
 describe('isPropTypeComponent', () => {
@@ -30,8 +26,8 @@ describe('isPropTypeComponent', () => {
       null,
       undefined,
       'string',
-      100,
-      45.23,
+      100, // eslint-disable-line
+      45.23, // eslint-disable-line
       function () {},
     ].forEach((value) => {
       it(`passed a non-component such as ${value}`, () => {
@@ -42,5 +38,4 @@ describe('isPropTypeComponent', () => {
       });
     });
   });
-
 });
